@@ -7,3 +7,4 @@
 - Damián Arrieta
 - Felipe Briones
 - Federico Puppo
+- Daniel Pinto 
