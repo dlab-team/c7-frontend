@@ -4,3 +4,4 @@
 -Gonzalo Fleming
 
 ## Frontend Developers
+- Damián Arrieta
