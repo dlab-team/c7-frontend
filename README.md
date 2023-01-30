@@ -5,3 +5,4 @@
 
 ## Frontend Developers
 - Damián Arrieta
+- Felipe Briones
