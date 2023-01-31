@@ -5,6 +5,6 @@
 
 ## Frontend Developers
 - Damián Arrieta
-- Felipe Briones
+- Felipe Briones (3 mascotas)
 - Federico Puppo
 - Daniel Pinto 
