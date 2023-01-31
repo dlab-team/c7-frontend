@@ -7,5 +7,5 @@
 - Damián Arrieta
 - Federico Puppo (5 mascotas)
 - Felipe Briones (3 mascotas)
-- Daniel Pinto 
+- Daniel Pinto (0 mascotas)
 - Lizander Camilo (1 mascota)
