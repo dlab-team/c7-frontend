@@ -5,6 +5,7 @@
 
 ## Frontend Developers
 - Damián Arrieta
-- Felipe Briones
 - Federico Puppo (5 mascotas)
+- Felipe Briones (3 mascotas)
 - Daniel Pinto 
+- Lizander Camilo (1 mascota)
