@@ -1,15 +1,10 @@
 import React from 'react';
 import logo from '../assets/Logo horizontal blanco.png';
 
-//Styles:
-import '../css/navbar.css';
-
-
-
 export default function Navbar() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg d-flex justify-content-between">
+      <nav className="navbar navbar-expand-lg d-flex justify-content-between navbar_container">
         <a className="navbar-brand mx-5" href="#">
           <img src={logo} width="120" height="45" alt="Logo" />
         </a>
