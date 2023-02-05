@@ -1,0 +1,65 @@
+.section {
+  text-align: center;
+  font-family: 'Poppins';
+  background: #E2F2FE;
+}
+
+.section__title {
+  color: #140B34;
+  padding-top: 40px;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px;
+  text-align: center;
+}
+
+.section__text {
+  color: #232323;
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-top: 48px;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 36px;  
+}
+
+.section__text--b {
+  color: #2738F5;
+  font-weight: 600;
+}
+
+.itembox {
+  justify-content: space-evenly;
+}
+
+.item {
+  margin-top: 120px;
+  width: 286px;
+}
+
+.item__title {
+  margin-top: 72px;
+  color: #140B34;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  text-align: center;  
+  background: #E2F2FE;
+}
+
+.item__text {
+  height: 240px;
+  color: #232323;
+  margin-top: 32px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  background: #E2F2FE;
+  margin-bottom: 40px;
+}
+
+.item__text--b {
+  color: #140B34;
+  font-weight: 600;
+}
