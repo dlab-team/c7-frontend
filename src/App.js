@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import NewContrat_article from './myComponente/ui_NewContrat';
+import './styles/global_styles.scss'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => {
+  return <>
+    <div style={{ width: '50%' }}>
+      <NewContrat_article />
     </div>
-  );
+  </>
+
 }
 
 export default App;

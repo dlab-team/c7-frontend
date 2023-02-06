@@ -1,0 +1,83 @@
+// width: fit-content
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap");
+@import url("/node_modules/bootstrap/scss/bootstrap.scss");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  overflow-x: hidden;
+  background: linear-gradient(
+    180deg,
+    #2738f5 0%,
+    #1e239a 51.04%,
+    #140b34 99.98%
+  );
+  height: 100vh;
+}
+
+#root {
+  width: 100%;
+}
+
+/*#region Textos usados en la aplicacion*/
+
+.big--text--title {
+  font-weight: 700;
+  font-size: 5vw;
+}
+
+.medium--text--title {
+  font-weight: 600;
+  font-size: 3vw;
+}
+
+.subject--text--title {
+  font-weight: 400;
+  font-size: 2vw;
+}
+
+.info--text--normal {
+  font-weight: 300;
+  font-size: 1.4vw;
+}
+/*#endregion*/
+
+
+
+// los botones en la aplicacion derivan del mismo formato
+.btn-dev {
+  width: 10vw;
+  height: 4vw;
+  border-radius: 5px;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+// este es el mismo boton pero transparente
+.btn-transparent {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #ffff;
+}
+
+//boton en blanco un poco mas largo
+.btn-white {
+  background-color: white;
+  color: #2738f5;
+  border: 1px solid #ffff;
+  width: 12vw;
+}
