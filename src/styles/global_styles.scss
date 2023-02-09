@@ -7,6 +7,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -49,6 +50,8 @@ body {
 
 
 
+/* #region botones globales de la app */
+
 // los botones en la aplicacion derivan del mismo formato
 .btn-dev {
   width: 10vw;
@@ -81,3 +84,7 @@ body {
   border: 1px solid #ffff;
   width: 12vw;
 }
+
+/* #endregion */
+
+

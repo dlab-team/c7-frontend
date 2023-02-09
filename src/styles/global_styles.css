@@ -40,6 +40,7 @@ body {
 }
 
 /*#endregion*/
+/* #region botones globales de la app */
 .btn-dev {
   width: 10vw;
   height: 4vw;
@@ -66,4 +67,6 @@ body {
   color: #2738f5;
   border: 1px solid white;
   width: 12vw;
-}/*# sourceMappingURL=global_styles.css.map */
+}
+
+/* #endregion *//*# sourceMappingURL=global_styles.css.map */
