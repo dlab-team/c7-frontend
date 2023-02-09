@@ -1,4 +1,4 @@
-import Section from './components/Section';
+import Section from './components/section/Section.js';
 
 function App() {
   return (

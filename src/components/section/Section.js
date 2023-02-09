@@ -1,8 +1,8 @@
 import React from 'react';
-import aceleramos from '../assets/aceleramos.png'
-import acompañamos from '../assets/acompañamos.png'
-import potenciamos from '../assets/potenciamos.png'
-import '../css/section.css';
+import aceleramos from '../../assets/aceleramos.png'
+import acompañamos from '../../assets/acompañamos.png'
+import potenciamos from '../../assets/potenciamos.png'
+import '../section/section.scss';
 
 
 export default function Section() {
