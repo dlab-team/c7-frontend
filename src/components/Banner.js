@@ -6,7 +6,7 @@ function Banner() {
       <div className="container">
             <div className="row align-items-center">
                 <div className="col-6 text-center mx-auto">
-                    <h2 className="font-semibold">
+                    <h2 className="fw-bold font-family:'Poppins'">
                         ¿Cómo funcionamos?
                     </h2>
                     <div className='py-4 px-4'>
