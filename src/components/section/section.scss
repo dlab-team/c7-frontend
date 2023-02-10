@@ -1,11 +1,13 @@
+@import '../../_setting.scss';
+
 .section {
   text-align: center;
-  font-family: 'Poppins';
-  background: #E2F2FE;
+  font-family: $font;
+  background: $light-blue;
 
 
   &__title {
-    color: #140B34;
+    color: $blue-dark;
     padding-top: 40px;
     font-size: 32px;
     font-weight: 600;
@@ -14,7 +16,7 @@
   }
 
   &__text {
-    color: #232323;
+    color: $grey;
     margin-left: 120px;
     margin-right: 120px;
     margin-top: 48px;
@@ -24,7 +26,7 @@
   }
 
   &__text--b {
-    color: #2738F5;
+    color: $blue;
     font-weight: 600;
   }
 
@@ -37,7 +39,7 @@
 
       &__title {
         margin-top: 72px;
-        color: #140B34;
+        color: $blue-dark;
         font-size: 24px;
         font-weight: 600;
         line-height: 36px;
@@ -46,7 +48,7 @@
 
       &__text {
         height: 240px;
-        color: #232323;
+        color: $grey;
         margin-top: 32px;
         font-weight: 400;
         font-size: 20px;
@@ -56,7 +58,7 @@
       }
 
       &__text--b {
-        color: #140B34;
+        color: $blue-dark;
         font-weight: 600;
       }
     }
