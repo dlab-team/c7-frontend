@@ -1,0 +1,44 @@
+.container--section--whoWork {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.container--info--whoWork {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 35%;
+}
+
+.title--whoWork {
+  text-align: center;
+}
+
+.text--whoWork {
+  text-align: center;
+}
+
+.image--whoWork {
+  min-width: 30%;
+}
+
+@media screen and (max-width: 765px) {
+  .container--section--whoWork {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  .container--info--whoWork {
+    margin-top: 10px;
+    width: 70%;
+  }
+  .image--whoWork {
+    width: 90%;
+  }
+}/*# sourceMappingURL=styles_whoWork.css.map */

@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Section_whoWork from './component/Sections_whoWok';
 
 function App() {
   return <div className="App">
@@ -17,6 +18,8 @@ function App() {
         Learn React
       </a>
     </header>
+
+    <Section_whoWork />
   </div>
 }
 
