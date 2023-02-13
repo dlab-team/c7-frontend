@@ -4,8 +4,12 @@
 -Gonzalo Fleming
 
 ## Frontend Developers
-- Damián Arrieta
-- Felipe Briones
-- Federico Puppo
+- Damián Arrieta (28 años, 3 mascotas)
+- Federico Puppo (5 mascotas)
+- Felipe Briones (3 mascotas)
 - Daniel Pinto 
+<<<<<<< HEAD
 - prueba develop
+=======
+- Lizander Camilo (1 mascota)
+>>>>>>> 88b631d691936c59b977922ea0b6923921613fdb
