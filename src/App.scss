@@ -42,3 +42,83 @@
 }
 
 // #endregion Global Styles texts
+
+// #region Global Button Styles
+
+.btn-dev {
+  width: fit-content;
+  height: var(--button--height);
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: aliceblue;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  padding: 0 15px;
+  z-index: 1;
+  // background-color: aquamarine;
+  cursor: pointer;
+
+  transform-origin: right;
+  &::before {
+    content: "";
+    border-radius: 5px;
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+
+    width: 0%;
+    height: 100%;
+    background: #009eff;
+    opacity: 85%;
+    transition: all 0.2s ease-in-out;
+    transform: scaleY(0.5) "";
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 8px rgba(#fff, 0.4);
+    &::before {
+      content: "";
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.btn-blue {
+  background-color: #2738f5;
+  &::before {
+    background: #0212c6;
+  }
+}
+
+.btn-white {
+  background-color: #fdfdfd;
+  color: #2738f5;
+
+  &::before {
+    background: #2738f5;
+  }
+
+  &:hover {
+    border-color: #fff;
+    color: #fff;
+  }
+}
+
+.btn-disable {
+  cursor: not-allowed;
+  color: currentColor;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+// #endregion 
