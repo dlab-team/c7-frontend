@@ -26,7 +26,8 @@ const SectionHome_system = () => {
                 </span>
             </div>
 
-            <a className='btn-dev btn-blue btn-agendar-homeSystem' href='/'>Agendar</a>
+            <a className='btn-dev btn-blue btn-body-section' href='/'>AGENDAR</a>
+
         </div>
     </>
 
