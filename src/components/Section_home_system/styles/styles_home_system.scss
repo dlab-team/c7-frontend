@@ -1,0 +1,15 @@
+.container-home-section {
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+  gap: 1.5rem;
+  padding: 1rem;
+  background-color: aqua;
+  // justify-content: center;
+}
+
+.btn-agendar-homeSystem {
+  // height: 40px !important;
+  // border-radius: 20px !important;
+  border: none;
+}
