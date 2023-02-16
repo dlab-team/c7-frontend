@@ -29,7 +29,6 @@ const SectionHome_system = () => {
             </div>
 
             <a className='btn-dev btn-blue btn-body-section' href='/'>AGENDAR</a>
-
         </div>
     </>
 }
