@@ -1,16 +1,15 @@
 //UI settings:
 @import "./settings";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap");
-
 
 //Components:
 
-// #region Global Styles texts 
+// #region Global texts Styles
 :root {
   --big--text--font-size: 4rem;
   --medium--text--font-size: 3rem;
   --subject--text--font-size: 1.7rem;
   --info--text--font-size: 1.3rem;
+
 }
 
 @media screen and (max-width: 760px) {
@@ -19,6 +18,22 @@
     --medium--text--font-size: 2.6rem;
     --subject--text--font-size: 1.5rem;
   }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
 }
 
 .big--text--title {
@@ -40,5 +55,4 @@
   font-weight: 300;
   font-size: var(--info--text--font-size);
 }
-
 // #endregion Global Styles texts
