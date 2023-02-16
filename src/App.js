@@ -1,10 +1,10 @@
-import './App.scss';
-import Navbar from './components/Navbar/Navbar';
+import './styles/App.scss';
+import Ui_home from './views/home';
 
 function App() {
-  return (
-    <Navbar />
-  );
+  return <>
+    <Ui_home />
+  </>
 }
 
 export default App;
