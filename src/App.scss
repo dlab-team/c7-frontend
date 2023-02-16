@@ -1,84 +1,120 @@
 //UI settings:
-@import './settings';
+@import './settings.scss';
 
 //Components:
 
-// #region Global Button Styles
+// #region Global texts Styles
+:root {
+  --big--text--font-size: 4rem;
+  --medium--text--font-size: 3rem;
+  --subject--text--font-size: 1.7rem;
+  --info--text--font-size: 1.3rem;
 
+  --button--width: 8rem;
+  --button--height: 3.5rem;
+  
+  --button--width--white: 10rem;
+  --button--body--width: 2rem;
+}
+
+@media screen and (max-width: 760px) {
+  :root {
+    --big--text--font-size: 8.2vw;
+    --medium--text--font-size: 2.6rem;
+    --subject--text--font-size: 1.5rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+}
+
+.big--text--title {
+  font-weight: 700;
+  font-size: var(--big--text--font-size);
+}
+
+.medium--text--title {
+  font-weight: 500;
+  font-size: var(--medium--text--font-size);
+}
+
+.subject--text--title {
+  font-weight: 600;
+  font-size: var(--subject--text--font-size);
+}
+
+.info--text--normal {
+  font-weight: 300;
+  font-size: var(--info--text--font-size);
+}
+// #endregion Global Styles texts
+
+// #region Global Button Styles
 .btn-dev {
-    width: fit-content;
-    height: var(--button--height);
-    position: relative;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: aliceblue;
-    border-radius: 5px;
-    border: 1px solid #fff;
-    padding: 0 15px;
-    z-index: 1;
-    // background-color: aquamarine;
-    cursor: pointer;
-  
-    transform-origin: right;
-    &::before {
-      content: "";
-      border-radius: 5px;
-      position: absolute;
-  
-      bottom: 0;
-      right: 0;
-  
-      width: 0%;
-      height: 100%;
-      background: #009eff;
-      opacity: 85%;
-      transition: all 0.2s ease-in-out;
-      transform: scaleY(0.5) "";
-      z-index: -1;
-      overflow: hidden;
-    }
-  
-    &:hover {
-      box-shadow: 0px 0px 8px rgba(#fff, 0.4);
-      &::before {
-        content: "";
-        width: 100%;
-        left: 0;
-      }
-    }
-  
-    &:active {
-      transform: scale(0.98);
-    }
+  width: fit-content;
+  height: var(--button--height);
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: $white;
+  border-radius: 5px;
+  border: 1px solid $white;
+  padding: 0 20px;
+  z-index: 1;
+  cursor: pointer;
+  transform-origin: right;
+
+  &:hover {
+    background:#0212c6;
   }
-  
-  .btn-blue {
-    background-color: #2738f5;
-    &::before {
-      background: #0212c6;
-    }
+
+  &:active {
+    transform: scale(0.98);
   }
-  
-  .btn-white {
-    background-color: #fdfdfd;
-    color: #2738f5;
-  
-    &::before {
-      background: #2738f5;
-    }
-  
-    &:hover {
-      border-color: #fff;
-      color: #fff;
-    }
+}
+
+.btn-body-section {
+  padding: 0px var(--button--body--width);
+  border-radius: 20px;
+  border: none;
+}
+
+//status button option 
+.btn-disable {
+  cursor: not-allowed;
+  color: currentColor;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+//color button option
+.btn-blue {
+  background-color:$blue;
+
+  &:hover {
+    color: $white;
   }
-  
-  .btn-disable {
-    cursor: not-allowed;
-    color: currentColor;
-    opacity: 0.6;
-    pointer-events: none;
+}
+
+.btn-white {
+  background-color: $white;
+  color: $blue;
+  &:hover {
+    color: $white;
   }
-  
-  // #endregion 
+}
+// #endregion
