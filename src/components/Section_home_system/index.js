@@ -1,6 +1,8 @@
 import React from 'react'
 import imgHomeSystem from '../../assets/DevSafio_sistema.svg'
 import './styles/styles_home_system.scss'
+import '../../styles/App.scss'
+
 
 const SectionHome_system = () => {
     return <>
@@ -30,7 +32,6 @@ const SectionHome_system = () => {
 
         </div>
     </>
-
 }
 
 export default SectionHome_system
