@@ -1,0 +1,72 @@
+.modal--login--container {
+  width: 100%;
+  //   height: fit-content;
+  height: 600px;
+  background-image: url("../../assets/devBannerCirculos.svg");
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 5px 4px 8px rgba(#f8f9fa, 0.8);
+
+  .modal--login {
+    width: 80%;
+    max-width: 900px;
+    height: fit-content;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    // justify-content: center;
+    align-items: center;
+
+    border: #0a0a0a 6px solid;
+    .modal--text--container {
+      max-width: 750px;
+      text-align: center;
+      font-size: 20px;
+    }
+    .modal--container--buttons {
+      display: flex;
+      flex-wrap: wrap;
+      width: fit-content;
+      max-width: 600px;
+      // background-color: #008ff7;
+      justify-content: center;
+      gap: 5px;
+    }
+  }
+}
+
+.login--icons {
+  font-size: 20px;
+  margin: 0 10px;
+}
+
+.btn-white {
+  border: 1px solid #000000 !important;
+}
+
+.btn-linkedin {
+  background: #140b34;
+}
+
+.btn-github {
+  background: #232323;
+}
+
+.btn-twitter {
+  background: #008ff7;
+}
+
+// @media screen and (max-width: 760px) {
+//   .modal--login {
+//     gap: 10px !important;
+//     background-color: #008ff7 ;
+//   }
+// }
