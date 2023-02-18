@@ -1,0 +1,66 @@
+@import '../../_setting.scss';
+
+.section {
+  text-align: center;
+  font-family: $font;
+  background: $light-blue;
+
+
+  &__title {
+    color: $blue-dark;
+    padding-top: 40px;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    text-align: center;
+  }
+
+  &__text {
+    color: $grey;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 48px;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  &__text--b {
+    color: $blue;
+    font-weight: 600;
+  }
+
+  .itembox {
+    justify-content: space-evenly;
+
+    .item {
+      margin-top: 120px;
+      width: 286px;
+
+      &__title {
+        margin-top: 72px;
+        color: $blue-dark;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 36px;
+        text-align: center;
+      }
+
+      &__text {
+        height: 240px;
+        color: $grey;
+        margin-top: 32px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      &__text--b {
+        color: $blue-dark;
+        font-weight: 600;
+      }
+    }
+  }
+}
