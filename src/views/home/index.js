@@ -1,11 +1,11 @@
 import React from 'react'
-import Section from './components/section/Section.js';
+import SectionSinJrsNoHaySrs from '../../components/Section_sinJrsNoHaySrs/SectionSinJrsNoHaySrs.js';
 
 // encargada de renderizar todos los componentes de la vista home
 const Ui_home = () => {
     return (
         <div>Ui_home
-            <Section/>
+            <SectionSinJrsNoHaySrs/>
         </div>
         // <Componente_Banner/>
         // <Componente_Seccion1/>

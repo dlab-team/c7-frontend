@@ -1,4 +1,4 @@
-@import '../../_setting.scss';
+@import '../../styles/settings';
 
 .section {
   text-align: center;
@@ -32,6 +32,7 @@
 
   .itembox {
     justify-content: space-evenly;
+    display: flex;
 
     .item {
       margin-top: 120px;
