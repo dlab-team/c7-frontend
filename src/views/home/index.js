@@ -5,7 +5,7 @@ import SectionSinJrsNoHaySrs from '../../components/Section_sinJrsNoHaySrs/Secti
 const Ui_home = () => {
     return (
         <div>Ui_home
-            <SectionSinJrsNoHaySrs />
+            <SectionSinJrsNoHaySrs/>
         </div>
         // <Componente_Banner/>
         // <Componente_Seccion1/>
