@@ -17,7 +17,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "remove": "rm -rf node_modules package-lock.json",
+    "docker:dev": "docker compose -f docker-compose-dev.yml up --build --force-recreate"
   },
   "eslintConfig": {
     "extends": [

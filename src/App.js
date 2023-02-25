@@ -1,13 +1,11 @@
-import NewContrat_article from './myComponente/ui_NewContrat';
-import './styles/global_styles.scss'
 
-const App = () => {
+import './styles/App.scss';
+import Ui_home from './views/home';
+
+function App() {
   return <>
-    <div style={{ width: '50%' }}>
-      <NewContrat_article />
-    </div>
+    <Ui_home />
   </>
-
 }
 
 export default App;

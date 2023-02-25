@@ -1,7 +1,0 @@
-@import url('./styles/global_styles.css');
-@import url('./myComponente/style/Navbartop.css');
-/* @import url('/node_modules/bootstrap/') */
-
-body {
-  background: rgb(82, 82, 196);
-}
