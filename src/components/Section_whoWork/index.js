@@ -4,13 +4,13 @@ import './styles_whoWork.scss'
 
 const SectionWhoWork = () => {
     return <>
-        <div className='container__whoWork'>
-            <div className='whoWork__info'>
+        <div className='who-Work'>
+            <div className='who-Work__info'>
 
-                <span className='subject__text__title text-center'> ¿Cómo funcionamos?
+                <span className='text__subject text-center'> ¿Cómo funcionamos?
                 </span>
 
-                <span className='normal__text text-center'>
+                <span className='text--normal text-center'>
                     Da click a nuestro video y en sólo 60 segundos conoce Devsafio y
                     cómo estamos cambiando el mundo TI, acelerando y
                     potenciando las células tecnológicas.
@@ -18,7 +18,7 @@ const SectionWhoWork = () => {
 
             </div>
 
-            <img className='whoWork__image' alt='Trabajo en Equipo' src={imgWhoWork} />
+            <img className='who-Work__image' alt='Trabajo en Equipo' src={imgWhoWork} />
         </div>
     </>
 }

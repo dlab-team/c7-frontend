@@ -1,4 +1,4 @@
-.container__whoWork {
+.who-Work {
   width: 100%;
   height: fit-content;
   display: flex;
@@ -7,37 +7,37 @@
   justify-items: center;
   gap: 80px;
   padding: 20px 10px;
-}
 
-.whoWork__info {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  width: 35%;
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 35%;
+  }
+
+  &__image {
+    min-width: 30%;
+  }
 }
 
 .text-center {
   text-align: center;
 }
 
-.whoWork__image {
-  min-width: 30%;
-}
-
 //vista tablet
 @media screen and (max-width: 765px) {
-  .container__whoWork {
+  .who-Work {
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
-  }
 
-  .whoWork__info {
-    margin-top: 10px;
-    width: 70%;
-  }
+    &__info {
+      margin-top: 10px;
+      width: 70%;
+    }
 
-  .whoWork__image {
-    width: 90%;
+    &__image {
+      width: 90%;
+    }
   }
 }
