@@ -14,7 +14,6 @@ export default function ContactForm() {
             ...form,
             [e.target.name]: e.target.value
         })
-        //console.log(form);
     }
 
     const onCheckBoxUpdate = (position) => {
@@ -23,7 +22,6 @@ export default function ContactForm() {
         );
         setCheckBoxState(updatedCheckBoxState);
         setForm({ ...form, tags: Array.from(document.querySelectorAll("input[type=checkbox]:checked"), e => e.name) });
-        //console.log(form);
     }
 
     const handleSubmit = async (e) => {
