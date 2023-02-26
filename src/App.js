@@ -1,27 +1,10 @@
-import logo from './logo.svg';
-import './App.scss';
-import SectionHome_system from './components/Section_home_system';
+import './styles/App.scss';
+import Ui_home from './views/home';
 
 function App() {
-  return (
-    <SectionHome_system />
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-  );
+  return <>
+    <Ui_home />
+  </>
 }
 
 export default App;

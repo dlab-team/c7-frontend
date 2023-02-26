@@ -1,0 +1,16 @@
+.section__system {
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+  gap: 1.5rem;
+  padding: 1rem;
+
+  &--image {
+    min-width: 300px;
+  }
+}
+.btn--system {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 18px;
+}
