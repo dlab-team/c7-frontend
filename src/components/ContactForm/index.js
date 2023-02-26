@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-import './contactForm.scss';
+import './style.scss';
 import { categories } from "../../utils/contactFormCategories";
+
+const formDefault = { name: '', lastName: '', email: '', phone: '', company: '', tags: [], message: '' }
+const checkboxDefault = new Array(categories.length).fill(false)
 
 export default function ContactForm() {
 
-    const formDefault = { name: '', lastName: '', email: '', phone: '', company: '', tags: [], message: '' }
     const [form, setForm] = useState(formDefault);
-    const checkboxDefault = new Array(categories.length).fill(false)
     const [checkboxState, setCheckBoxState] = useState(checkboxDefault);
 
     const onFormUpdate = (e) => {
@@ -14,7 +15,6 @@ export default function ContactForm() {
             ...form,
             [e.target.name]: e.target.value
         })
-        //console.log(form);
     }
 
     const onCheckBoxUpdate = (position) => {
@@ -23,12 +23,10 @@ export default function ContactForm() {
         );
         setCheckBoxState(updatedCheckBoxState);
         setForm({ ...form, tags: Array.from(document.querySelectorAll("input[type=checkbox]:checked"), e => e.name) });
-        //console.log(form);
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        alert(JSON.stringify(form));
         setForm(formDefault);
         setCheckBoxState(checkboxDefault);
     }
@@ -55,27 +53,27 @@ export default function ContactForm() {
                     <div className="row">
                         <div className="form-group col-md-6">
                             <label className="contactForm__text">Nombre *</label>
-                            <input type="text" className="contactForm--input form-control" name="name" value={form.name} onChange={onFormUpdate} required />
+                            <input type="text" className="contactForm--input" name="name" value={form.name} onChange={onFormUpdate} required />
                         </div>
                         <div className="form-group col-md-6">
                             <label className="contactForm__text">Apellido *</label>
-                            <input type="text" className="contactForm--input form-control" name="lastName" value={form.lastName} onChange={onFormUpdate} required />
+                            <input type="text" className="contactForm--input" name="lastName" value={form.lastName} onChange={onFormUpdate} required />
                         </div>
                     </div>
                     <div className="row">
                         <div className="form-group col-md-6">
                             <label className="contactForm__text">Email corporativo *</label>
-                            <input type="email" className="contactForm--input form-control" name="email" value={form.email} onChange={onFormUpdate} required />
+                            <input type="email" className="contactForm--input" name="email" value={form.email} onChange={onFormUpdate} required />
                         </div>
                         <div className="form-group col-md-6">
                             <label className="contactForm__text">Número de teléfono *</label>
-                            <input type="phone" className="contactForm--input form-control" name="phone" value={form.phone} onChange={onFormUpdate} required />
+                            <input type="phone" className="contactForm--input" name="phone" value={form.phone} onChange={onFormUpdate} required />
                         </div>
                     </div>
                     <div className="row">
                         <div className="form-group col-md-12">
                             <label className="contactForm__text">¿A qué empresa perteneces? *</label>
-                            <input type="text" className="contactForm--input form-control" name="company" value={form.company} onChange={onFormUpdate} required />
+                            <input type="text" className="contactForm--input" name="company" value={form.company} onChange={onFormUpdate} required />
                         </div>
                     </div>
                     <div className="row">
@@ -86,7 +84,7 @@ export default function ContactForm() {
                                     return (
                                         <li key={index}>
                                             <input
-                                                className="form-check-input contactForm--check"
+                                                className="contactForm--check"
                                                 type="checkbox"
                                                 id={`checkbox-${name}`}
                                                 name={name}
