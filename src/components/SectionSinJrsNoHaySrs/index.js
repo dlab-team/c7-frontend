@@ -2,7 +2,7 @@ import React from 'react';
 import aceleramos from '../../assets/aceleramos.png'
 import acompañamos from '../../assets/acompaniamos.png'
 import potenciamos from '../../assets/potenciamos.png'
-import './sectionSinJrsNoHaySrs.scss';
+import './style.scss';
 
 
 export default function Section() {
