@@ -1,21 +1,21 @@
 import './Navbartop.scss'
-const NewContrat_article = () => {
+const NewContratArticle = () => {
     return <>
-        <p className='big__text__title'
+        <p className='text__title--big'
             style={{ color: '#ffff' }}>
             ¿Buscas talento TI?
         </p>
-        <div className='medium__text__title'
+        <div className='text__title--medium'
             style={{ color: '#ffff' }}>
             <span>Contrata</span> <span style={{ color: 'rgba(0, 143, 247, 1)' }}>Talento TI </span><span>rápdo,</span><br />
             inteligente y eficiente
         </div>
-        <p className='normal__text'
+        <p className='text--normal'
             style={{ color: '#ffff' }}>
             Te encontramos profesionales en 5 días y los acompañamos por 3 meses con tutores senior para potenciar y acelerar sus habilidades técnicas
         </p>
-        <input className='btn__dev normal__text btn-white btn__contact' type={'button'} value={'QUIERO CONTRATAR'}></input>
+        <input className='btn-app text--normal btn-app--white' type={'button'} value={'QUIERO CONTRATAR'}></input>
     </>
 }
 
-export default NewContrat_article
+export default NewContratArticle

@@ -1,5 +1,5 @@
 //UI settings:
-@import './settings';
+@import "./settings";
 
 //Components:
 
@@ -18,30 +18,27 @@
   }
 }
 
-// #region Global texts Styles
-.big__text__title {
+.text__title--big {
   font-weight: 700;
   font-size: var(--big--text--font-size);
 }
 
-.medium__text__title {
+.text__title--medium {
   font-weight: 500;
   font-size: var(--medium--text--font-size);
 }
 
-.subject__text__title {
+.text__subject {
   font-weight: 600;
   font-size: var(--subject--text--font-size);
 }
 
-.normal__text {
+.text--normal {
   font-weight: 300;
   font-size: var(--info--text--font-size);
 }
-// #endregion Global Styles texts
 
-// #region Global Button Styles
-.btn__dev {
+.btn-app {
   width: fit-content;
   height: var(--button--height);
   position: relative;
@@ -49,43 +46,42 @@
   align-items: center;
   text-decoration: none;
   color: $white;
-  border-radius: 5px;
+  border-radius: 20px;
   border: 1px solid $white;
-  padding: 0 20px;
+  padding: 15px 20px;
   z-index: 1;
   cursor: pointer;
   transform-origin: right;
+  font-weight: bold;
 
   &:hover {
     background: #0212c6;
+    color: $white;
   }
 
   &:active {
     transform: scale(0.98);
   }
-}
 
-//status button option
-.btn-disable {
-  cursor: not-allowed;
-  color: currentColor;
-  opacity: 0.8;
-  pointer-events: none;
-}
-
-//color button option
-.btn-blue {
-  background-color: $blue;
-  &:hover {
-    color: $white;
+  &--disabled {
+    cursor: not-allowed;
+    color: currentColor;
+    opacity: 0.8;
+    pointer-events: none;
   }
-}
 
-.btn-white {
-  background-color: $white;
-  color: $blue;
-  &:hover {
-    color: $white;
-    // #endregion
+  &--blue {
+    background-color: $blue;
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &--white {
+    background-color: $white;
+    color: $blue;
+    &:hover {
+      color: $white;
+    }
   }
 }
