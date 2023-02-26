@@ -6,6 +6,7 @@ import Navbar from '../../components/Navbar/Navbar.js';
 const Ui_home = () => {
     return (
         <div>
+            //navbar
             <Navbar />
             <SectionSinJrsNoHaySrs/>
         </div>
