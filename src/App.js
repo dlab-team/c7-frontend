@@ -1,4 +1,3 @@
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.scss';
 import Ui_home from './views/home';
