@@ -1,0 +1,21 @@
+@import '../../styles/settings';
+
+.navbar {
+    background-color: $blue;
+
+    ul li {
+        .btn-registrate {
+            box-shadow: 0px 0px 0px 0.5px $white;
+            background-color: transparent;
+            border-radius:10px;
+            border:0.5px solid #f7f7f7;
+        }
+        .btn-contactanos {
+            box-shadow: 0px 0px 0px 0.5px $white;
+            background-color:#ffffff;
+            border-radius:10px;
+            border:1px solid #f2f5f2;
+            color: $blue !important;
+        }
+    }
+}
