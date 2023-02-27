@@ -9,7 +9,6 @@ import SectionHomeSystem from '../../components/Section_home_system/index.js';
 const Ui_home = () => {
     return (
         <div>
-            //navbar
             <Navbar />
             <SectionSinJrsNoHaySrs/>
             <SectionHomeSystem/>
