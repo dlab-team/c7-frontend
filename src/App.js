@@ -1,3 +1,5 @@
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.scss';
 import Ui_home from './views/home';
 import Ui_register from './views/registrar';
@@ -9,5 +11,6 @@ function App() {
     <Ui_register />
   </>
 }
+
 
 export default App;
