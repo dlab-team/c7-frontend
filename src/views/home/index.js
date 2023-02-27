@@ -12,6 +12,7 @@ const Ui_home = () => {
             //navbar
             <Navbar />
             <SectionSinJrsNoHaySrs/>
+            <SectionHomeSystem/>
             <Footer />
         </div>
         // <Componente_Banner/>
