@@ -1,2 +1,85 @@
 //UI settings:
-@import './settings';
+@import "./settings";
+
+:root {
+  --big--text--font-size: 4rem;
+  --medium--text--font-size: 3rem;
+  --subject--text--font-size: 1.7rem;
+  --info--text--font-size: 1.3rem;
+}
+
+@media screen and (max-width: 760px) {
+  :root {
+    --big--text--font-size: 8.2vw;
+    --medium--text--font-size: 2.6rem;
+    --subject--text--font-size: 1.5rem;
+  }
+}
+
+.text__title--big {
+  font-weight: 700;
+  font-size: var(--big--text--font-size);
+}
+
+.text__title--medium {
+  font-weight: 500;
+  font-size: var(--medium--text--font-size);
+}
+
+.text__subject {
+  font-weight: 600;
+  font-size: var(--subject--text--font-size);
+}
+
+.text--normal {
+  font-weight: 300;
+  font-size: var(--info--text--font-size);
+}
+
+.btn-app {
+  width: fit-content;
+  height: var(--button--height);
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: $white;
+  border-radius: 20px;
+  border: 1px solid $white;
+  padding: 15px 20px;
+  z-index: 1;
+  cursor: pointer;
+  transform-origin: right;
+  font-weight: bold;
+
+  &:hover {
+    background: #0212c6;
+    color: $white;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    color: currentColor;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  &--blue {
+    background-color: $blue;
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &--white {
+    background-color: $white;
+    color: $blue;
+    &:hover {
+      color: $white;
+    }
+  }
+}
