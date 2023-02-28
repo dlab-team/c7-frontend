@@ -5,20 +5,15 @@ import Footer from '../../components/Footer/Footer.js';
 import Banner from '../../components/Banner/Banner.js';
 
 // encargada de renderizar todos los componentes de la vista home
-const Ui_home = () => {
+const UiHome = () => {
     return (
         <div>
             <Navbar />
             <Banner />
-            <SectionSinJrsNoHaySrs/>
+            <SectionSinJrsNoHaySrs />
             <Footer />
         </div>
-        // <Componente_Banner/>
-        // <Componente_Seccion1/>
-        // <Componente_Seccion_Galleria/>
-        // <Componente_SeccionX/>
-        // <Componente_SeccionY/>
     )
 }
 
-export default Ui_home
+export default UiHome
