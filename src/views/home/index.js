@@ -10,7 +10,7 @@ const Ui_home = () => {
         <div>
             <Navbar />
             <Banner />
-            <SectionSinJrsNoHaySrs/>
+            <SectionSinJrsNoHaySrs />
             <Footer />
         </div>
         // <Componente_Banner/>
