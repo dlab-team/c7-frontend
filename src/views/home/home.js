@@ -1,30 +1,22 @@
 import React from 'react'
-import SectionSinJrsNoHaySrs from '../../components/Section_sinJrsNoHaySrs/SectionSinJrsNoHaySrs.js';
 import Navbar from '../../components/Navbar/Navbar.js';
 import Footer from '../../components/Footer/Footer.js';
 import SectionHomeSystem from '../../components/Section_home_system/index.js';
 import Banner from '../../components/Banner/Banner.js';
 import BigBanner from '../../components/BigBanner/BigBanner.js';
-
-
+import SectionSinJuniors from '../../components/SectionSinJrsNoHaySrs/index.js';
 
 // encargada de renderizar todos los componentes de la vista home
-const Ui_home = () => {
+const UiHome = () => {
     return (
         <div>
             <Navbar />
             <BigBanner />
             <Banner />
-            <SectionSinJrsNoHaySrs/>
-            <SectionHomeSystem/>
+            <SectionSinJuniors />
+            <SectionHomeSystem />
             <Footer />
         </div>
-        // <Componente_Banner/>
-        // <Componente_Seccion1/>
-        // <Componente_Seccion_Galleria/>
-        // <Componente_SeccionX/>
-        // <Componente_SeccionY/>
     )
 }
-
-export default Ui_home
+export default UiHome
