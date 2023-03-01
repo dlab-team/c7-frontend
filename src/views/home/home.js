@@ -1,12 +1,10 @@
 import React from 'react'
-import SectionSinJrsNoHaySrs from '../../components/Section_sinJrsNoHaySrs/SectionSinJrsNoHaySrs.js';
 import Navbar from '../../components/Navbar/Navbar.js';
 import Footer from '../../components/Footer/Footer.js';
 import SectionHomeSystem from '../../components/Section_home_system/index.js';
 import Banner from '../../components/Banner/Banner.js';
 import BigBanner from '../../components/BigBanner/BigBanner.js';
-
-
+import Section from '../../components/SectionSinJrsNoHaySrs/index.js';
 
 // encargada de renderizar todos los componentes de la vista home
 const UiHome = () => {
@@ -15,7 +13,7 @@ const UiHome = () => {
             <Navbar />
             <BigBanner />
             <Banner />
-            <SectionSinJrsNoHaySrs/>
+            <Section />
             <SectionHomeSystem/>
             <Footer />
         </div>
