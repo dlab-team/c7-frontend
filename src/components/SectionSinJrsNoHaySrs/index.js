@@ -5,7 +5,7 @@ import potenciamos from '../../assets/potenciamos.png'
 import './style.scss';
 
 
-export default function Section() {
+export default function SectionSinJuniors() {
     return (
         <div className='section'>
             <div className='section__title'>Sin Juniors no hay Seniors</div>
