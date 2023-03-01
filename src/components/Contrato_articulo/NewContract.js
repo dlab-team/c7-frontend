@@ -1,5 +1,5 @@
 import './Navbartop.scss'
-const NewContratArticle = () => {
+const NewContractArticle = () => {
     return <>
         <p className='text__title--big'
             style={{ color: '#ffff' }}>
@@ -7,7 +7,7 @@ const NewContratArticle = () => {
         </p>
         <div className='text__title--medium'
             style={{ color: '#ffff' }}>
-            <span>Contrata</span> <span style={{ color: 'rgba(0, 143, 247, 1)' }}>Talento TI </span><span>rápdo,</span><br />
+            <span>Contrata</span> <span style={{ color: 'rgba(0, 143, 247, 1)' }}>Talento TI </span><span>rápido,</span><br />
             inteligente y eficiente
         </div>
         <p className='text--normal'
@@ -18,4 +18,4 @@ const NewContratArticle = () => {
     </>
 }
 
-export default NewContratArticle
+export default NewContractArticle
