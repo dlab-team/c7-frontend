@@ -19,5 +19,3 @@ const UiHome = () => {
         </div>
     )
 }
-
-export default UiHome
