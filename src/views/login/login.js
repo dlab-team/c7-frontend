@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.scss'
+import './login.scss'
 import { Envelope, Google, Linkedin, Twitter, Github } from 'react-bootstrap-icons'
 
 const UiLogin = () => {
