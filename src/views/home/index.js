@@ -3,12 +3,14 @@ import SectionSinJrsNoHaySrs from '../../components/Section_sinJrsNoHaySrs/Secti
 import Navbar from '../../components/Navbar/Navbar.js';
 import Footer from '../../components/Footer/Footer.js';
 import Banner from '../../components/Banner/Banner.js';
+import NewContratArticle from '../../components/Contrato_articulo/NewContrat.js';
 
 // encargada de renderizar todos los componentes de la vista home
 const Ui_home = () => {
     return (
         <div>
             <Navbar />
+            <NewContratArticle />
             <Banner />
             <SectionSinJrsNoHaySrs/>
             <Footer />
