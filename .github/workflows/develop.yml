@@ -25,9 +25,8 @@ jobs:
       with:
         context: .
         file: ./.docker/preprod/Dockerfile
-        repository: ${{ github.repository }}
         push: true
-        tags: ${{ github.sha }}
+        tags: ${{ github.repository }}:${{ github.sha }}
     - name: Deploy to cluster
       uses: myrotvorets/kubectl-action@2.0.0
       with:
