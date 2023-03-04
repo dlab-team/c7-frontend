@@ -26,4 +26,4 @@ jobs:
         context: .
         file: ./.docker/preprod/Dockerfile
         push: true
-        tags: ${{ github.sha }}
+        tags: user/app:latest
