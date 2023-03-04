@@ -20,7 +20,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "remove": "rm -rf node_modules package-lock.json",
-    "docker:dev": "docker compose -f docker-compose-dev.yml up --build --force-recreate"
+    "docker:dev": "docker compose -f docker-compose-dev.yml up --build --force-recreate",
+    "docker:preprod": "docker compose -f docker-compose-preprod.yml up --build --force-recreate"
   },
   "eslintConfig": {
     "extends": [
