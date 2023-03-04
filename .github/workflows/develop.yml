@@ -25,5 +25,18 @@ jobs:
       with:
         context: .
         file: ./.docker/preprod/Dockerfile
+        repository: ${{ github.repository }}
         push: true
-        tags: ${{ github.actor }}/app:latest
+        tags: ${{ github.sha }}
+    - name: Deploy to cluster
+      uses: myrotvorets/kubectl-action@2.0.0
+      with:
+        config: ${{ secrets.KUBE_CONFIG_DATA }}
+        version: latest
+        args: set image --record deployment/my-app container=${{ github.repository }}:${{ github.sha }}
+    - name: Verify deployment
+      uses: myrotvorets/kubectl-action@2.0.0
+      with:
+        config: ${{ secrets.KUBE_CONFIG_DATA }}
+        version: latest
+        args: rollout status deployment/application
