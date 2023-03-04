@@ -14,7 +14,7 @@ function Banner() {
                 Da click a nuestro video y en sólo 60 segundos conoce
                 <b className="banner__text--b"> Devsafio </b>
                 cómo estamos
-                <b className="banner__text--b">cambiando el mundo TI</b>,
+                <b className="banner__text--b"> cambiando el mundo TI</b>,
                 acelerando y potenciando las células tecnológicas.
               </p>
             </div>
