@@ -26,13 +26,13 @@ jobs:
         context: .
         file: ./.docker/preprod/Dockerfile
         push: true
-        tags: gonzafg2/C7-frontend:${{ github.sha }}
+        tags: gonzafg2/c7-frontend:${{ github.sha }}
     - name: Deploy to cluster
       uses: myrotvorets/kubectl-action@2.0.0
       with:
         config: ${{ secrets.KUBE_CONFIG_DATA }}
         version: latest
-        args: set image --record deployment/my-app container=gonzafg2/C7-frontend:${{ github.sha }}
+        args: set image --record deployment/my-app container=gonzafg2/c7-frontend:${{ github.sha }}
     - name: Verify deployment
       uses: myrotvorets/kubectl-action@2.0.0
       with:
