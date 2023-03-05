@@ -1,5 +1,5 @@
 name: deploy
-run-name: ${{ github.base_ref }} / ${{ github.ref }}
+run-name: ${{ github.event_name }} in ${{ github.ref_name }} by ${{ github.actor }}
 on:
   push:
     branches:
