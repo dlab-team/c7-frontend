@@ -1,5 +1,7 @@
-import './Navbartop.scss'
+import './Navbartop.scss';
+
 const NewContractArticle = () => {
+
     return <>
         <p className='text__title--big'
             style={{ color: '#ffff' }}>
@@ -14,7 +16,7 @@ const NewContractArticle = () => {
             style={{ color: '#ffff' }}>
             Te encontramos profesionales en 5 días y los acompañamos por 3 meses con tutores senior para potenciar y acelerar sus habilidades técnicas
         </p>
-        <input className='btn-app text--normal btn-app--white' type={'button'} value={'QUIERO CONTRATAR'}></input>
+        <a href="#contactForm" className='btn-app text--normal btn-app--white'>QUIERO CONTRATAR</a>
     </>
 }
 
