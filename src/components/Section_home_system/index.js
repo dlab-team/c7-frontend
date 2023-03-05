@@ -1,6 +1,6 @@
 import React from "react";
 import imgHomeSystem from "../../assets/DevSafio_sistema.svg";
-import "./style.scss";
+import "./styles_home_system.scss";
 
 const SectionHomeSystem = () => {
   return (
@@ -11,7 +11,7 @@ const SectionHomeSystem = () => {
           <span>
             ¿Escasez de talento Senior? No te preocupes, en{" "}
             <span className="system__text--blue">Devsafio </span>encontrarás el
-            talento que necesitas en nuestro programa Mentorías.
+            talento que necesitas en nuestro programa Mentorías.git 
           </span>
         </div>
         <div className="system__text">
