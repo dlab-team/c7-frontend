@@ -28,14 +28,8 @@ jobs:
         push: true
         tags: gonzafg2/c7-frontend:${{ github.sha }}
     - name: Deploy to cluster
-      uses: myrotvorets/kubectl-action@2.0.0
+      uses: ThomasKliszowski/setup-kubectl@v1
       with:
-        config: ${{ secrets.KUBE_CONFIG_DATA }}
-        version: latest
-        args: set image --namespace c7-preprod --record deployment/c7-frontend container=gonzafg2/c7-frontend:${{ github.sha }}
-    - name: Verify deployment
-      uses: myrotvorets/kubectl-action@2.0.0
-      with:
-        config: ${{ secrets.KUBE_CONFIG_DATA }}
-        version: latest
-        args: rollout status deployment/application
+        kube-config: ${{ secrets.KUBE_CONFIG_DATA }}
+        kube-version: 1.15.0
+    - run: kubectl set image --namespace c7-preprod deployment/c7-frontend app=gonzafg2/c7-frontend:${{ github.sha }}
