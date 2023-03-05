@@ -46,7 +46,7 @@ export default function ContactForm() {
       },[form,checkboxState]);
 
     return (
-        <div className="contactForm">
+        <div className="contactForm" id="contactForm">
             <div className="contactForm__container">
                 <form onSubmit={handleSubmit}>
                     <h3 className="contactForm__title">Si eres empresa y buscas talento TI, déjanos tu información en este formulario. En breve te contactaremos:</h3>
