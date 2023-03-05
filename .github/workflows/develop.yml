@@ -32,4 +32,4 @@ jobs:
       with:
         kube-config: ${{ secrets.KUBE_CONFIG_DATA }}
         kube-version: 1.15.0
-    - run: kubectl set image --namespace c7-preprod deployment/c7-frontend app=gonzafg2/c7-frontend:${{ github.sha }}
+    - run: kubectl set image --namespace c7-preprod deployment/c7-frontend gonzafg2/c7-frontend:${{ github.sha }}
