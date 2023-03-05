@@ -1,11 +1,10 @@
 FROM node:18.14-alpine3.17 as build
 
-# RUN npm install -g react-scripts
-
 WORKDIR /app
 COPY . /app/
 
-RUN npm install
+RUN npm install -g react-scripts
+RUN npm install --registry https://registry.npmjs.org
 RUN npm run build
 
 FROM nginx:1.21.3-alpine
