@@ -1,5 +1,5 @@
-
 import './styles/App.scss';
+import { BrowserRouter } from 'react-router-dom';
 import UiHome from './views/home/home';
 //Redux
 import { Provider } from 'react-redux';
@@ -8,9 +8,11 @@ import store from './utils/Redux/store';
 function App() {
   return (
     <>
-      <Provider store={store}>
-        <UiHome />
-      </Provider>
+      <BrowserRouter>
+        <Provider store={store}>
+          <UiHome />
+        </Provider>
+      </BrowserRouter>
     </>
 )}
 
