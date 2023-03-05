@@ -4,6 +4,7 @@ import UiHome from './views/home/home';
 import Login from './views/login/login';
 import Register from './views/registrar/index';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 //Redux
 import { Provider } from 'react-redux';
 import store from './utils/Redux/store';
