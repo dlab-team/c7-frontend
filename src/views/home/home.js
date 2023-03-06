@@ -9,6 +9,7 @@ import ContactForm from "../../components/ContactForm/index.js";
 
 // encargada de renderizar todos los componentes de la vista home
 const Ui_home = () => {
+
   return (
     <div>
       <Navbar />
