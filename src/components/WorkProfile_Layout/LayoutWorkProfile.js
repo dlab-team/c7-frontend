@@ -21,4 +21,4 @@ const LayoutWorkProfile = () => {
     </>
 }
 
-export default LayoutWorkProfile
+export default LayoutWorkProfile;
