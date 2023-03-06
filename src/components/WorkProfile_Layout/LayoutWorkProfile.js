@@ -1,24 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ilustration from '../../assets/formIlustrationformIlustrat.png'
 import FormController from '../WorkProfile_FormController/FormController'
 import './LayoutWorkProfile.scss'
 
-const LayoutWorkProfile = ({ isOpen }) => {
-    const [open, setOpen] = useState(true);
-
-    const handleOpenClose = () => {
-        setOpen(false)
-        isOpen(false)
-    }
+const LayoutWorkProfile = () => {
 
     return <>
-        <div className='modal-container'>
-            <div className='modal-container__ilustration' >
+        <div className='modal-work-profile'>
+            <div className='modal-work-profile__ilustration' >
                 <img src={ilustration} alt='ilustracion' />
             </div>
 
-            <div className='modal-container__form-display' >
-                <div onClick={handleOpenClose} className='close-button'> X </div>
+            <div className='modal-work-profile__form-display' >
+                <div  className='close-button'> X </div>
                 <div className='form__regiter' >
                     <FormController />
                 </div>
