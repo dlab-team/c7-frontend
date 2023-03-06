@@ -38,8 +38,6 @@ const FormController = () => {
     </>
 }
 
-
-
 // formulario para probar la vista
 const TestForm = () => {
     return <form>

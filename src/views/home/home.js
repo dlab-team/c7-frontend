@@ -6,14 +6,9 @@ import SectionHomeSystem from "../../components/Section_home_system/index.js";
 import Banner from "../../components/Banner/Banner.js";
 import BigBanner from "../../components/BigBanner/BigBanner.js";
 import ContactForm from "../../components/ContactForm/index.js";
-import LayoutWorkProfile from "../../components/WorkProfile_Layout/LayoutWorkProfile";
 
 // encargada de renderizar todos los componentes de la vista home
 const Ui_home = () => {
-
-  const handleOpen = (ModalOpen) => {
-    console.log('modal abierto?? ' + ModalOpen)
-  };
 
   return (
     <div>

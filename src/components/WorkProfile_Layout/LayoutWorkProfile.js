@@ -13,7 +13,6 @@ const LayoutWorkProfile = ({ isOpen }) => {
 
     return <>
         <div className='modal-container'>
-            {open && <>Modal abierto</>}
             <div className='modal-container__ilustration' >
                 <img src={ilustration} alt='ilustracion' />
             </div>
