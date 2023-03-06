@@ -3,16 +3,12 @@
   height: 100vh;
   background-image: url("../../assets/FormBackground.png");
   background-size: cover;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
-  //   flex-direction: column;
   box-shadow: 5px 4px 8px rgba(#f8f9fa, 0.8);
   padding: 20px;
 
-  //   flex-wrap: wrap;
   position: absolute;
 
   &__ilustration {
@@ -24,13 +20,11 @@
   }
 
   &__form-display {
-
     min-width: 400px;
     width: 80%;
     height: fit-content;
     min-height: 90%;
     background-color: aliceblue;
-    // background-color: rgb(116, 190, 255);
     box-shadow: 8px 2px 15px rgba(0, 0, 0, 0.7);
     border-radius: 25px;
 
@@ -39,46 +33,22 @@
     gap: 25px;
     padding: 3% 5%;
 
-    .form__header {
-      width: 100%;
-    }
-
     .form__regiter {
       width: 100%;
     }
-  }
-}
+    .close-button {
+      font-weight: bolder;
+      color: rgb(56, 0, 152);
+      font-size: larger;
+      width: fit-content;
+      position: absolute;
+      text-align: center;
+      right: 5%;
 
-.indicators-container {
-  position: absolute;
-  top: 0;
-  opacity: 40%;
-  height: fit-content;
-  transition: all 0.3s ease-in-out;
-
-  .form-indicator {
-    background-color: #b3e5be;
-    min-height: 8px;
-    width: 90%;
-    &:hover {
-      opacity: 100%;
-      transform: scale(1.05);
+      &:hover {
+        cursor: pointer;
+      }
     }
-  }
-
-  .active {
-    background-color: #2738f5;
-  }
-
-  &:hover {
-    opacity: 100%;
-    transform: scale(1.05);
-  }
-}
-
-#form-controll {
-  .carousel-item {
-    padding-top: 50px;
   }
 }
 
@@ -87,13 +57,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // width: 400px;
     &__ilustration {
       img {
         content-visibility: hidden;
       }
     }
-    
+    .close-button {
+      right: 15%;
+      z-index: 1;
+    }
     &__form-display {
       width: 90%;
     }
