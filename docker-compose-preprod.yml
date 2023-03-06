@@ -1,0 +1,9 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: ./.docker/preprod/Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - .:/frontend
