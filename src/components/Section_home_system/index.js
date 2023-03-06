@@ -1,35 +1,41 @@
-import React from 'react'
-import imgHomeSystem from '../../assets/DevSafio_sistema.svg'
-import './styles_home_system.scss'
-import '../../styles/App.scss'
-
+import React from "react";
+import imgHomeSystem from "../../assets/DevSafio_sistema.svg";
+import "./styles_home_system.scss";
 
 const SectionHomeSystem = () => {
-    return <>
-        <div className='section__system'>
-
-            <div className='text__subject'>DEVsafiamos el sistema</div>
-            <div className='text--normal'>
-                <span>
-                    ¿Escasez de talento Senior? No te preocupes, en  <span className='fw-bold text-primary' >Devsafio </span>encontrarás el talento que necesitas en nuestro programa Mentorías.
-                </span>
-            </div>
-            <div className='text--normal'>
-                <span>
-                    Completa el formulario y te contactaremos en breve para acompañarte en la búsqueda de Talento TI que necesitas.
-                </span>
-            </div>
-            <div className='section__system--image'> <img src={imgHomeSystem} alt='imagen chica pensando' /> </div>
-
-            <div className='text__subject'>
-                <span>
-                    ¡Agenda una asesoría con nosotros si quieres saber más sobre cómo acelerar y potenciar tu próximo Talento TI!
-                </span>
-            </div>
-
-            <a className='btn-app btn-app--blue btn__system' href='/'>AGENDAR</a>
+  return (
+    <>
+      <div className="system">
+        <div className="system__title">DEVsafiamos el sistema</div>
+        <div className="system__text">
+          <span>
+            ¿Escasez de talento Senior? No te preocupes, en{" "}
+            <span className="system__text--blue">Devsafio </span>encontrarás el
+            talento que necesitas en nuestro programa Mentorías.git 
+          </span>
         </div>
+        <div className="system__text">
+          <span>
+            Completa el formulario y te contactaremos en breve para acompañarte
+            en la búsqueda de Talento TI que necesitas.
+          </span>
+        </div>
+        <div className="system__image">
+          {" "}
+          <img src={imgHomeSystem} alt="imagen chica pensando" />{" "}
+        </div>
+        <div className="system__text--grey">
+          <span>
+            ¡Agenda una asesoría con nosotros si quieres saber más sobre cómo
+            acelerar y potenciar tu próximo Talento TI!
+          </span>
+        </div>
+        <button className="system__btn" href="/">
+          AGENDAR
+        </button>
+      </div>
     </>
-}
+  );
+};
 
-export default SectionHomeSystem
+export default SectionHomeSystem;

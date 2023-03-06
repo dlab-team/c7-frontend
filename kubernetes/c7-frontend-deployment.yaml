@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: c7-frontend
+  namespace: c7-preprod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: c7-frontend
+  template:
+    metadata:
+      labels:
+        app: c7-frontend
+    spec:
+      containers:
+      - name: c7-frontend
+        image: gonzafg2/c7-frontend:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
