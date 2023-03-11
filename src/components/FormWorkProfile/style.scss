@@ -1,0 +1,19 @@
+@use "../../styles/App" as *;
+
+.workProfileForm {
+    color: $blue-dark;
+    font-size: 20px;
+    line-height: 30px;
+
+  &__title {
+    font-weight: 600;    
+  }
+
+  &__text {
+    font-weight: 400;
+
+    &--b {
+        font-weight: 600;
+      }
+  }
+}
