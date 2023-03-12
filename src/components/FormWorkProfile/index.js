@@ -15,7 +15,7 @@ import { frameworks } from "../../utils/FrameworksList";
 import { setLanguages } from "../../utils/Redux/Slices/Languages";
 import { setTools } from "../../utils/Redux/Slices/Tools";
 import { setFrameworks } from "../../utils/Redux/Slices/Frameworks";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const formDefault = { languages: [], frameworks: [], tools: [], message: "" };
 
@@ -23,22 +23,27 @@ export default function FormWorkProfile() {
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState(formDefault);
   const [list, setList] = useState([]);
+  const dispatch = useDispatch();
 
-  // const dispatch = useDispatch();
-  // const langs = useSelector((state) => state.languages);
-  // const fws = useSelector((state) => state.frameworks);
-  // const tls = useSelector((state) => state.tools);
-
+  //GESTIONA ENVIO DEL FORMULARIO
   const handleSubmit = async (e) => {
     e.preventDefault();
   };
 
-  // useEffect(() => {
-  //   dispatch(setLanguages(...form.languages));
-  //   dispatch(setFrameworks(...form.frameworks));
-  //   dispatch(setTools(...form.tools));
-  // }, [dispatch]);
+  //ACTUALIZA REDUX CUANDO MODIFICO EL FORM
+  useEffect(() => {
+    dispatch(setLanguages(form.languages));
+    dispatch(setFrameworks(form.frameworks));
+    dispatch(setTools(form.tools));
+  }, [form, dispatch]);
 
+  //ACTUALIZA EL FORM Y MUEVO EL SCROLL CUANDO MODIFICO LA LISTA
+  useEffect(() => {
+    updateForm();
+    scrollDown();
+  }, [list]);
+
+  //ACTUALIZA EL CUADRO DE TEXTO
   const onFormUpdate = (e) => {
     e.preventDefault();
     setForm({
@@ -47,47 +52,49 @@ export default function FormWorkProfile() {
     });
   };
 
-  useEffect(() => {
-    function updateForm() {
-      let l = [];
-      let f = [];
-      let t = [];
-      list.forEach((e) => {
-        if (e.id == "languages") {
-          l = [...l, { name: e.name, value: e.value }];
-        }
-        if (e.id == "frameworks") {
-          f = [...f, { name: e.name, value: e.value }];
-        }
-        if (e.id == "tools") {
-          t = [...t, { name: e.name, value: e.value }];
-        }
-        setForm({
-          ...form,
-          languages: l,
-          frameworks: f,
-          tools: t,
-        });
+   //SINCRONIZA EL FORMULARIO DEL STADO CON LA LISTA
+  const updateForm = () => {
+    let l = [];
+    let f = [];
+    let t = [];
+    list.forEach((e) => {
+      if (e.id === "languages") {
+        l = [...l, { name: e.name, value: e.value }];
+      }
+      if (e.id === "frameworks") {
+        f = [...f, { name: e.name, value: e.value }];
+      }
+      if (e.id === "tools") {
+        t = [...t, { name: e.name, value: e.value }];
+      }
+      setForm({
+        ...form,
+        languages: l,
+        frameworks: f,
+        tools: t,
       });
-    }
-    updateForm();
-    scrollDown()  
-    // console.log("redux langs: ", langs);
-    // console.log("redux frameworks: ", fws);
-    // console.log("redux tools: ", tls);
-    // console.log("form languages: ", form.languages);
-    // console.log("form frameworks: ", form.frameworks);
-    // console.log("form tools: ", form.tools);
-  }, [list]);
-
-  const updateValue = (index, value) => {
-    const temp = list;
-    temp[index].value = value;
-    setList(temp);
- 
+    });
   };
 
-  const deleteValue = (value) => {
+  //AGREGA LENGUAJE/FRAMEWORK O HERRAMIENTA A LA LISTA:
+  const addToList = async (name, value, id) => {
+    const found = list.filter((e) => e.name === name);
+    if (found.length === 0) {
+      setList([...list, { name, value, id }]);
+    }
+    scrollDown();
+  };
+
+  //ACTUALIZA VALOR DE NIVEL ELEGIDO
+  const updateValue = (index, value) => {
+    let temp = list;
+    temp[index].value = value;
+    setList(temp);
+    updateForm();
+  };
+
+  //QUITA ELEMENTO DE LA LISTA:
+  const removeList = (value) => {
     let temp = list;
     temp = temp.filter(function (item) {
       return item.name !== value;
@@ -95,18 +102,11 @@ export default function FormWorkProfile() {
     setList(temp);
   };
 
-  const addTolist = async (name, value, id) => {
-    const found = list.filter((e) => e.name == name).length == 0;
-    if (found) {
-      setList([...list, { name, value, id }]);
-    }
-    scrollDown()
-  };
-
-  const scrollDown = () =>{
+  //MUEVE SCROLLBAR HACIA ULTIMO ELEMENTO
+  const scrollDown = () => {
     var objDiv = document.getElementById("skills");
     objDiv.scrollTop += objDiv.scrollHeight;
-  }
+  };
 
   return (
     <div className="workProfileForm" id="contactForm">
@@ -181,10 +181,10 @@ export default function FormWorkProfile() {
                     const { id } = languages[0];
                     return (
                       <li key={index}>
-                        {index != 0 ? (
+                        {index !== 0 ? (
                           <Dropdown.Item
                             as="button"
-                            onClick={() => addTolist(name, value, id)}
+                            onClick={() => addToList(name, value, id)}
                           >
                             {name}
                           </Dropdown.Item>
@@ -201,10 +201,10 @@ export default function FormWorkProfile() {
                     const { id } = frameworks[0];
                     return (
                       <li key={index}>
-                        {index != 0 ? (
+                        {index !== 0 ? (
                           <Dropdown.Item
                             as="button"
-                            onClick={() => addTolist(name, value, id)}
+                            onClick={() => addToList(name, value, id)}
                           >
                             {name}
                           </Dropdown.Item>
@@ -221,10 +221,10 @@ export default function FormWorkProfile() {
                     const { id } = tools[0];
                     return (
                       <li key={index}>
-                        {index != 0 ? (
+                        {index !== 0 ? (
                           <Dropdown.Item
                             as="button"
-                            onClick={() => addTolist(name, value, id)}
+                            onClick={() => addToList(name, value, id)}
                           >
                             {name}
                           </Dropdown.Item>
@@ -250,6 +250,7 @@ export default function FormWorkProfile() {
                               {name}
                             </p>
                           </div>
+
                           <div className="form-group col-md-7">
                             <Form.Check
                               inline
@@ -279,7 +280,7 @@ export default function FormWorkProfile() {
 
                           <div className="form-group col-md-1">
                             <Button
-                              onClick={() => deleteValue(name)}
+                              onClick={() => removeList(name)}
                               className="btn-danger"
                             >
                               <span className="icon">

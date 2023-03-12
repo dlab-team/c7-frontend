@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {}
+
 const toolsSlice = createSlice({
   name: "tools",
-  initialState: {
-    tools: [],
-  },
+  initialState: initialState,
   reducers: {
     setTools: (state, action) => {
       state.tools = action.payload;
