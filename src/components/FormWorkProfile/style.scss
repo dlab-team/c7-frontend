@@ -1,19 +1,74 @@
 @use "../../styles/App" as *;
 
 .workProfileForm {
-    color: $blue-dark;
-    font-size: 20px;
-    line-height: 30px;
+  color: $blue-dark;
 
   &__title {
-    font-weight: 600;    
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
   }
 
   &__text {
+    font-size: 20px;
+    line-height: 30px;
     font-weight: 400;
 
     &--b {
-        font-weight: 600;
-      }
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: 600;
+    }
+    &--list {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 0px;
+      line-height: 0px;
+    }
   }
+
+  .icon {
+    font-size: 20px;
+    line-height: 0px;
+  }
+
+  .row {
+    align-items: center;
+    align-content: center;
+  }
+
+  .dropdown-menu {
+    max-height: 265px;
+    overflow-y: auto;
+  }
+
+  textarea:focus {
+    background-color: $light-blue;
+  }
+
+  .list-group {
+    list-style-type: none;
+    max-height: 119px;
+    overflow-y: auto;
+
+    &-item {
+      padding: 0px 0px 0px 10px;
+      background-color: $light-blue;
+    }
+  }
+
+  .form-check {
+    margin-bottom: 0px;
+
+    &-label {
+      font-size: 20px;
+    }
+  }
+
+  .form-group {
+    font-size: 24px;
+  }
+}
+.carousel-inner {
+  overflow: visible;
 }
