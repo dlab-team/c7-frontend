@@ -2,10 +2,10 @@ import React from 'react';
 import aceleramos from '../../assets/aceleramos.png'
 import acompañamos from '../../assets/acompaniamos.png'
 import potenciamos from '../../assets/potenciamos.png'
-import './sectionSinJrsNoHaySrs.scss';
+import './style.scss';
 
 
-export default function Section() {
+export default function SectionSinJuniors() {
     return (
         <div className='section'>
             <div className='section__title'>Sin Juniors no hay Seniors</div>
