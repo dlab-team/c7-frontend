@@ -1,7 +1,7 @@
 import React from "react";
 import "./FormController.scss";
 import FormWorkProfile from "../FormWorkProfile";
-
+import AcademicProfile from "../AcademicProfile/AcademicProfile";
 const FormController = () => {
   return (
     <>
@@ -44,6 +44,11 @@ const FormController = () => {
           <div className="carousel-item">
             <span className="text__subject ">DATOS DE TU CUENTA</span>
             <TestForm />
+          </div>
+
+          <div className="carousel-item">
+            <span className="text__subject ">PERFIL ACADÉMICO</span>
+            <AcademicProfile />
           </div>
 
           <div className="carousel-item">
