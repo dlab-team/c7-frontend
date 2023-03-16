@@ -1,6 +1,6 @@
 export const languages = [{id:"languages"},
   {
-    name: "Phyton",
+    name: "Python",
     value: 0,
   },
   {
