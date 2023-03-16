@@ -24,6 +24,7 @@
       font-weight: 600;
       margin-bottom: 0px;
       line-height: 0px;
+      margin-left: 5px;
     }
   }
 
@@ -49,10 +50,14 @@
   .list-group {
     list-style-type: none;
     max-height: 120px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    width: 760px;
     overflow-y: auto;
+    overflow-x: hidden;
 
     &-item {
-      padding: 0px 0px 0px 10px;
+      padding: 0px 0px;
       background-color: $light-blue;
     }
   }
@@ -61,14 +66,21 @@
     margin-bottom: 0px;
 
     &-label {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
 
   .form-group {
-    font-size: 24px;
+    font-size: 20px;
+  }
+
+  .btn{
+    &-app{
+    margin-left: 12px;
+  }
+  &-danger{
+    margin-left: auto;
+
   }
 }
-.carousel-inner {
-  overflow: visible;
 }

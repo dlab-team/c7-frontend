@@ -245,13 +245,13 @@ export default function FormWorkProfile() {
                     <li key={index}>
                       <ListGroup.Item>
                         <div className="row">
-                          <div className="form-group col-md-4">
+                          <div className="form-group col-5">
                             <p className="workProfileForm__text--list">
                               {name}
                             </p>
                           </div>
 
-                          <div className="form-group col-md-7">
+                          <div className="form-group col-6">
                             <Form.Check
                               inline
                               label="Nivel 1"
@@ -278,7 +278,7 @@ export default function FormWorkProfile() {
                             />
                           </div>
 
-                          <div className="form-group col-md-1">
+                          <div className="form-group col-1">
                             <Button
                               onClick={() => removeList(name)}
                               className="btn-danger"
