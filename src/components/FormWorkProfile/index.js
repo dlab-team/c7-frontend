@@ -10,7 +10,7 @@ import {
   Form,
   Tooltip,
   Popover,
-  Container,
+  InputGroup,
 } from "react-bootstrap";
 import { InfoCircle, ArrowRightCircle, Trash } from "react-bootstrap-icons";
 //BD
@@ -175,7 +175,6 @@ export default function FormWorkProfile() {
           <div className="dropdown" id="dropdown">
             <div className="row">
               <div className="form-group col-md-4">
-                <p className="workProfileForm__title">Lenguaje: </p>
                 <DropdownButton id="dropdown-Lenguajes" title="Lenguajes">
                   {languages.map(({ name, value }, index) => {
                     const { id } = languages[0];
@@ -195,7 +194,6 @@ export default function FormWorkProfile() {
                 </DropdownButton>
               </div>
               <div className="form-group col-md-4">
-                <p className="workProfileForm__title">Bases o frameworks:</p>
                 <DropdownButton id="dropdown-Frameworks" title="Frameworks">
                   {frameworks.map(({ name, value }, index) => {
                     const { id } = frameworks[0];
@@ -215,7 +213,6 @@ export default function FormWorkProfile() {
                 </DropdownButton>
               </div>
               <div className="form-group col-md-4">
-                <p className="workProfileForm__title">Herramientas:</p>
                 <DropdownButton id="dropdown-Herramientas" title="Herramientas">
                   {tools.map(({ name, value }, index) => {
                     const { id } = tools[0];
