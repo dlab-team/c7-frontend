@@ -55,6 +55,7 @@
     width: 760px;
     overflow-y: auto;
     overflow-x: hidden;
+    gap: 0px;
 
     &-item {
       padding: 0px 0px;
@@ -70,17 +71,12 @@
     }
   }
 
-  .form-group {
-    font-size: 20px;
+  .btn {
+    &-app {
+      margin-left: 12px;
+    }
+    &-danger {
+      margin-left: auto;
+    }
   }
-
-  .btn{
-    &-app{
-    margin-left: 12px;
-  }
-  &-danger{
-    margin-left: auto;
-
-  }
-}
 }

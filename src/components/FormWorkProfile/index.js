@@ -1,12 +1,18 @@
 import "./style.scss";
 import React, { useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
-import Collapse from "react-bootstrap/Collapse";
-import Dropdown from "react-bootstrap/Dropdown";
-import ListGroup from "react-bootstrap/ListGroup";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import Form from "react-bootstrap/Form";
-import { ArrowBarDown, ArrowRightCircle, Trash } from "react-bootstrap-icons";
+import {
+  Button,
+  Collapse,
+  Dropdown,
+  ListGroup,
+  DropdownButton,
+  OverlayTrigger,
+  Form,
+  Tooltip,
+  Popover,
+  Container,
+} from "react-bootstrap";
+import { InfoCircle, ArrowRightCircle, Trash } from "react-bootstrap-icons";
 //BD
 import { tools } from "../../utils/ToolsList";
 import { languages } from "../../utils/LanguagesList";
@@ -52,7 +58,7 @@ export default function FormWorkProfile() {
     });
   };
 
-   //SINCRONIZA EL FORMULARIO DEL STADO CON LA LISTA
+  //SINCRONIZA EL FORMULARIO DEL STADO CON LA LISTA
   const updateForm = () => {
     let l = [];
     let f = [];
@@ -108,6 +114,32 @@ export default function FormWorkProfile() {
     objDiv.scrollTop += objDiv.scrollHeight;
   };
 
+  const lvlinfo = (
+    <>
+      <p>
+        <span className="workProfileForm__text--b">Nivel 1: </span>
+        <span className="workProfileForm__text">
+          No tengo experiencia laboral, pero he desarrollado proyectos utilizado
+          esta tecnología/herramienta.
+        </span>
+      </p>
+      <p>
+        <span className="workProfileForm__text--b">Nivel 2: </span>
+        <span className="workProfileForm__text">
+          Tengo poca experiencia laboral, menos de dos años, necesito
+          supervisión constante.
+        </span>
+      </p>
+      <p>
+        <span className="workProfileForm__text--b">Nivel 3: </span>
+        <span className="workProfileForm__text">
+          Tengo experiencia laboral (+2 años) y/o autonomía completa a la hora
+          de desarrollar proyectos.
+        </span>
+      </p>
+    </>
+  );
+
   return (
     <div className="workProfileForm" id="contactForm">
       <form onSubmit={handleSubmit}>
@@ -118,27 +150,7 @@ export default function FormWorkProfile() {
               podrás elegir las competencias que conoces con respecto a 3
               niveles:
             </p>
-            <p>
-              <span className="workProfileForm__text--b">Nivel 1: </span>
-              <span className="workProfile__text">
-                No tengo experiencia laboral, pero he desarrollado proyectos
-                utilizado esta tecnología/herramienta.
-              </span>
-            </p>
-            <p>
-              <span className="workProfileForm__text--b">Nivel 2: </span>
-              <span className="workProfile__text">
-                Tengo poca experiencia laboral, menos de dos años, necesito
-                supervisión constante.
-              </span>
-            </p>
-            <p>
-              <span className="workProfileForm__text--b">Nivel 3: </span>
-              <span className="workProfile__text">
-                Tengo experiencia laboral (+2 años) y/o autonomía completa a la
-                hora de desarrollar proyectos.
-              </span>
-            </p>
+            {lvlinfo}
             <p className="workProfileForm__text--b">
               Ten en cuenta, de acuerdo a las competencias declaradas, te
               pediremos que seas capaz de demostrarlo de forma práctica durante
@@ -161,18 +173,6 @@ export default function FormWorkProfile() {
 
         <Collapse in={open}>
           <div className="dropdown" id="dropdown">
-            <div className="row">
-              <Button
-                onClick={() => setOpen(!open)}
-                aria-expanded={open}
-                className="btn-app btn-app--blue"
-              >
-                <span className="icon">
-                  Mostrar informacion <ArrowBarDown />
-                </span>
-              </Button>
-            </div>
-
             <div className="row">
               <div className="form-group col-md-4">
                 <p className="workProfileForm__title">Lenguaje: </p>
@@ -238,44 +238,102 @@ export default function FormWorkProfile() {
             <br></br>
 
             <div className="row">
-              <br></br>
+              <div className="form-group col-12">
+                <OverlayTrigger
+                  placement="right"
+                  delay={{ show: 100, hide: 100 }}
+                  overlay={
+                    <Popover id="popover-basic">
+                      <Popover.Header as="h3">Niveles:</Popover.Header>
+                      <Popover.Body>{lvlinfo}</Popover.Body>
+                    </Popover>
+                  }
+                >
+                  <label>
+                    Informacion <InfoCircle />
+                  </label>
+                </OverlayTrigger>
+              </div>
               <ListGroup id="skills">
                 {list.map(({ name }, index) => {
                   return (
                     <li key={index}>
                       <ListGroup.Item>
                         <div className="row">
-                          <div className="form-group col-5">
+                          <div className="form-group col-6">
                             <p className="workProfileForm__text--list">
                               {name}
                             </p>
                           </div>
 
-                          <div className="form-group col-6">
-                            <Form.Check
-                              inline
-                              label="Nivel 1"
-                              type="radio"
-                              name={`check-${name}`}
-                              onChange={() => updateValue(index, 1)}
-                            />
+                          <div className="form-group col-5">
+                            <OverlayTrigger
+                              placement="left"
+                              delay={{ show: 500, hide: 100 }}
+                              overlay={
+                                <Tooltip id={`tooltip-1`}>
+                                  No tengo experiencia laboral, pero he
+                                  desarrollado proyectos utilizado esta
+                                  tecnología/herramienta.
+                                </Tooltip>
+                              }
+                            >
+                              <label htmlFor={`lvl-1-${name}`}>
+                                <Form.Check
+                                  inline
+                                  label="Nivel 1"
+                                  id={`lvl-1-${name}`}
+                                  type="radio"
+                                  name={`check-${name}`}
+                                  onChange={() => updateValue(index, 1)}
+                                />
+                              </label>
+                            </OverlayTrigger>
 
-                            <Form.Check
-                              inline
-                              label="Nivel 2"
-                              type="radio"
-                              name={`check-${name}`}
-                              onChange={() => updateValue(index, 2)}
-                            />
+                            <OverlayTrigger
+                              placement="left"
+                              delay={{ show: 500, hide: 100 }}
+                              overlay={
+                                <Tooltip id={`tooltip-1`}>
+                                  Tengo poca experiencia laboral, menos de dos
+                                  años, necesito supervisión constante.
+                                </Tooltip>
+                              }
+                            >
+                              <label htmlFor={`lvl-2-${name}`}>
+                                <Form.Check
+                                  inline
+                                  id={`lvl-2-${name}`}
+                                  label="Nivel 2"
+                                  type="radio"
+                                  name={`check-${name}`}
+                                  onChange={() => updateValue(index, 2)}
+                                />
+                              </label>
+                            </OverlayTrigger>
 
-                            <Form.Check
-                              inline
-                              style={{ textAlign: "center" }}
-                              label="Nivel 3"
-                              type="radio"
-                              name={`check-${name}`}
-                              onChange={() => updateValue(index, 3)}
-                            />
+                            <OverlayTrigger
+                              placement="left"
+                              delay={{ show: 500, hide: 100 }}
+                              overlay={
+                                <Tooltip id={`tooltip-1`}>
+                                  Tengo experiencia laboral (+2 años) y/o
+                                  autonomía completa a la hora de desarrollar
+                                  proyectos.
+                                </Tooltip>
+                              }
+                            >
+                              <label htmlFor={`lvl-3-${name}`}>
+                                <Form.Check
+                                  inline
+                                  label="Nivel 3"
+                                  id={`lvl-3-${name}`}
+                                  type="radio"
+                                  name={`check-${name}`}
+                                  onChange={() => updateValue(index, 3)}
+                                />
+                              </label>
+                            </OverlayTrigger>
                           </div>
 
                           <div className="form-group col-1">
