@@ -3,6 +3,10 @@ import { Form, Col, Row, Button } from "react-bootstrap";
 import React, { useState } from "react";
 import { categories } from "../../utils/contactFormCategories";
 import { employmentStatus } from "../../utils/contactFormEmploymentStatus";
+//REDUX
+import { setCategories } from "../../utils/Redux/Slices/Languages";
+import { setEmploymentStatus } from "../../utils/Redux/Slices/Tools";
+import { useDispatch } from "react-redux";
 //import { useEffect } from "react";
 
 const formDefault = {
@@ -21,6 +25,7 @@ const FormInfoPersonal = () => {
   const [form, setForm] = useState(formDefault);
   const [validated, setValidated] = useState(false);
   const [categoriesState, setCategoriesState] = useState(categoriesDefault);
+  const dispatch = useDispatch();
 
   //--------ACTUALIZO EL FORM DEL STATE-----//
   const onFormUpdate = (e) => {
@@ -29,6 +34,12 @@ const FormInfoPersonal = () => {
       [e.target.name]: e.target.value,
     });
   };
+
+  //ACTUALIZA REDUX CUANDO MODIFICO EL FORM
+  useEffect(() => {
+    dispatch(setCategories(form.categories));
+    dispatch(setEmploymentStatus(form.employmentStatus));
+  }, [form, dispatch]);
 
   //--------CHECKEA QUE AL MENOS SE HAYA SELECCIONADO UNA OPCION DE LOS CHECKS----//
   function atLeastOneCheckboxIsChecked() {
