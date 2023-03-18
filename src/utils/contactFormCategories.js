@@ -1,31 +1,31 @@
 export const categories = [
     {
-      name: "Front End",
-      label: "Desarrollador Front End"
+      name: "Desarrollador Front End",
+      value: "Front End"
     },
     {
-      name: "Full Stack",
-      label: "Desarrollador Full Stack / Backend"
+      name: "Desarrollador Full Stack / Backend",
+      value: "Full Stack"
     },
     {
-      name: "UX/UI",
-      label: "Diseñador UX/UI"
+      name: "Diseñador UX/UI",
+      value: "UX/UI"
     },
     {
-      name: "QA",
-      label: "Analista QA"
+      name: "Analista QA",
+      value: "QA"
     },
     {
-      name: "Mobile",
-      label: "Desarrollador Mobile"
+      name: "Desarrollador Mobile",
+      value: "Mobile"
     },
     {
       name: "Datos",
-      label: "Datos"
+      value: "Datos"
     },
     {
       name: "Otra",
-      label: "Otra"
+      value: "Otra"
     }
   ];
   
