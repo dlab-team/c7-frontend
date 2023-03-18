@@ -33,11 +33,13 @@ const FormController = () => {
           <div className="carousel-item active">
             <span className="text__subject ">INFORMACIÓN PERSONAL</span>
             <FormInfoPersonal />
+            <FormButtons/>
           </div>
 
           <div className="carousel-item">
             <span className="text__subject ">DATOS DE TU CUENTA</span>
             <TestForm />
+            <FormButtons/>
           </div>
         </div>
       </div>
@@ -65,29 +67,34 @@ const TestForm = () => {
       <span>Chileno : </span>
       <input type={"checkbox"} /> <br /> <br />
       <br />
-      <div
-        style={{
-          display: "flex",
-          gap: "30px",
-        }}
-      >
-        <input
-          type={"button"}
-          value="Atras"
-          className="btn-app btn-app--blue"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="prev"
-        />
-
-        <input
-          type={"button"}
-          value="Siguiente"
-          className="btn-app btn-app--blue"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="next"
-        />
-      </div>
     </form>
+  );
+};
+
+const FormButtons = () => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        gap: "30px",
+      }}
+    >
+      <input
+        type={"button"}
+        value="Atras"
+        className="btn-app btn-app--blue"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      />
+
+      <input
+        type={"button"}
+        value="Siguiente"
+        className="btn-app btn-app--blue"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      />
+    </div>
   );
 };
 

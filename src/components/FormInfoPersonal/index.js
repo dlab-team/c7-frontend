@@ -1,8 +1,9 @@
 import "./style.scss";
-import { Form, Col, Row, Button,FormCheck } from "react-bootstrap";
-import React, { useState, useEffect } from "react";
+import { Form, Col, Row, Button } from "react-bootstrap";
+import React, { useState } from "react";
 import { categories } from "../../utils/contactFormCategories";
 import { employmentStatus } from "../../utils/contactFormEmploymentStatus";
+//import { useEffect } from "react";
 
 const formDefault = {
   name: "",
@@ -20,8 +21,8 @@ const FormInfoPersonal = () => {
   const [form, setForm] = useState(formDefault);
   const [validated, setValidated] = useState(false);
   const [categoriesState, setCategoriesState] = useState(categoriesDefault);
-  const checkBoxSelected = form.categories.length > 0;
 
+  //--------ACTUALIZO EL FORM DEL STATE-----//
   const onFormUpdate = (e) => {
     setForm({
       ...form,
@@ -29,11 +30,7 @@ const FormInfoPersonal = () => {
     });
   };
 
-  useEffect(() => {
-    console.log(form);
-    console.log(atLeastOneCheckboxIsChecked());
-  }, [form]);
-
+  //--------CHECKEA QUE AL MENOS SE HAYA SELECCIONADO UNA OPCION DE LOS CHECKS----//
   function atLeastOneCheckboxIsChecked() {
     const checkboxes = Array.from(
       document.querySelectorAll(".categories-checkbox")
@@ -41,8 +38,7 @@ const FormInfoPersonal = () => {
     return checkboxes.reduce((acc, curr) => acc || curr.checked, false);
   }
 
-  ///////////////////////
-
+  //--------MANEJA EL ENVIO DE FORMULARIO----//
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -52,6 +48,7 @@ const FormInfoPersonal = () => {
     setValidated(true);
   };
 
+  //--------GUARDA LOS CHECKS EN EL FORM----//
   const categoriesUpdate = (position) => {
     const updatedcategoriesState = categoriesState.map((item, index) =>
       index === position ? !item : item
@@ -65,6 +62,12 @@ const FormInfoPersonal = () => {
       ),
     });
   };
+  
+  //--------CONSOLE LOG SOLO PARA PRUEBAS-----//
+  // useEffect(() => {
+  //   console.log(form);
+  //   console.log(atLeastOneCheckboxIsChecked());
+  // }, [form]);
 
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
@@ -77,6 +80,7 @@ const FormInfoPersonal = () => {
               </span>
             </Form.Label>
             <Form.Control
+              size="sm"
               type="text"
               required
               onChange={onFormUpdate}
@@ -93,6 +97,7 @@ const FormInfoPersonal = () => {
               </span>
             </Form.Label>
             <Form.Control
+              size="sm"
               type="text"
               required
               onChange={onFormUpdate}
@@ -104,7 +109,6 @@ const FormInfoPersonal = () => {
           </Col>
         </Form.Group>
 
-        <br></br>
         <Form.Group as={Row}>
           <Col sm="6">
             <Form.Label>
@@ -113,6 +117,7 @@ const FormInfoPersonal = () => {
               </span>
             </Form.Label>
             <Form.Control
+              size="sm"
               type="email"
               required
               onChange={onFormUpdate}
@@ -129,6 +134,7 @@ const FormInfoPersonal = () => {
               </span>
             </Form.Label>
             <Form.Control
+              size="sm"
               type="number"
               required
               onChange={onFormUpdate}
@@ -140,7 +146,6 @@ const FormInfoPersonal = () => {
           </Col>
         </Form.Group>
 
-        <br></br>
         <Form.Group as={Row}>
           <Col sm="6">
             <Form.Label>
@@ -149,6 +154,7 @@ const FormInfoPersonal = () => {
               </span>
             </Form.Label>
             <Form.Control
+              size="sm"
               type="text"
               required
               onChange={onFormUpdate}
@@ -165,6 +171,7 @@ const FormInfoPersonal = () => {
               </span>
             </Form.Label>
             <Form.Control
+              size="sm"
               type="text"
               required
               onChange={onFormUpdate}
@@ -176,7 +183,6 @@ const FormInfoPersonal = () => {
           </Col>
         </Form.Group>
 
-        <br></br>
         <Form.Group as={Row}>
           <Col sm="6">
             <Form.Label>
@@ -184,7 +190,7 @@ const FormInfoPersonal = () => {
                 ¿Con qué género te identificas? <span className="red">*</span>
               </span>
             </Form.Label>
-            <Form.Select required name="gender" defaultValue="">
+            <Form.Select required name="gender" defaultValue="" size="sm">
               <option value="" disabled hidden>
                 Selecciona
               </option>
@@ -197,32 +203,30 @@ const FormInfoPersonal = () => {
             </Form.Control.Feedback>
           </Col>
           <Col sm="6">
-
             <Form.Label>
               <span className="text">
                 ¿Cuál es tu estado laboral actual?<span className="red">*</span>
               </span>
             </Form.Label>
-            <FormCheck controlId="employment">
-              {employmentStatus.map((employment) => (
-                <div key={employment.name}>
-                  <Form.Check.Input
-                    required
-                    type="radio"
-                    name="employmentStatus"
-                    value={employment.value}
-                    onChange={onFormUpdate}
-                  />
-                  <Form.Check.Label className="text--sm">
-                    {employment.name}
-                  </Form.Check.Label>
-                  <Form.Control.Feedback type="invalid" htmlFor="employment">
-              Por favor selecciona una opcion.
-            </Form.Control.Feedback>
-                </div>
-              ))}
-             
-              </FormCheck>
+            {employmentStatus.map(({ name, value }) => (
+              <div key={name}>
+                <Form.Check.Input
+                  size="sm"
+                  required
+                  type="radio"
+                  name="employmentStatus"
+                  id={`radio-${name}`}
+                  value={value}
+                  onChange={onFormUpdate}
+                />
+                <Form.Check.Label
+                  className="text--sm"
+                  htmlFor={`radio-${name}`}
+                >
+                  {name}
+                </Form.Check.Label>
+              </div>
+            ))}
           </Col>
         </Form.Group>
 
@@ -234,35 +238,36 @@ const FormInfoPersonal = () => {
                 <span className="red">*</span>
               </span>
             </Form.Label>
-            <Form.Group required controlId="categories-checkbox">
-              {categories.map(({ name, value }, index) => (
-                <div key={name}>
-                  <Form.Check.Input
-                    formNoValidate={atLeastOneCheckboxIsChecked}
-                    className="categories-checkbox"
-                    type="checkbox"
-                    id={`check-${name}`}
-                    name={value}
-                    feedback="Debes seleccionar al menos una opcion."
-                    feedbacktype="invalid"
-                    checked={categoriesState[index]}
-                    onChange={() => categoriesUpdate(index)}
-                  />
-                  <Form.Check.Label
-                    className="text--sm"
-                    htmlFor={`check-${name}`}
-                  >
-                    {name}
-                  </Form.Check.Label>
-                </div>
-              ))}
-            </Form.Group>
+            {categories.map(({ name, value }, index) => (
+              <div key={name}>
+                <Form.Check.Input
+                  size="sm"
+                  required={!atLeastOneCheckboxIsChecked()}
+                  className="categories-checkbox"
+                  type="checkbox"
+                  id={`check-${name}`}
+                  name={value}
+                  feedback="Debes seleccionar al menos una opcion."
+                  feedbacktype="invalid"
+                  checked={categoriesState[index]}
+                  onChange={() => categoriesUpdate(index)}
+                />
+                <Form.Check.Label
+                  className="text--sm"
+                  htmlFor={`check-${name}`}
+                >
+                  {name}
+                </Form.Check.Label>
+              </div>
+            ))}
           </Col>
         </Form.Group>
       </div>
-      <Button type="submit" onSubmit={handleSubmit}>
+      {/* ////////////////////////////////////////////////////////////////// */}
+      <Button type="submit">
         Test
       </Button>
+      {/* ////////////////////////////////////////////////////////////////// */}
     </Form>
   );
 };
