@@ -1,40 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {}
+
 const categoriesSlice = createSlice({
   name: "categories",
-  initialState: {
-    categories: [
-      {
-        name: "Front End",
-        label: "Desarrollador Front End"
-      },
-      {
-        name: "Full Stack",
-        label: "Desarrollador Full Stack / Backend"
-      },
-      {
-        name: "UX/UI",
-        label: "Diseñador UX/UI"
-      },
-      {
-        name: "QA",
-        label: "Analista QA"
-      },
-      {
-        name: "Mobile",
-        label: "Desarrollador Mobile"
-      },
-      {
-        name: "Datos",
-        label: "Datos"
-      },
-      {
-        name: "Otra",
-        label: "Otra"
-      }
-    ]
-  },
-  reducers: {}
+  initialState: initialState,
+  reducers: {
+    setCategories: (state, action) => {
+      state.categories = action.payload;
+    },
+  }
 });
 
+export const { setCategories } = categoriesSlice.actions;
 export default categoriesSlice.reducer;

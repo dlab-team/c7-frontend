@@ -4,10 +4,9 @@ import React, { useState } from "react";
 import { categories } from "../../utils/contactFormCategories";
 import { employmentStatus } from "../../utils/contactFormEmploymentStatus";
 //REDUX
-import { setCategories } from "../../utils/Redux/Slices/Languages";
-import { setEmploymentStatus } from "../../utils/Redux/Slices/Tools";
+import { setFormData } from "../../utils/Redux/Slices/Form";
 import { useDispatch } from "react-redux";
-//import { useEffect } from "react";
+import { useEffect } from "react";
 
 const formDefault = {
   name: "",
@@ -16,8 +15,9 @@ const formDefault = {
   phone: "",
   city: "",
   country: "",
+  gender: "",
   employmentStatus: "",
-  categories: [],
+  workCategories: [],
 };
 const categoriesDefault = new Array(categories.length).fill(false);
 
@@ -37,8 +37,7 @@ const FormInfoPersonal = () => {
 
   //ACTUALIZA REDUX CUANDO MODIFICO EL FORM
   useEffect(() => {
-    dispatch(setCategories(form.categories));
-    dispatch(setEmploymentStatus(form.employmentStatus));
+    dispatch(setFormData(form));
   }, [form, dispatch]);
 
   //--------CHECKEA QUE AL MENOS SE HAYA SELECCIONADO UNA OPCION DE LOS CHECKS----//
@@ -67,13 +66,13 @@ const FormInfoPersonal = () => {
     setCategoriesState(updatedcategoriesState);
     setForm({
       ...form,
-      categories: Array.from(
+      workCategories: Array.from(
         document.querySelectorAll("input[type=checkbox]:checked"),
         (e) => e.name
       ),
     });
   };
-  
+
   //--------CONSOLE LOG SOLO PARA PRUEBAS-----//
   // useEffect(() => {
   //   console.log(form);
@@ -201,13 +200,19 @@ const FormInfoPersonal = () => {
                 ¿Con qué género te identificas? <span className="red">*</span>
               </span>
             </Form.Label>
-            <Form.Select required name="gender" defaultValue="" size="sm">
+            <Form.Select
+              required
+              name="gender"
+              defaultValue=""
+              size="sm"
+              onChange={onFormUpdate}
+            >
               <option value="" disabled hidden>
                 Selecciona
               </option>
-              <option value="1">Hombre</option>
-              <option value="2">Mujer</option>
-              <option value="3">Otro</option>
+              <option value="Hombre">Hombre</option>
+              <option value="Mujer">Mujer</option>
+              <option value="Otro">Otro</option>
             </Form.Select>
             <Form.Control.Feedback type="invalid">
               Por favor selecciona tu Género.
@@ -275,9 +280,7 @@ const FormInfoPersonal = () => {
         </Form.Group>
       </div>
       {/* ////////////////////////////////////////////////////////////////// */}
-      <Button type="submit">
-        Test
-      </Button>
+      <Button type="submit">Test</Button>
       {/* ////////////////////////////////////////////////////////////////// */}
     </Form>
   );
