@@ -24,6 +24,15 @@ const FormController = () => {
             className="form-indicator"
             aria-label="Slide 2"
           ></button>
+
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            className="form-indicator"
+            aria-label="Slide 3"
+          ></button>
+
           {/*<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" className='form-indicator' aria-label="Slide 3"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" className='form-indicator' aria-label="Slide 4"></button>
           <button
@@ -42,19 +51,19 @@ const FormController = () => {
           <div className="carousel-item active">
             <span className="text__subject ">INFORMACIÓN PERSONAL</span>
             <FormInfoPersonal />
-            <FormButtons/>
-            <span className="text__subject ">DATOS PERSONALES</span>
-            <TestForm />
+            <FormButtons />
           </div>
 
           <div className="carousel-item">
             <span className="text__subject ">DATOS DE TU CUENTA</span>
             <TestForm />
-            <FormButtons/>
+            <FormButtons />
           </div>
+
           <div className="carousel-item">
             <span className="text__subject ">PERFIL LABORAL</span>
             <FormWorkProfile />
+            <FormButtons />
           </div>
         </div>
       </div>
@@ -88,28 +97,7 @@ const TestForm = () => {
 
 const FormButtons = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        gap: "30px",
-      }}
-    >
-      <input
-        type={"button"}
-        value="Atras"
-        className="btn-app btn-app--blue"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="prev"
-      />
-
-      <input
-        type={"button"}
-        value="Siguiente"
-        className="btn-app btn-app--blue"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="next"
-      />
-    </div>
+    <form>
       <div
         style={{
           display: "flex",

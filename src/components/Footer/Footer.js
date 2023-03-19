@@ -7,7 +7,7 @@ export default function Footer() {
     <>
         <footer className='w-100'>
             <div className='container col-md-12 text-right'>
-              <button type="button" class="btn btn-primary"><NavLink className="nav-link" to='/form'>F</NavLink></button>
+              <button type="button" className="btn btn-primary"><NavLink className="nav-link" to='/form'>F</NavLink></button>
             </div>
         </footer>
     </>
