@@ -1,0 +1,29 @@
+@use "../../styles/App" as *;
+
+.FormInfoPersonal {
+  display: block;
+  margin-left: 12px;
+}
+.text {
+  color: $blue-dark;
+  font-weight: 400;
+  font-size: 20px;
+  &--sm {
+    color: $blue-dark;
+    font-weight: 400;
+    font-size: 13px;
+  margin-left: 12px;
+
+  }
+  .red {
+    color: $red;
+  }
+}
+.list {
+    display: block;
+    list-style-type: none;
+    padding: 0px;
+    align-items: start;
+    justify-content: center;
+  }
+
