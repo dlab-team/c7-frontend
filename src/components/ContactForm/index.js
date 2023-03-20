@@ -80,18 +80,18 @@ export default function ContactForm() {
                         <div className="form-group col-md-12">
                             <label className="contactForm__text" style={{ marginBottom: "16px" }}>Cargo/área de preferencia que buscas contratar *</label>
                             <ul className="list">
-                                {categories.map(({ name, label }, index) => {
+                                {categories.map(({ name, value }, index) => {
                                     return (
                                         <li key={index}>
                                             <input
                                                 className="contactForm--check"
                                                 type="checkbox"
                                                 id={`checkbox-${name}`}
-                                                name={name}
+                                                name={value}
                                                 checked={checkboxState[index]}
                                                 onChange={() => onCheckBoxUpdate(index)}
                                             />
-                                            <label className="form-check-label contactForm__text--check" htmlFor={`checkbox-${name}`}>{label}</label>
+                                            <label className="form-check-label contactForm__text--check" htmlFor={`checkbox-${name}`}>{name}</label>
                                         </li>
                                     );
                                 })}
