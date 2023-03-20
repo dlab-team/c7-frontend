@@ -1,0 +1,21 @@
+@use "../../styles/App" as *;
+
+.FormWorkExperience {
+  display: block;
+  margin-left: 12px;
+
+  .text {
+    color: $blue-dark;
+    font-weight: 400;
+    font-size: 20px;
+    &--sm {
+      color: $blue-dark;
+      font-weight: 400;
+      font-size: 16px;
+      margin-left: 12px;
+    }
+  }
+  .red {
+    color: $red;
+  }
+}

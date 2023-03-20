@@ -2,6 +2,7 @@ import React from "react";
 import "./FormController.scss";
 import FormInfoPersonal from "../FormInfoPersonal";
 import FormWorkProfile from "../FormWorkProfile";
+import FormWorkExperience from "../FormWorkExperience";
 
 const FormController = () => {
   return (
@@ -9,6 +10,7 @@ const FormController = () => {
       <div id="carouselExampleCaptions" className="carousel slide">
         {/* botones navegacion de la parte de arriba */}
         <div className="carousel-indicators indicators-container">
+          
           <button
             type="button"
             data-bs-target="#carouselExampleCaptions"
@@ -17,6 +19,7 @@ const FormController = () => {
             aria-current="true"
             aria-label="Slide 1"
           ></button>
+
           <button
             type="button"
             data-bs-target="#carouselExampleCaptions"
@@ -31,6 +34,22 @@ const FormController = () => {
             data-bs-slide-to="2"
             className="form-indicator"
             aria-label="Slide 3"
+          ></button>
+
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="3"
+            className="form-indicator"
+            aria-label="Slide 4"
+          ></button>
+
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="4"
+            className="form-indicator"
+            aria-label="Slide 5"
           ></button>
 
           {/*<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" className='form-indicator' aria-label="Slide 3"></button>
@@ -55,7 +74,7 @@ const FormController = () => {
           </div>
 
           <div className="carousel-item">
-            <span className="text__subject ">DATOS DE TU CUENTA</span>
+            <span className="text__subject ">INFORMACIÓN ACADÉMICA</span>
             <TestForm />
             <FormButtons />
           </div>
@@ -63,6 +82,20 @@ const FormController = () => {
           <div className="carousel-item">
             <span className="text__subject ">PERFIL LABORAL</span>
             <FormWorkProfile />
+            <FormButtons />
+          </div>
+
+          <div className="carousel-item">
+            <span className="text__subject ">EXPERIENCIA Y TRABAJO</span>
+            <FormWorkExperience />
+            <FormButtons />
+          </div>
+
+          <div className="carousel-item">
+            <span className="text__subject ">
+              ¿QUÉ TIPO DE TRABAJO ESTÁS BUSCANDO?
+            </span>
+            <TestForm />
             <FormButtons />
           </div>
         </div>
