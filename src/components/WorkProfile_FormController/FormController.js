@@ -3,6 +3,7 @@ import "./FormController.scss";
 import FormInfoPersonal from "../FormInfoPersonal";
 import FormWorkProfile from "../FormWorkProfile";
 import FormWorkExperience from "../FormWorkExperience";
+import FormDesiredJob from "../FormDesiredJob"
 
 const FormController = () => {
   return (
@@ -95,7 +96,7 @@ const FormController = () => {
             <span className="text__subject ">
               ¿QUÉ TIPO DE TRABAJO ESTÁS BUSCANDO?
             </span>
-            <TestForm />
+            <FormDesiredJob />
             <FormButtons />
           </div>
         </div>
