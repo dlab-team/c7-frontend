@@ -7,7 +7,6 @@ import Banner from "../../components/Banner/Banner.js";
 import BigBanner from "../../components/BigBanner/BigBanner.js";
 import ContactForm from "../../components/ContactForm/index.js";
 
-// encargada de renderizar todos los componentes de la vista home
 const Ui_home = () => {
 
   return (

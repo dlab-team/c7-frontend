@@ -23,9 +23,6 @@ export default function Navbar() {
                 <NavLink className="nav-link text-light" to='/login' >Inicia Sesión</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link text-light" to='/login' >Administra la página</NavLink>
-              </li>
-              <li className="nav-item">
                 <NavLink className="nav-link text-light btn-registrate" to='/register' >Regístrate</NavLink>
               </li>
               <li className="nav-item">

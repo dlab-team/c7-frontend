@@ -1,6 +1,6 @@
 import React from 'react'
 import './login.scss'
-import { Envelope, Google, Linkedin, Twitter, Github } from 'react-bootstrap-icons'
+import { NavLink } from "react-router-dom";
 
 const UiLogin = () => {
 
@@ -16,11 +16,12 @@ const UiLogin = () => {
                 </div>
 
                 <div className='login-modal__box-buttons'>
-                    <a className='btn-app login-modal__button btn-app--white btn--border'> <Envelope className='login--icons' />  Ingresa con tu mail</a>
-                    <a className='btn-app login-modal__button btn-app--white btn--border'><Google className='login--icons' /> Ingresa con tu Google</a>
-                    <a className='btn-app login-modal__button btn--linkedin'><Linkedin className='login--icons' />Ingresa con tu LinkedIn</a>
-                    <a className='btn-app login-modal__button btn--github'><Twitter className='login--icons' />Ingresa con tu Twitter</a>
-                    <a className='btn-app login-modal__button btn--twitter'><Github className='login--icons' />Ingresa con tu GitHub</a>
+                    <a className='btn-app login-modal__button btn-app--white btn--border'>
+                        <NavLink className="nav-link" to='/form'>Soy Developer</NavLink>
+                    </a>
+                    <a className='btn-app login-modal__button btn-app--white btn--border'>
+                        <NavLink className="nav-link" to='/soyempresa'>Soy Empresa</NavLink>
+                    </a>
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ import Login from './views/login/login';
 import Register from './views/registrar/index';
 import LayoutWorkProfile from './components/WorkProfile_Layout/LayoutWorkProfile';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import FormEmpresa from './views/formEmpresa/index';
 
 //Redux
 import { Provider } from 'react-redux';
@@ -18,10 +19,11 @@ function App() {
         <Provider store={store}>
           <Routes>
             <Route path='/' element={<UiHome />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/register' element={<Register />} />
+            <Route path='/login' element={<Register />} />
+            <Route path='/register' element={<Login />} />
             <Route path='/form' element={<FormView />} />
             <Route path='/carrou' element={<LayoutWorkProfile/>} />
+            <Route path='/soyempresa' element={<FormEmpresa />} />
           </Routes>
         </Provider>
       </BrowserRouter>
