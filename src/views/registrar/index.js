@@ -7,7 +7,7 @@ const UiRegister = () => {
 
             <div className='modal-record'>
 
-                <div className='text__subject'> Regístrate </div>
+                <div className='text__subject'> Inicia Sesión </div>
 
                 <div className='modal-record__form'>
                     <FormRegister />
