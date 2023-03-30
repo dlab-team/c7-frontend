@@ -1,0 +1,17 @@
+.cv-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__title {
+    
+  }
+  &__cv {
+    .cv-name {
+      color: blue;
+    }
+    .profile-pen-edit {
+      margin-left: 2rem;
+      cursor: pointer;
+    }
+  }
+}

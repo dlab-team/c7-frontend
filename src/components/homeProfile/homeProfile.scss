@@ -1,0 +1,29 @@
+.home-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  // justify-content: center;
+  &__subject {
+    font-weight: 400;
+    text-align: center;
+  }
+  &__cards {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .home-profile {
+    .home-profile__cards {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}

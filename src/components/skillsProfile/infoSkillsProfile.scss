@@ -1,0 +1,41 @@
+.skills-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+  &__data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 35px;
+    width: 100%;
+
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      &__item {
+
+        // display: flex;
+        // align-items: center;
+        .all-skills__skill-x {
+          background-color: transparent;
+          border: 1px solid blue;
+          padding: 4px 5px;
+          margin: 5px;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+
+  //   &__data {
+  //     display: flex;
+  //     align-items: center;
+  //     .generic-data {
+  //       gap: 10px;
+  //       display: flex;
+  //       flex-direction: column;
+  //     }
+  //   }
+}
