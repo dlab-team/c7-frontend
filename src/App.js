@@ -18,12 +18,12 @@ function App() {
       <BrowserRouter>
         <Provider store={store}>
           <Routes>
-            <Route path='/' element={<UserProfile />} />
-            {/* <Route path='/' element={<UiHome />} /> */}
+            <Route path='/' element={<UiHome />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/form' element={<FormView />} />
             <Route path='/carrou' element={<LayoutWorkProfile />} />
+            <Route path='/userProfile' element={<UserProfile />} />
           </Routes>
         </Provider>
       </BrowserRouter>

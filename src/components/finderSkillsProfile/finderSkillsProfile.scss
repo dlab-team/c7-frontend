@@ -1,0 +1,31 @@
+.skills-button {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  
+  &__container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    .skills-button__item {
+      background: transparent;
+      border: 1px solid blue;
+      border-radius: 10px;
+      padding: 10px 10px;
+    }
+  }
+  &__find {
+    width: 100%;
+    position: relative;
+    .input-finder {
+      padding-right: 2rem;
+    }
+    .input-icon {
+      position: absolute;
+      top: calc(30%);
+      right: 10px;
+      color: rgb(55, 55, 55);
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Book, Pen, Trash3 } from 'react-bootstrap-icons'
+import { Book } from 'react-bootstrap-icons'
 import EducationRender from './EducationRender'
 
 const EducationProfile = () => {
@@ -26,7 +26,6 @@ const EducationProfile = () => {
             />
 
         </>
-        // <EducationRender name={'Desafio Latam'} data={'Mar 2021- Mar 2022'} stack={'FullStack'} />
     )
 }
 

@@ -16,7 +16,6 @@ const MenuProfile = ({ choice_selected }) => {
             perfil: '',
             test: '', [status_X]: 'active'
         });
-
         choice_selected(status_X)
     }
 
@@ -30,31 +29,29 @@ const MenuProfile = ({ choice_selected }) => {
             </header>
             <ul className='menu-list'>
                 <li className={`text--normal menu-list__item ${active.home}`} onClick={() => handleClick('home')}>
-                    <a href='#'>
-                        {
-                            !active.home
-                                ? <House className='icons-profile icon-profile__links' />
-                                : <HouseFill className='icons-profile icon-profile__links' />
-                        }
-                        Home </a>
+                    {
+                        !active.home
+                            ? <House className='icons-profile icon-profile__links' />
+                            : <HouseFill className='icons-profile icon-profile__links' />
+                    }
+                    Home
                 </li>
                 <></>
 
                 <li className={`text--normal menu-list__item ${active.perfil}`} onClick={() => handleClick('perfil')}>
-                    <a href='#'>
-                        {
-                            !active.perfil
-                                ? <Person className='icons-profile icon-profile__links' />
-                                : <PersonFill className='icons-profile icon-profile__links' />
-                        }
-                        Perfil  </a>
+                    {
+                        !active.perfil
+                            ? <Person className='icons-profile icon-profile__links' />
+                            : <PersonFill className='icons-profile icon-profile__links' />
+                    }
+                    Perfil
                 </li>
 
                 <li className={`text--normal menu-list__item ${active.test}`} onClick={() => handleClick('test')}>
-                    <a href='#'>
-                        <JournalCode className='icons-profile icon-profile__links' />
-                        Test Técnico  </a>
+                    <JournalCode className='icons-profile icon-profile__links' />
+                    Test Técnico
                 </li>
+
 
             </ul >
         </div >

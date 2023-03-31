@@ -1,6 +1,6 @@
 import React from 'react'
 import { Envelope, Github, Linkedin, Pen, Telephone } from 'react-bootstrap-icons'
-import defaultImage from '../../assets/FormBackground.png'
+import defaultImage from '../../assets/unknownPhoto.svg'
 import './infoPersonalProfile.scss'
 
 const InfoPersonalProfile = () => {

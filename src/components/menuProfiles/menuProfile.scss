@@ -41,6 +41,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      text-align: center;
       .icons-profile {
         color: #1316da;
         margin: 0 15px;
@@ -56,16 +57,13 @@
       }
 
       &.active {
+        color: white;
         .icons-profile {
           color: white;
         }
         background-color: #008ff7;
-        a {
-          color: white;
-        }
       }
     }
-    // background-color: aqua;
   }
 }
 

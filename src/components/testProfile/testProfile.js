@@ -2,6 +2,7 @@ import React from 'react'
 import { InfoCircleFill, StarFill } from 'react-bootstrap-icons'
 import TestCardsList from '../testCardsList/testCardsList'
 import './testProfile.scss'
+import FinderSkillsProfile from '../finderSkillsProfile/finderSkillsProfile'
 
 const TestProfile = () => {
   return (
@@ -20,30 +21,7 @@ const TestProfile = () => {
       </div>
 
       <div className='test-profile__skills'>
-
-        <b>Habilidades</b>
-        <div className='skills-button'>
-          <input className='skills-button__finder' type={'text'} />
-          <div className='skills-button__container'>
-            <input className='skills-button__item' type={'button'} value='Todos' />
-            <input className='skills-button__item' type={'button'} value='Skill-based' />
-            <input className='skills-button__item' type={'button'} value='Backend' />
-            <input className='skills-button__item' type={'button'} value='Containers' />
-            <input className='skills-button__item' type={'button'} value='Data engineering' />
-            <input className='skills-button__item' type={'button'} value='Database' />
-            <input className='skills-button__item' type={'button'} value='DevOps' />
-            <input className='skills-button__item' type={'button'} value='Frontend' />
-            <input className='skills-button__item' type={'button'} value='Hybrid mobile' />
-            <input className='skills-button__item' type={'button'} value='Infrastructure' />
-            <input className='skills-button__item' type={'button'} value='Java' />
-            <input className='skills-button__item' type={'button'} value='Microsoft' />
-            <input className='skills-button__item' type={'button'} value='Mobile' />
-            <input className='skills-button__item' type={'button'} value='Other' />
-            <input className='skills-button__item' type={'button'} value='PHP' />
-            <input className='skills-button__item' type={'button'} value='Python' />
-            <input className='skills-button__item' type={'button'} value='React' />
-          </div>
-        </div>
+        <FinderSkillsProfile />
       </div>
       <div className='test-profile__cards'>
         <TestCardsList />

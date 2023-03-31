@@ -9,14 +9,12 @@ const CardProfile = ({ numberCard, textCard }) => {
             <div className='card-profile__text'><b>{firstWord}</b> {restOfText}</div>
         </div>
     )
-
 }
 
 function getFirstWord(text) {
     const textArr = text.split(' ');
     const firstWord = textArr.shift();
     const restOfText = textArr.join(' ');
-
     return [firstWord, restOfText];
 }
 export default CardProfile

@@ -26,29 +26,6 @@
   }
 }
 
-.skills-button {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-
-  &__finder {
-    width: 100%;
-  }
-
-  &__container {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    .skills-button__item {
-      background: transparent;
-      border: 1px solid blue;
-      border-radius: 10px;
-      padding: 10px 10px;
-    }
-  }
-}
-
 .icons-test-profile {
   margin: 0 5px;
   &_yellow {
