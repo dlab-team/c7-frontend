@@ -1,6 +1,7 @@
 import React from 'react'
 import './login.scss'
 import { Envelope, Google, Linkedin, Twitter, Github } from 'react-bootstrap-icons'
+import { NavLink } from 'react-router-dom';
 
 const UiLogin = () => {
 
@@ -15,8 +16,8 @@ const UiLogin = () => {
                     <span>Crea tu cuenta profesional en DevSafío para que seas parte de distintas ofertas laborales que tenemos junto a importantes empresas en latinoamérica.</span>
                 </div>
 
-                <div className='login-modal__box-buttons'>
-                    <a className='btn-app login-modal__button btn-app--white btn--border'> <Envelope className='login--icons' />  Ingresa con tu mail</a>
+                <div className='login-modal__box-buttons'>                    
+                    <NavLink className="nav-link text-light" to='/loginEmail' ><a className='btn-app login-modal__button btn-app--white btn--border'> <Envelope className='login--icons' />  Ingresa con tu mail</a></NavLink>
                     <a className='btn-app login-modal__button btn-app--white btn--border'><Google className='login--icons' /> Ingresa con tu Google</a>
                     <a className='btn-app login-modal__button btn--linkedin'><Linkedin className='login--icons' />Ingresa con tu LinkedIn</a>
                     <a className='btn-app login-modal__button btn--github'><Twitter className='login--icons' />Ingresa con tu Twitter</a>
