@@ -8,6 +8,10 @@ const UiRegister = () => {
             <div className='modal-record'>
 
                 <div className='text__subject'> Regístrate </div>
+                <div className='modal-record__text'>
+                    <span>Crea tu cuenta profesional en DevSafío para que seas parte de distintas ofertas laborales que tenemos junto a importantes empresas en latinoamérica.</span>
+                </div>
+
 
                 <div className='modal-record__form'>
                     <FormRegister />
@@ -23,7 +27,7 @@ const FormRegister = () => {
     return <form className="row g-3">
 
         <div className="col-md-6">
-            <label htmlFor="inputNames" className="form-label">Usuario:</label>
+            <label htmlFor="inputNames" className="form-label">Nombre:</label>
             <input type="text" className="form-control form__input" id="inputUserName" placeholder='Robert' required />
         </div>
         <div className="col-md-6">

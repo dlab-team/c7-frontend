@@ -26,6 +26,12 @@
 
   border: #0a0a0a 6px solid;
 
+  &__text {
+    max-width: 750px;
+    text-align: center;
+    font-size: 20px;
+  }
+
   &__form {
     max-width: 750px;
     font-size: 20px;
@@ -37,5 +43,4 @@
       }
     }
   }
-  
 }
