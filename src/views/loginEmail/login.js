@@ -42,8 +42,8 @@ const UiLoginEmail = () => {
 
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
-      <div className="login-container">
-        <div className="login-modal">
+      <div className="login-email-container">
+        <div className="login-email-modal">
           <span className="text__subject"> Ingresa a tu cuenta </span>
           <Form.Group as={Row} className="form-group">
             <Row>
