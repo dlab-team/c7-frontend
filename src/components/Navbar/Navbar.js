@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import logo from '../../assets/dev-imagotipo-white-horizontal.png';
 import './Navbar.scss';
+import { List, Option, X, XLg } from 'react-bootstrap-icons';
 
 export default function Navbar() {
 
@@ -9,27 +10,25 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg">
+      <nav className="navbar navbar-dark navbar-expand-lg">
         <div className="container">
           <a className="navbar-brand mx-5" href="/">
-            <img src={logo} width="120" height="45" alt="Logo" />
+            <img src={logo} id="navbar-logo" alt="Logo" />
           </a>
           <button className="navbar-toggler" type="button" onClick={() => setIsOpen(!isOpen)} data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded={isOpen} aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon" />
+            <span className="navbar-toggler__menu">
+              {
+                isOpen ? <X /> : <List />
+              }
+            </span>
           </button>
-          <div className={`collapse navbar-collapse justify-content-end ${isOpen ? "show" : ""}`} id="navbarNav">
+          <div className={`collapse navbar-collapse justify-content-end ${isOpen ? "show " : ""}`} id="navbarNav">
             <ul className="navbar-nav mx-5 gap-3">
-              <li className="nav-item active">
-                <NavLink className="nav-link text-light" to='/login' >Inicia Sesión</NavLink>
+              <li className="nav-item">
+                <NavLink className="nav-link text-light btn-registrate ps-3 pe-3" to='/register' >Regístrate</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link text-light" to='/login' >Administra la página</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link text-light btn-registrate" to='/register' >Regístrate</NavLink>
-              </li>
-              <li className="nav-item">
-                <a href="#contactForm" className='nav-link text-light btn-contactanos'>Contáctanos</a>
+                <NavLink className="nav-link text-light btn-contactanos ps-3 pe-3" to='/login' >Inicia Sesión</NavLink>
               </li>
             </ul>
           </div>
