@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 //Redux
 import { Provider } from 'react-redux';
 import store from './utils/Redux/store';
+import UserProfile from './views/userProfile/UserProfile';
 
 function App() {
   return (
@@ -21,11 +22,13 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/form' element={<FormView />} />
-            <Route path='/carrou' element={<LayoutWorkProfile/>} />
+            <Route path='/carrou' element={<LayoutWorkProfile />} />
+            <Route path='/userProfile' element={<UserProfile />} />
           </Routes>
         </Provider>
       </BrowserRouter>
-  </>
-)}
+    </>
+  )
+}
 
 export default App;

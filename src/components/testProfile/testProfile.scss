@@ -1,0 +1,37 @@
+.test-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    // span {
+    // font-weight: 800;
+    // }
+  }
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .section_tip {
+      font-size: small;
+    }
+  }
+  &__skills {
+    display: flex;
+    flex-direction: column;
+  }
+  &__cards {
+  }
+}
+
+.icons-test-profile {
+  margin: 0 5px;
+  &_yellow {
+    color: #ffd51e;
+  }
+  &_blue {
+    color: #0081c9;
+  }
+}
