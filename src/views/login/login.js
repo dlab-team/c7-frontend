@@ -17,11 +17,11 @@ const UiLogin = () => {
                 </div>
 
                 <div className='login-modal__box-buttons'>                    
-                    <NavLink className="nav-link text-light" to='/loginEmail' ><a className='btn-app login-modal__button btn-app--white btn--border'> <Envelope className='login--icons' />  Ingresa con tu mail</a></NavLink>
-                    <a className='btn-app login-modal__button btn-app--white btn--border'><Google className='login--icons' /> Ingresa con tu Google</a>
-                    <a className='btn-app login-modal__button btn--linkedin'><Linkedin className='login--icons' />Ingresa con tu LinkedIn</a>
-                    <a className='btn-app login-modal__button btn--github'><Twitter className='login--icons' />Ingresa con tu Twitter</a>
-                    <a className='btn-app login-modal__button btn--twitter'><Github className='login--icons' />Ingresa con tu GitHub</a>
+                    <NavLink className="nav-link text-light" to='/loginEmail' ><button className='btn-app login-modal__button btn-app--white btn--border'> <Envelope className='login--icons' />  Ingresa con tu E-Mail</button></NavLink>
+                    <button className='btn-app login-modal__button btn-app--white btn--border'><Google className='login--icons' /> Ingresa con tu Google</button>
+                    <button className='btn-app login-modal__button btn--linkedin'><Linkedin className='login--icons' />Ingresa con tu LinkedIn</button>
+                    <button className='btn-app login-modal__button btn--github'><Twitter className='login--icons' />Ingresa con tu Twitter</button>
+                    <button className='btn-app login-modal__button btn--twitter'><Github className='login--icons' />Ingresa con tu GitHub</button>
                 </div>
             </div>
         </div>
