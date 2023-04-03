@@ -3,6 +3,7 @@ import './styles/App.scss';
 import FormView from './views/form/FormView';
 import UiHome from './views/home/home';
 import Login from './views/login/login';
+import LoginEmail from './views/loginEmail/login';
 import Register from './views/registrar/index';
 import LayoutWorkProfile from './components/WorkProfile_Layout/LayoutWorkProfile';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route path='/' element={<UiHome />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/loginEmail' element={<LoginEmail />} />
             <Route path='/register' element={<Register />} />
             <Route path='/form' element={<FormView />} />
             <Route path='/carrou' element={<LayoutWorkProfile />} />
