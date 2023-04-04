@@ -5,6 +5,8 @@ import UiHome from './views/home/home';
 import Login from './views/login/login';
 import LoginEmail from './views/loginEmail/login';
 import Register from './views/registrar/index';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 import LayoutWorkProfile from './components/WorkProfile_Layout/LayoutWorkProfile';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -18,15 +20,17 @@ function App() {
     <>
       <BrowserRouter>
         <Provider store={store}>
+          <Navbar />
           <Routes>
             <Route path='/' element={<UiHome />} />
             <Route path='/login' element={<Login />} />
             <Route path='/loginEmail' element={<LoginEmail />} />
             <Route path='/register' element={<Register />} />
             <Route path='/form' element={<FormView />} />
-            <Route path='/carrou' element={<LayoutWorkProfile />} />
+            <Route path='/carrousel' element={<LayoutWorkProfile />} />
             <Route path='/userProfile' element={<UserProfile />} />
           </Routes>
+          <Footer />
         </Provider>
       </BrowserRouter>
     </>
