@@ -1,9 +1,8 @@
 .user-profile {
   display: flex;
   flex-direction: column;
+  height: 100vh;
 
-  &__menu {
-  }
   &__content {
     padding: 3rem;
     width: 100%;
