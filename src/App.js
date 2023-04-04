@@ -5,8 +5,6 @@ import UiHome from './views/home/home';
 import Login from './views/login/login';
 import LoginEmail from './views/loginEmail/login';
 import Register from './views/registrar/index';
-import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
 import LayoutWorkProfile from './components/WorkProfile_Layout/LayoutWorkProfile';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
