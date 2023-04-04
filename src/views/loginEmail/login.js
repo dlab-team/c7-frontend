@@ -60,6 +60,8 @@ const UiLoginEmail = () => {
                   required
                   className="inputField"
                   name="email"
+                  pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                  title="Por favor ingresa un email valido."
                 />
                 <Form.Control.Feedback type="invalid">
                   Por favor ingresa un email valido.
