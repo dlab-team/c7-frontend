@@ -3,6 +3,9 @@ import { Form, Col, Row, Button, InputGroup } from "react-bootstrap";
 import { Eye, EyeSlash } from "react-bootstrap-icons";
 
 import "./login.scss";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../utils/Redux/Slices/authDev";
+import { useNavigate } from "react-router-dom";
 
 const formDefault = { email: "", password: "" };
 
@@ -10,6 +13,7 @@ const UiLoginEmail = () => {
   const [form, setForm] = useState(formDefault);
   const [validated, setValidated] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate()
 
   //ACTUALIZA EL CUADRO DE TEXTO
   const onFormUpdate = (e) => {
@@ -23,11 +27,22 @@ const UiLoginEmail = () => {
   //--------MANEJA EL ENVIO DE FORMULARIO----//
   const handleSubmit = (e) => {
     const form = e.currentTarget;
+    e.preventDefault();
     if (form.checkValidity() === false) {
-      e.preventDefault();
       e.stopPropagation();
     }
     setValidated(true);
+    const mail = form.email.value
+    const pass = form.password.value
+
+    if (handleLogIn(mail, pass)) {
+      navigate('/')
+    } else {
+      if(form.checkValidity()){
+        alert('Usuario o contraseña incorrectos. Intente nuevamente');
+      }
+      
+    }
   };
 
   //--------MANEJA LA VISIBILIDAD DE LA CONTRASEÑA----//
@@ -35,6 +50,37 @@ const UiLoginEmail = () => {
     e.preventDefault();
     setShowPassword(!showPassword);
   };
+  const dispatch = useDispatch()
+  // MANEJO EL LOGUEO DEL USUARIO
+  function handleLogIn(user, pass) {
+    if (user === 'alex@devsafio.com' && pass === 'alex') {
+      dispatch(setUser({
+        userName: 'alex',
+        mail: user,
+        rol: 'user'
+      }))
+      return true;
+    }
+    if (user === 'usuario@devsafio.com' && pass === 'user') {
+      dispatch(setUser({
+        userName: 'usuario',
+        mail: user,
+        rol: 'user'
+      }))
+
+      return true;
+    }
+    if (user === 'admin@devsafio.com' && pass === 'admin') {
+      dispatch(setUser({
+        userName: 'Administrador',
+        mail: user,
+        rol: 'admin'
+      }))
+      return true;
+    }
+
+    return false;
+  }
 
   useEffect(() => {
     console.log(form);
@@ -90,11 +136,11 @@ const UiLoginEmail = () => {
                       variant="primary btn--border"
                       onClick={handleTogglePassword}
                     >
-                      {showPassword ? <EyeSlash/> : <Eye />}
+                      {showPassword ? <EyeSlash /> : <Eye />}
                     </Button>
-                  <Form.Control.Feedback type="invalid">
-                    Por favor ingresa tu contraseña.
-                  </Form.Control.Feedback>
+                    <Form.Control.Feedback type="invalid">
+                      Por favor ingresa tu contraseña.
+                    </Form.Control.Feedback>
                   </InputGroup>
 
                   <span className="text--sm link" >
