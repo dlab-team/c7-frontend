@@ -1,8 +1,12 @@
-import React from 'react'
-import './registrar.scss'
+import React from 'react';
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
+import './registrar.scss';
 
 const UiRegister = () => {
     return <>
+        <Navbar />
+
         <div className='modal-container'>
 
             <div className='modal-record'>
@@ -19,6 +23,7 @@ const UiRegister = () => {
             </div>
         </div>
 
+        <Footer />
     </>
 }
 

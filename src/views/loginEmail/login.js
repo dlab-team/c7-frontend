@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Form, Col, Row, Button, InputGroup } from "react-bootstrap";
 import { Eye, EyeSlash } from "react-bootstrap-icons";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 
 import "./login.scss";
 
@@ -43,7 +43,6 @@ const UiLoginEmail = () => {
   }, [form]);
 
   return (
-
     <>
       <Navbar />
 
