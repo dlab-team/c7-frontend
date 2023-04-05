@@ -2,11 +2,17 @@ import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import logo from '../../assets/dev-imagotipo-white-horizontal.png';
 import './Navbar.scss';
-import { List, Option, X, XLg } from 'react-bootstrap-icons';
+import { DoorOpen, List, X } from 'react-bootstrap-icons';
 
 export default function Navbar() {
 
   const [isOpen, setIsOpen] = useState(false);
+  const userName = 'Bernard'
+  const [logged, setLoged] = useState(true)
+
+  const handleLogOut = () => {
+    setLoged(!logged)
+  }
 
   return (
     <>
@@ -15,6 +21,7 @@ export default function Navbar() {
           <a className="navbar-brand mx-5" href="/">
             <img src={logo} id="navbar-logo" alt="Logo" />
           </a>
+          
           <button className="navbar-toggler" type="button" onClick={() => setIsOpen(!isOpen)} data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded={isOpen} aria-label="Toggle navigation">
             <span className="navbar-toggler__menu">
               {
@@ -23,13 +30,34 @@ export default function Navbar() {
             </span>
           </button>
           <div className={`collapse navbar-collapse justify-content-end ${isOpen ? "show " : ""}`} id="navbarNav">
-            <ul className="navbar-nav mx-5 gap-3">
-              <li className="nav-item">
-                <NavLink className="nav-link text-light btn-registrate ps-3 pe-3" to='/register' >Regístrate</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link text-light btn-contactanos ps-3 pe-3" to='/login' >Inicia Sesión</NavLink>
-              </li>
+            <ul className="navbar-nav mx-5 gap-4">
+              {
+                !logged && <>
+                  <li className="nav-item">
+                    <NavLink className="nav-link text-light btn-registrate ps-3 pe-3" to='/register' >Regístrate</NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink className="nav-link text-light btn-contactanos ps-3 pe-3" to='/login' >Inicia Sesión</NavLink>
+                  </li>
+                </>}
+              {
+                logged && <>
+                  <li className="nav-item">
+                  <>¡Bienvenido {userName}.!</>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink className="nav-link text-light btn-registrate ps-3 pe-3" to='/form' >Busco trabajo</NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink className="nav-link text-light btn-contactanos ps-3 pe-3" to='/UserProfile' >Completa tu perfil</NavLink>
+                  </li>
+                  <li className="nav-item">
+                    < DoorOpen onClick={handleLogOut} className='navbar-log-out' />
+                  </li>
+                </>
+              }
+
+
             </ul>
           </div>
         </div>
