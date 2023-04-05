@@ -1,6 +1,4 @@
 import React from 'react';
-import Navbar from '../../components/Navbar/Navbar';
-import Footer from '../../components/Footer/Footer';
 import { Envelope, Google, Linkedin, Twitter, Github } from 'react-bootstrap-icons'
 import { NavLink } from 'react-router-dom';
 import './login.scss';
@@ -10,8 +8,6 @@ const UiLogin = () => {
 
     return (
         <>
-            <Navbar />
-
             <div className='login-container'>
 
                 <div className='login-modal'>
@@ -30,8 +26,6 @@ const UiLogin = () => {
                     </div>
                 </div>
             </div>
-
-            <Footer />
         </>
     )
 }

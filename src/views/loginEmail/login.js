@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Form, Col, Row, Button, InputGroup } from "react-bootstrap";
 import { Eye, EyeSlash } from "react-bootstrap-icons";
-import Navbar from '../../components/Navbar/Navbar';
-import Footer from '../../components/Footer/Footer';
 
 import "./login.scss";
 
@@ -44,8 +42,6 @@ const UiLoginEmail = () => {
 
   return (
     <>
-      <Navbar />
-
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <div className="login-email-container">
           <div className="login-email-modal">
@@ -65,6 +61,8 @@ const UiLoginEmail = () => {
                     required
                     className="inputField"
                     name="email"
+                    pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                    title="Por favor ingresa un email valido."
                   />
                   <Form.Control.Feedback type="invalid">
                     Por favor ingresa un email valido.
@@ -111,8 +109,6 @@ const UiLoginEmail = () => {
           </div>
         </div>
       </Form>
-
-      <Footer />
     </>
   );
 };
