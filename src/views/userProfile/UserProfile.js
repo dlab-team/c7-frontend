@@ -14,17 +14,19 @@ const UserProfile = () => {
     }
 
     return (
-        <section className='user-profile'>
-            <div className='user-profile__menu'>
-                <MenuProfile choice_selected={setChoice} />
-            </div>
-            <div className='user-profile__content'>
-                {menuRender[choice_selected]}
-                {/*choice_selected === 'home' && <HomeUserProfile />}
-                {choice_selected === 'perfil' && <PersonalProfile />}
-                {choice_selected === 'test' && <TestProfile />} */}
-            </div>
-        </section>
+        <>
+            <section className='user-profile'>
+                <div className='user-profile__menu'>
+                    <MenuProfile choice_selected={setChoice} />
+                </div>
+                <div className='user-profile__content'>
+                    {menuRender[choice_selected]}
+                    {/*choice_selected === 'home' && <HomeUserProfile />}
+                    {choice_selected === 'perfil' && <PersonalProfile />}
+                    {choice_selected === 'test' && <TestProfile />} */}
+                </div>
+            </section>
+        </>
     )
 }
 

@@ -1,5 +1,5 @@
-import React from 'react'
-import './registrar.scss'
+import React from 'react';
+import './registrar.scss';
 
 const UiRegister = () => {
     return <>
@@ -18,7 +18,6 @@ const UiRegister = () => {
                 </div>
             </div>
         </div>
-
     </>
 }
 
