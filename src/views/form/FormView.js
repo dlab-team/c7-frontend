@@ -48,7 +48,7 @@ const FormView = () => {
                 <p className="py-3 font-sans text-lg">
                 <strong>Tiempo: 5-10 minutos</strong>
                 </p>
-                <button className="blueBtn" id="LayoutWorkProfile"><NavLink className="nav-link" to='/carrou'>¡POSTULAR!</NavLink></button>            
+                <button className="blueBtn" id="LayoutWorkProfile"><NavLink className="nav-link" to='/carrousel'>¡POSTULAR!</NavLink></button>            
             </div>
         </section>
         );
