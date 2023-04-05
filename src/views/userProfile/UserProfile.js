@@ -4,8 +4,6 @@ import MenuProfile from '../../components/menuProfiles/menuProfile'
 import HomeUserProfile from '../../components/homeProfile/homeProfile'
 import PersonalProfile from '../../components/personalProfile/personalProfile'
 import TestProfile from '../../components/testProfile/testProfile'
-import Navbar from '../../components/Navbar/Navbar';
-import Footer from '../../components/Footer/Footer';
 
 const UserProfile = () => {
     const [choice_selected, setChoice] = useState('home')
@@ -17,8 +15,6 @@ const UserProfile = () => {
 
     return (
         <>
-            <Navbar />
-
             <section className='user-profile'>
                 <div className='user-profile__menu'>
                     <MenuProfile choice_selected={setChoice} />
@@ -30,8 +26,6 @@ const UserProfile = () => {
                     {choice_selected === 'test' && <TestProfile />} */}
                 </div>
             </section>
-
-            <Footer />
         </>
     )
 }
