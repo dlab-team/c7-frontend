@@ -12,7 +12,8 @@
     .navbar-nav {
       display: flex;
       // gap: 20px;
-      svg {
+       svg {
+        color: #f2f5f2;
         font-size: 2rem;
         cursor: pointer;
       }
@@ -34,9 +35,11 @@
       color: $blue !important;
     }
   }
+
   #navbar-logo {
     width: 130px;
   }
+
   .navbar-toggler {
     background-color: transparent;
     border: none;
@@ -56,10 +59,8 @@
   #navbar-logo {
     width: 170px;
   }
-
   .navbar {
     background-color: $blue;
-
     .collapse {
       padding: 0;
       .navbar-nav {
