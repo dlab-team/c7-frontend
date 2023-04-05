@@ -50,12 +50,6 @@ const FormInfoPersonal = () => {
     setValidated(true);
   };
 
-  //--------CONSOLE LOG SOLO PARA PRUEBAS-----//
-  // useEffect(() => {
-  //   console.log(form);
-  //   console.log(atLeastOneCheckboxIsChecked());
-  // }, [form]);
-
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
       <div className="FormInfoAcademica">
@@ -118,7 +112,7 @@ const FormInfoPersonal = () => {
         <Form.Group as={Row}>
           <div>
             <br></br>
-            <p>
+            <p className="text-sm">
               A continuación, indícanos 2 (dos) carreras profesionales, cursos,
               bootcamp o certificaciones cursadas relacionadas al desarrollo de
               software, diseño o TI (puedes indicarnos las más importantes o
@@ -147,7 +141,7 @@ const FormInfoPersonal = () => {
             <option value="" disabled hidden>
               Selecciona
             </option>
-            {instituteType.map(({ name, value }) => (
+            {educationalSituation.map(({ name, value }) => (
               <option key={name} value={value}>
                 {name}
               </option>
@@ -157,6 +151,7 @@ const FormInfoPersonal = () => {
             Por favor selecciona tu situación educacional actual.
           </Form.Control.Feedback>
         </Col>
+        <br></br>
       </div>
     </Form>
   );
@@ -221,7 +216,7 @@ const academicForm = (onFormUpdate, id) => {
             <option value="" disabled hidden>
               Selecciona
             </option>
-            {educationalSituation.map(({ name, value }) => (
+            {instituteType.map(({ name, value }) => (
               <option key={name} value={value}>
                 {name}
               </option>
