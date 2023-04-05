@@ -3,9 +3,22 @@
 .navbar {
   background-color: $blue;
 
-  .collapse {
-    padding: 4rem 0px;
+  .navbar-welcome{
+    color: #f7f7f7;
   }
+  .collapse {
+    color: #f2f5f2;
+    padding: 2rem 0px;
+    .navbar-nav {
+      display: flex;
+      // gap: 20px;
+      svg {
+        font-size: 2rem;
+        cursor: pointer;
+      }
+    }
+  }
+
   ul li {
     .btn-registrate {
       box-shadow: 0px 0px 0px 0.5px $white;
@@ -49,6 +62,14 @@
 
     .collapse {
       padding: 0;
+      .navbar-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+         margin-left:2rem ;
+        }
+      }
     }
   }
 }
