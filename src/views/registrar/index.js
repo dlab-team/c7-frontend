@@ -5,7 +5,6 @@ import { Eye, EyeSlash } from "react-bootstrap-icons";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 
-
 const formDefault = {
   nombre: "",
   apellidos: "",
@@ -19,7 +18,7 @@ const UiRegister = () => {
   const [validated, setValidated] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [passwordsMatch, setPasswordsMatch] = useState(true);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   //ACTUALIZA EL FORMULARIO
   const onFormUpdate = (e) => {
@@ -48,15 +47,13 @@ const UiRegister = () => {
     setValidated(true);
 
     if (form.checkValidity()) {
-        swal("Registrado con exito", {
-          icon: "success", timer: 4000,
-        })
-          .then(() => {
-            navigate('/login')
-          })
-
-      }
-
+      swal("Registrado con exito", {
+        icon: "success",
+        timer: 4000,
+      }).then(() => {
+        navigate("/login");
+      });
+    }
   };
 
   useEffect(() => {
@@ -172,7 +169,7 @@ const FormRegister = ({
       <Form.Group as={Row} className="form-group">
         <Col sm="12">
           <Form.Label>
-            <span className="text">Contraseña:</span>
+            <span className="text">Crea tu contraseña:</span>
           </Form.Label>
           <InputGroup className="mb-3">
             <Form.Control
@@ -201,7 +198,7 @@ const FormRegister = ({
       <Form.Group as={Row} className="form-group">
         <Col sm="12">
           <Form.Label>
-            <span className="text">Contraseña:</span>
+            <span className="text">Reingresa tu contraseña:</span>
           </Form.Label>
           <InputGroup className="mb-3">
             <Form.Control
