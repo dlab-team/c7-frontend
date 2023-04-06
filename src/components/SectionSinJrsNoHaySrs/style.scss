@@ -1,11 +1,10 @@
-@use '../../styles/App' as *;
+@use "../../styles/App" as *;
 
 .section {
   text-align: center;
   font-family: $font;
   background: $light-blue;
   padding: 30px 0;
-
 
   &__title {
     color: $blue-dark;
@@ -17,12 +16,12 @@
 
   &__text {
     color: $grey;
-    margin-left: 120px;
-    margin-right: 120px;
-    margin-top: 48px;
     font-weight: 400;
     font-size: 28px;
     line-height: 36px;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
   }
 
   &__text--b {
