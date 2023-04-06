@@ -1,0 +1,61 @@
+.modal-work-profile {
+  width: 100%;
+  height: fit-content;
+  background-image: url("../../assets/FormBackground.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 4px 8px rgba(#f8f9fa, 0.8);
+  padding: 20px;
+  &__ilustration {
+    position: relative;
+
+    img {
+      width: 40vw;
+    }
+  }
+
+  &__form-display {
+    min-width: 400px;
+    width: 80%;
+    background-color: aliceblue;
+    box-shadow: 8px 2px 15px rgba(0, 0, 0, 0.7);
+    border-radius:25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 3% 5%;
+    .close-button {
+      font-weight: bolder;
+      color: rgb(56, 0, 152);
+      font-size: larger;
+      width: fit-content;
+      position: absolute;
+      text-align: center;
+      right: 5%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .modal-work-profile {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: fit-content;
+    &__ilustration {
+      img {
+        content-visibility: hidden;
+      }
+    }
+    .close-button {
+      right: 18%;
+      z-index: 1;
+    }
+  }
+}

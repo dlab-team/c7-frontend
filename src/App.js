@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/App.scss';
+import FormView from './views/form/FormView';
+import UiHome from './views/home/home';
+import Login from './views/login/login';
+import LoginEmail from './views/loginEmail/login';
+import Register from './views/registrar/index';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
+import LayoutWorkProfile from './components/WorkProfile_Layout/LayoutWorkProfile';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+//Redux
+import { Provider } from 'react-redux';
+import store from './utils/Redux/store';
+import UserProfile from './views/userProfile/UserProfile';
+import PageNotFound from './views/notFound/PageNotFound';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <BrowserRouter>
+        <Provider store={store}>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<UiHome />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/loginEmail' element={<LoginEmail />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/form' element={<FormView />} />
+            <Route path='/carrousel' element={<LayoutWorkProfile />} />
+            <Route path='/userProfile' element={<UserProfile />} />
+            <Route path='/*' element={<PageNotFound/>} />
+          </Routes>
+          <Footer />
+        </Provider>
+      </BrowserRouter>
+    </>
+  )
 }
 
 export default App;

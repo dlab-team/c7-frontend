@@ -1,0 +1,28 @@
+$white: #ffffff;
+$light-blue: #e2f2fe;
+$light-blue-dark: #008ff7;
+$blue: #2738f5;
+$blue-dark: #140b34;
+$grey: #232323;
+$light-grey: #575253;
+$red: #AC231B;
+$font: "Poppins", sans-serif;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap");
+@import url("/node_modules/bootstrap/scss/bootstrap.scss");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  overflow-x: hidden;
+}

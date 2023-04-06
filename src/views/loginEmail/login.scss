@@ -1,0 +1,63 @@
+@use "../../styles/App" as *;
+
+.login-email-container {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../assets/devBannerCirculos.svg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 5px 4px 8px rgba(#f8f9fa, 0.8);
+}
+
+.login-email-modal {
+  width: 80%;
+  max-width: 900px;
+  height: fit-content;
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 40px 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  border: #0a0a0a 6px solid;
+
+  .text {
+    color: $blue-dark;
+    font-weight: 400;
+    font-size: 20px;
+    &--sm {
+      color: $blue-dark;
+      font-weight: 400;
+      font-size: 16px;
+      margin-left: 12px;
+    }
+  }
+
+  .form-control {
+    background-color: $light-blue;
+  }
+  .link {
+    display: flex;
+    justify-content: end;
+    color: $blue-dark;
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: -0.8rem;
+  }
+
+  .btn--border {
+    border: 1px solid #ced4da;
+    border-radius: 0px 5px 5px 0px !important;
+  }
+  .form-group {
+    & .row {
+      margin-bottom: 1rem;
+    }
+  }
+}
