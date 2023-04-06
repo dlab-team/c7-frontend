@@ -1,14 +1,13 @@
-@use '../../styles/App' as *;
+@use "../../styles/App" as *;
 
 .section {
   text-align: center;
   font-family: $font;
   background: $light-blue;
-
+  padding: 30px 0;
 
   &__title {
     color: $blue-dark;
-    padding-top: 40px;
     font-size: 32px;
     font-weight: 600;
     line-height: 48px;
@@ -17,12 +16,12 @@
 
   &__text {
     color: $grey;
-    margin-left: 120px;
-    margin-right: 120px;
-    margin-top: 48px;
     font-weight: 400;
     font-size: 28px;
     line-height: 36px;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
   }
 
   &__text--b {
@@ -31,11 +30,7 @@
   }
 
   .itembox {
-    justify-content: space-evenly;
-    display: flex;
-
     .item {
-      margin-top: 120px;
       width: 286px;
 
       &__title {
