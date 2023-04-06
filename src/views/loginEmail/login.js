@@ -6,6 +6,7 @@ import "./login.scss";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../utils/Redux/Slices/authDev";
 import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 
 const formDefault = { email: "", password: "" };
 
@@ -14,6 +15,7 @@ const UiLoginEmail = () => {
   const [validated, setValidated] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   //ACTUALIZA EL CUADRO DE TEXTO
   const onFormUpdate = (e) => {
@@ -38,19 +40,48 @@ const UiLoginEmail = () => {
     if (handleLogIn(mail, pass)) {
       navigate('/')
     } else {
-      if(form.checkValidity()){
-        alert('Usuario o contraseña incorrectos. Intente nuevamente');
+      if (form.checkValidity()) {
+        swal("Usuario o contraseña incorrectos.", "Intente de nuevo por favor.", {
+          icon: "error", timer: 4000,
+        })
+          .then(() => {
+            form.password.focus()
+          })
+
       }
-      
+
     }
   };
+
+  //--------MANEJA EL CAMBIO DE LA CONTRASEÑA----//
+  const handleForgetPassword = (e) => {
+    swal("Introduce tu correo electrónico: ", {
+      content: {
+        element: "input",
+        attributes: {
+          placeholder: "usermail@gmail.com",
+        },
+      },
+      buttons: {
+        cancel: "Cancelar",
+        catch: {
+          text: "Enviar!",
+          value: "catch",
+        },
+      },
+    })
+      .then((value) => {
+        if (!!value) {
+          swal("Correo enviado exitosamente.", { icon: "success" })
+        }
+      });
+  }
 
   //--------MANEJA LA VISIBILIDAD DE LA CONTRASEÑA----//
   const handleTogglePassword = (e) => {
     e.preventDefault();
     setShowPassword(!showPassword);
   };
-  const dispatch = useDispatch()
   // MANEJO EL LOGUEO DEL USUARIO
   function handleLogIn(user, pass) {
     if (user === 'alex@devsafio.com' && pass === 'alex') {
@@ -83,7 +114,7 @@ const UiLoginEmail = () => {
   }
 
   useEffect(() => {
-    console.log(form);
+    // console.log(form);
   }, [form]);
 
   return (
@@ -144,7 +175,7 @@ const UiLoginEmail = () => {
                   </InputGroup>
 
                   <span className="text--sm link" >
-                    <a href="">¿Olvidaste tu contraseña?</a>
+                    <a href="#" onClick={() => handleForgetPassword()}>¿Olvidaste tu contraseña?</a>
                   </span>
                 </Col>
               </Row>
