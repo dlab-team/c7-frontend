@@ -88,17 +88,17 @@ export default function FormWorkProfile({ formButtons }) {
   const allChecksWithLvlSelected = () => {
     let formValid = true;
     list.forEach((e) => {
-      if (e.id === "languages") {
-        formValid = (e.value === 0);
+      if (e.id === "languages" && e.value === 0) {
+        formValid = false;
       }
-      if (e.id === "frameworks") {
-        formValid = (e.value === 0);
+      if (e.id === "frameworks" && e.value === 0) {
+        formValid = false;
       }
-      if (e.id === "tools") {
-        formValid = (e.value === 0);
+      if (e.id === "tools" && e.value === 0) {
+        formValid = false;
       }
     });
-    return formValid
+    return formValid;
   };
 
   //AGREGA LENGUAJE/FRAMEWORK O HERRAMIENTA A LA LISTA:
@@ -136,7 +136,7 @@ export default function FormWorkProfile({ formButtons }) {
   //--------MANEJO DE VALIDACIONES-----//
   useEffect(() => {
     const form = document.getElementById("form-workProfile");
-    if (form.checkValidity() === true && !allChecksWithLvlSelected()) {
+    if (form.checkValidity() === true && allChecksWithLvlSelected()) {
       setValidated(true);
     } else {
       setValidated(false);
