@@ -19,21 +19,21 @@ const formDefault = {
 };
 const softSkillsDefault = new Array(softSkills.length).fill(false);
 
-const FormWorkExperience = () => {
+const FormWorkExperience = ({formButtons}) => {
   const [form, setForm] = useState(formDefault);
   const [validated, setValidated] = useState(false);
   const [softSkillsState, setsoftSkillsState] = useState(softSkillsDefault);
   const dispatch = useDispatch();
 
   //--------MANEJA EL ENVIO DE FORMULARIO----//
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    setValidated(true);
-  };
+  // const handleSubmit = (event) => {
+  //   const form = event.currentTarget;
+  //   if (form.checkValidity() === false && atLeastThreeCheckboxIsChecked()) {
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //   }
+  //   setValidated(true);
+  // };
 
   //--------CHECKEA QUE AL MENOS SE HAYAN SELECCIONADO 3 OPCIONES DE LOS CHECKS----//
   function atLeastThreeCheckboxIsChecked() {
@@ -49,7 +49,7 @@ const FormWorkExperience = () => {
     setForm({
       ...form,
       softSkills: Array.from(
-        document.querySelectorAll("input[type=checkbox]:checked"),
+        document.querySelectorAll("input[type=checkbox].softSkills-checkbox:checked"),
         (e) => e.name
       ),
     });
@@ -68,13 +68,19 @@ const FormWorkExperience = () => {
     dispatch(setFormData(form));
   }, [form, dispatch]);
 
-  //--------CONSOLE LOG SOLO PARA PRUEBAS-----//
-  //   useEffect(() => {
-  //     console.log(form);
-  //   }, [form]);
+  //--------MANEJO DE VALIDACIONES-----//
+  useEffect(() => {
+    const form = document.getElementById("form-workExperience");
+    if (form.checkValidity() === true  && atLeastThreeCheckboxIsChecked()) {
+      setValidated(true);
+    }
+    else{
+      setValidated(false);
+    }
+  }, [form]);
 
   return (
-    <Form noValidate validated={validated} onSubmit={handleSubmit}>
+    <Form noValidate validated={validated} id="form-workExperience">
       <div className="FormWorkExperience">
         <Form.Group as={Row}>
           <Col sm="6">
@@ -178,6 +184,7 @@ const FormWorkExperience = () => {
                   feedback="Debes seleccionar al menos una opcion."
                   feedbacktype="invalid"
                   checked={softSkillsState[index]}
+                  isValid={atLeastThreeCheckboxIsChecked()}
                   onChange={() => softSkillsUpdate(index)}
                 />
                 <Form.Check.Label
@@ -221,7 +228,24 @@ const FormWorkExperience = () => {
         </Form.Group>
       </div>
       {/* ////////////////////////////////////////////////////////////////// */}
-      <Button type="submit">Test</Button>
+      {validated ? (
+        formButtons
+      ) : (
+        <>
+        <Form.Group as={Row}>
+        <Col md="6">
+          <Button type="submit" disabled className="btn-app btn-app--blue">
+            Atras
+          </Button>
+          </Col>
+        <Col md="6">
+          <Button type="submit" disabled className="btn-app btn-app--blue">
+            Siguiente
+          </Button>
+          </Col>
+          </Form.Group>
+          </>
+      )}
       {/* ////////////////////////////////////////////////////////////////// */}
     </Form>
   );

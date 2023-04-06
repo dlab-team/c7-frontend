@@ -1,5 +1,5 @@
 import "./style.scss";
-import { Form, Col, Row } from "react-bootstrap";
+import { Form, Col, Row, Button } from "react-bootstrap";
 import React, { useState } from "react";
 import { englishLevels } from "../../utils/EnglishLevels";
 import { instituteType } from "../../utils/instituteType";
@@ -22,7 +22,7 @@ const formDefault = {
   educationalSituation: "",
 };
 
-const FormInfoPersonal = () => {
+const FormInfoPersonal = ({ formButtons }) => {
   const [form, setForm] = useState(formDefault);
   const [validated, setValidated] = useState(false);
   const dispatch = useDispatch();
@@ -41,17 +41,27 @@ const FormInfoPersonal = () => {
   }, [form, dispatch]);
 
   //--------MANEJA EL ENVIO DE FORMULARIO----//
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
+  // const handleSubmit = (event) => {
+  //   const form = event.currentTarget;
+  //   if (form.checkValidity() === false) {
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //   }
+  //   setValidated(true);
+  // };
+
+  //--------MANEJO DE VALIDACIONES-----//
+  useEffect(() => {
+    const form = document.getElementById("form-academica");
+    if (form.checkValidity() === true) {
+      setValidated(true);
+    } else {
+      setValidated(false);
     }
-    setValidated(true);
-  };
+  }, [form]);
 
   return (
-    <Form noValidate validated={validated} onSubmit={handleSubmit}>
+    <Form noValidate validated={validated} id="form-academica">
       <div className="FormInfoAcademica">
         <Form.Group as={Row}>
           <Col xs="8" sm="7">
@@ -153,6 +163,26 @@ const FormInfoPersonal = () => {
         </Col>
         <br></br>
       </div>
+      {/* ////////////////////////////////////////////////////////////////// */}
+      {validated ? (
+        formButtons
+      ) : (
+        <>
+          <Form.Group as={Row}>
+            <Col md="6">
+              <Button type="submit" disabled className="btn-app btn-app--blue">
+                Atras
+              </Button>
+            </Col>
+            <Col md="6">
+              <Button type="submit" disabled className="btn-app btn-app--blue">
+                Siguiente
+              </Button>
+            </Col>
+          </Form.Group>
+        </>
+      )}
+      {/* ////////////////////////////////////////////////////////////////// */}
     </Form>
   );
 };
