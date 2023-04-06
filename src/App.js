@@ -14,6 +14,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './utils/Redux/store';
 import UserProfile from './views/userProfile/UserProfile';
+import PageNotFound from './views/notFound/PageNotFound';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path='/form' element={<FormView />} />
             <Route path='/carrousel' element={<LayoutWorkProfile />} />
             <Route path='/userProfile' element={<UserProfile />} />
+            <Route path='/*' element={<PageNotFound/>} />
           </Routes>
           <Footer />
         </Provider>
