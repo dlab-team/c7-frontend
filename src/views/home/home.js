@@ -12,11 +12,11 @@ const Ui_home = () => {
       <BigBanner />
       <Banner />
       <SectionSinJrsNoHaySrs />
-      <div className="row">
-        <div className="col-md-6">
+      <div className="row mt-5 p-3">
+        <div className="col-lg-6 mb-3">
           <SectionHomeSystem />
         </div>
-        <div className="col-md-6">
+        <div className="col-lg-6">
           <ContactForm />
         </div>
       </div>

@@ -3,14 +3,12 @@
 .system {
   display: flex;
   flex-direction: column;
-  width: 508px;
-  margin: 56px 100px 160px 120px;
+  // padding: 0px 20px;
 
   &__image {
     min-width: 300px;
-    width: 100%;
-    align-content: center;
-    margin-top: -35px;
+    width: 90%;
+    margin: auto;
   }
   &__title {
     color: $blue-dark;
@@ -18,14 +16,17 @@
     font-weight: 600;
     font-size: 32px;
     line-height: 48px;
+    text-align: center;
   }
   &__text {
+    text-align: center;
     font-weight: 400;
     font-size: 20px;
     line-height: 30px;
     margin-bottom: 30px;
-
+    
     &--grey {
+      text-align: center;
       margin: 38px 0px 48px 0px;
       color: $grey;
       font-weight: 700;

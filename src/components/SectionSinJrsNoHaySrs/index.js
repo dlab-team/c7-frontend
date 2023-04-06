@@ -7,12 +7,13 @@ import './style.scss';
 
 export default function SectionSinJuniors() {
     return (
-        <div className='section'>
+        <div className='section '>
             <div className='section__title'>Sin Juniors no hay Seniors</div>
             <div className='section__text'>
                 <p>En este programa unimos la <b className='section__text--b'>rapidez, eficiencia y visión de un desarrollador junior</b> junto con la <b className='section__text--b'>experiencia y liderazgo de un senior TI</b>, quien acompañará al talento junior contratado para potenciar tu área digital, acá te explicamos cómo: </p>
             </div>
-            <div className="itembox d-flex ">
+
+            <div className="itembox pt-5 d-flex flex-wrap gap-5 justify-content-evenly ">
                 <div className='item'>
                     <img src={aceleramos} alt="aceleramos.png"></img>
                     <div className='item__title'>Aceleramos</div>

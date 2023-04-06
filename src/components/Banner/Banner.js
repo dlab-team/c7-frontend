@@ -4,12 +4,12 @@ import "./style.scss";
 
 function Banner() {
   return (
-    <div className="banner">
+    <div className="banner pt-3 pb-3">
       <div className="container">
         <div className="row">
-          <div className="col-6">
+          <div className="col-lg-6 mx-auto">
             <div className="banner__title">¿Cómo funcionamos?</div>
-            <div className="banner__text">
+            <div className="text--normal banner__text fw-normal fs-4">
               <p>
                 Da click a nuestro video y en sólo 60 segundos conoce
                 <b className="banner__text--b"> Devsafio </b>
@@ -19,7 +19,7 @@ function Banner() {
               </p>
             </div>
           </div>
-          <div className="col-6">
+          <div className="col-lg-6 mx-auto p-3">
               <Video />
           </div>
         </div>
