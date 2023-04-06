@@ -40,20 +40,20 @@ const UiRegister = () => {
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
+    event.preventDefault();
     if (form.checkValidity() === false || !passwordsMatch) {
-      event.preventDefault();
       event.stopPropagation();
     }
     setValidated(true);
-
     if (form.checkValidity()) {
       swal("Registrado con exito", {
         icon: "success",
         timer: 4000,
       }).then(() => {
-        navigate("/login");
+        navigate("/loginEmail");
       });
     }
+
   };
 
   useEffect(() => {
@@ -239,6 +239,7 @@ const FormRegister = ({
           </Button>
         </Col>
       </Form.Group>
+
     </Form>
   );
 };
