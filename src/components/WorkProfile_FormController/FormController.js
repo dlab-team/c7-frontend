@@ -5,8 +5,61 @@ import FormInfoAcademica from "../FormInfoAcademica";
 import FormWorkProfile from "../FormWorkProfile";
 import FormWorkExperience from "../FormWorkExperience";
 import FormDesiredJob from "../FormDesiredJob";
+import swal from "sweetalert";
+import { useNavigate } from "react-router";
 
 const FormController = () => {
+  const navigate = useNavigate()
+
+
+  const handleSubmit = () => {
+    swal("Sus datos han sido guardados exitosamente...", { icon: "success" ,timer: 6000})
+      .then(() => {
+        navigate('/UserProfile')
+      })
+  }
+
+  const FormButtons = ({ btn_back = 'Atras', btn_next = 'Siguiente' }) => {
+    const next_opions = {
+      Siguiente: <input
+        type={"button"}
+        value={btn_next}
+        className="btn-app btn-app--blue"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      />,
+
+      Finalizar: <input
+        type={"button"}
+        value={btn_next}
+        className="btn-app btn-app--blue"
+        onClick={handleSubmit}
+      />
+    }
+
+    return (
+      <form>
+        <div
+          style={{
+            display: "flex",
+            gap: "30px",
+          }}
+        >
+          <input
+            type={"button"}
+            value={btn_back}
+            className="btn-app btn-app--blue"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev"
+          />
+          {
+            next_opions[btn_next]
+          }
+
+        </div>
+      </form>
+    );
+  };
   return (
     <>
       <div id="carouselExampleCaptions" className="carousel slide">
@@ -85,7 +138,7 @@ const FormController = () => {
               ¿QUÉ TIPO DE TRABAJO ESTÁS BUSCANDO?
             </span>
             <FormDesiredJob />
-            <FormButtons />
+            <FormButtons btn_next="Finalizar" />
           </div>
         </div>
       </div>
@@ -93,33 +146,7 @@ const FormController = () => {
   );
 };
 
-const FormButtons = () => {
-  return (
-    <form>
-      <div
-        style={{
-          display: "flex",
-          gap: "30px",
-        }}
-      >
-        <input
-          type={"button"}
-          value="Atras"
-          className="btn-app btn-app--blue"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="prev"
-        />
 
-        <input
-          type={"button"}
-          value="Siguiente"
-          className="btn-app btn-app--blue"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="next"
-        />
-      </div>
-    </form>
-  );
-};
+
 
 export default FormController;

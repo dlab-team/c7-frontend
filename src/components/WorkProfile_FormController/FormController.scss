@@ -1,34 +1,33 @@
-
 .indicators-container {
-    position: absolute;
-    top: 0;
-    opacity: 40%;
-    height: fit-content;
-    transition: all 0.3s ease-in-out;
-  
-    .form-indicator {
-      background-color: #b3e5be;
-      min-height: 8px;
-      width: 90%;
-      &:hover {
-        opacity: 100%;
-        transform: scale(1.05);
-      }
-    }
-  
-    .active {
-      background-color: #2738f5;
-    }
-  
+  position: absolute;
+  top: 0;
+  opacity: 40%;
+  height: fit-content;
+  transition: all 0.3s ease-in-out;
+
+  .form-indicator {
+    background-color: #D3DEDC;
+    min-height: 8px;
+    width: 90%;
     &:hover {
       opacity: 100%;
       transform: scale(1.05);
     }
   }
-  .carousel-item {
-    padding-top: 50px;
+
+  .active {
+    background-color: #2738f5;
   }
 
-  .carousel-item {
-    padding-top: 50px;
+  &:hover {
+    opacity: 100%;
+    transform: scale(1.05);
   }
+}
+.carousel-item {
+  padding-top: 50px;
+}
+
+.carousel-item {
+  padding-top: 50px;
+}
