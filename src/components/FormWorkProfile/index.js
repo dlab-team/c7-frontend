@@ -10,6 +10,8 @@ import {
   Form,
   Tooltip,
   Popover,
+  Row,
+  Col,
 } from "react-bootstrap";
 import { InfoCircle, ArrowRightCircle, Trash } from "react-bootstrap-icons";
 //BD
@@ -24,10 +26,11 @@ import { useDispatch } from "react-redux";
 
 const formDefault = { languages: [], frameworks: [], tools: [], message: "" };
 
-export default function FormWorkProfile() {
+export default function FormWorkProfile({ formButtons }) {
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState(formDefault);
   const [list, setList] = useState([]);
+  const [validated, setValidated] = useState(false);
   const dispatch = useDispatch();
 
   //GESTIONA ENVIO DEL FORMULARIO
@@ -81,6 +84,23 @@ export default function FormWorkProfile() {
     });
   };
 
+  //VALIDO QUE LOS LVLS ESTEN SELECCIONADOS:
+  const allChecksWithLvlSelected = () => {
+    let formValid = true;
+    list.forEach((e) => {
+      if (e.id === "languages" && e.value === 0) {
+        formValid = false;
+      }
+      if (e.id === "frameworks" && e.value === 0) {
+        formValid = false;
+      }
+      if (e.id === "tools" && e.value === 0) {
+        formValid = false;
+      }
+    });
+    return formValid;
+  };
+
   //AGREGA LENGUAJE/FRAMEWORK O HERRAMIENTA A LA LISTA:
   const addToList = async (name, value, id) => {
     const found = list.filter((e) => e.name === name);
@@ -113,6 +133,16 @@ export default function FormWorkProfile() {
     objDiv.scrollTop += objDiv.scrollHeight;
   };
 
+  //--------MANEJO DE VALIDACIONES-----//
+  useEffect(() => {
+    const form = document.getElementById("form-workProfile");
+    if (form.checkValidity() === true && allChecksWithLvlSelected()) {
+      setValidated(true);
+    } else {
+      setValidated(false);
+    }
+  }, [form]);
+
   const lvlinfo = (
     <>
       <p>
@@ -141,7 +171,7 @@ export default function FormWorkProfile() {
 
   return (
     <div className="workProfileForm" id="contactForm">
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} validated={validated} id="form-workProfile">
         <Collapse in={!open}>
           <div className="info" id="info">
             <p className="workProfileForm__text">
@@ -233,8 +263,8 @@ export default function FormWorkProfile() {
             </div>
             <br></br>
 
-            <div className="row">
-              <div className="form-group col-12">
+            <Form.Group as={Row}>
+              <Col md="12">
                 <OverlayTrigger
                   placement="right"
                   delay={{ show: 100, hide: 100 }}
@@ -245,24 +275,24 @@ export default function FormWorkProfile() {
                     </Popover>
                   }
                 >
-                  <label>
+                  <Form.Label>
                     Informacion <InfoCircle />
-                  </label>
+                  </Form.Label>
                 </OverlayTrigger>
-              </div>
+              </Col>
               <ListGroup id="skills">
                 {list.map(({ name }, index) => {
                   return (
                     <li key={index}>
                       <ListGroup.Item>
-                        <div className="row">
-                          <div className="form-group col-6">
+                        <Form.Group as={Row}>
+                          <Col md="6">
                             <p className="workProfileForm__text--list">
                               {name}
                             </p>
-                          </div>
+                          </Col>
 
-                          <div className="form-group col-5">
+                          <Col md="5">
                             <OverlayTrigger
                               placement="left"
                               delay={{ show: 500, hide: 100 }}
@@ -330,9 +360,9 @@ export default function FormWorkProfile() {
                                 />
                               </label>
                             </OverlayTrigger>
-                          </div>
+                          </Col>
 
-                          <div className="form-group col-1">
+                          <Col md="1">
                             <Button
                               onClick={() => removeList(name)}
                               className="btn-danger"
@@ -341,21 +371,23 @@ export default function FormWorkProfile() {
                                 <Trash />
                               </span>
                             </Button>
-                          </div>
-                        </div>
+                          </Col>
+                        </Form.Group>
                       </ListGroup.Item>
                     </li>
                   );
                 })}
               </ListGroup>
-            </div>
+            </Form.Group>
 
-            <div className="row">
-              <div>
-                <p className="workProfileForm__text">
+            <Form.Group as={Row}>
+              <Col md="12">
+                <span className="workProfileForm__text">
                   Indícanos alguna otra competencia, herramienta o tecnología
                   que conozcas que creas importante agregar:
-                </p>
+                </span>
+              </Col>
+              <Col md="12">
                 <textarea
                   type="text"
                   rows="3"
@@ -364,11 +396,40 @@ export default function FormWorkProfile() {
                   value={form.message}
                   onChange={onFormUpdate}
                 />
-              </div>
-            </div>
+              </Col>
+            </Form.Group>
+
+            {/* ////////////////////////////////////////////////////////////////// */}
+            {validated ? (
+              formButtons
+            ) : (
+              <>
+                <Form.Group as={Row}>
+                  <Col md="6">
+                    <Button
+                      type="submit"
+                      disabled
+                      className="btn-app btn-app--blue"
+                    >
+                      Atras
+                    </Button>
+                  </Col>
+                  <Col md="6">
+                    <Button
+                      type="submit"
+                      disabled
+                      className="btn-app btn-app--blue"
+                    >
+                      Siguiente
+                    </Button>
+                  </Col>
+                </Form.Group>
+              </>
+            )}
+            {/* ////////////////////////////////////////////////////////////////// */}
           </div>
         </Collapse>
-      </form>
+      </Form>
     </div>
   );
 }

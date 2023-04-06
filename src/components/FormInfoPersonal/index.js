@@ -21,7 +21,7 @@ const formDefault = {
 };
 const categoriesDefault = new Array(categories.length).fill(false);
 
-const FormInfoPersonal = () => {
+const FormInfoPersonal = ({formButtons}) => {
   const [form, setForm] = useState(formDefault);
   const [validated, setValidated] = useState(false);
   const [categoriesState, setCategoriesState] = useState(categoriesDefault);
@@ -49,14 +49,14 @@ const FormInfoPersonal = () => {
   }
 
   //--------MANEJA EL ENVIO DE FORMULARIO----//
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    setValidated(true);
-  };
+  // const handleSubmit = (event) => {
+  //   const form = event.currentTarget;
+  //   if (form.checkValidity() === false) {
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //   }
+  //   setValidated(true);
+  // };
 
   //--------GUARDA LOS CHECKS EN EL FORM----//
   const categoriesUpdate = (position) => {
@@ -73,14 +73,19 @@ const FormInfoPersonal = () => {
     });
   };
 
-  //--------CONSOLE LOG SOLO PARA PRUEBAS-----//
-  // useEffect(() => {
-  //   console.log(form);
-  //   console.log(atLeastOneCheckboxIsChecked());
-  // }, [form]);
+  //--------MANEJO DE VALIDACIONES-----//
+  useEffect(() => {
+    const form = document.getElementById("form-personal");
+    if (form.checkValidity() === true) {
+      setValidated(true);
+    }
+    else{
+      setValidated(false);
+    }
+  }, [form]);
 
   return (
-    <Form noValidate validated={validated} onSubmit={handleSubmit}>
+    <Form noValidate validated={validated} id="form-personal">
       <div className="FormInfoPersonal">
         <Form.Group as={Row}>
           <Col sm="6">
@@ -280,7 +285,7 @@ const FormInfoPersonal = () => {
         </Form.Group>
       </div>
       {/* ////////////////////////////////////////////////////////////////// */}
-      <Button type="submit">Test</Button>
+      {validated ? (formButtons):(<Button type="submit" disabled className="btn-app btn-app--blue">Siguiente</Button>)}
       {/* ////////////////////////////////////////////////////////////////// */}
     </Form>
   );

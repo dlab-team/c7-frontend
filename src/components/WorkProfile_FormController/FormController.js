@@ -111,34 +111,34 @@ const FormController = () => {
         <div className="carousel-inner" id="form-controll">
           <div className="carousel-item active">
             <span className="text__subject ">INFORMACIÓN PERSONAL</span>
-            <FormInfoPersonal />
-            <FormButtons />
+            <FormInfoPersonal formButtons={<FormButtons />}/>
+            {/* <FormButtons /> */}
           </div>
 
           <div className="carousel-item">
             <span className="text__subject ">INFORMACIÓN ACADÉMICA</span>
-            <FormInfoAcademica />
-            <FormButtons />
+            <FormInfoAcademica formButtons={<FormButtons />}/>
+            {/* <FormButtons /> */}
           </div>
 
           <div className="carousel-item">
             <span className="text__subject ">PERFIL LABORAL</span>
-            <FormWorkProfile />
-            <FormButtons />
+            <FormWorkProfile formButtons={<FormButtons />}/>
+            {/* <FormButtons /> */}
           </div>
 
           <div className="carousel-item">
             <span className="text__subject ">EXPERIENCIA Y TRABAJO</span>
-            <FormWorkExperience />
-            <FormButtons />
+            <FormWorkExperience formButtons={<FormButtons />}/>
+            {/* <FormButtons /> */}
           </div>
 
           <div className="carousel-item">
             <span className="text__subject ">
               ¿QUÉ TIPO DE TRABAJO ESTÁS BUSCANDO?
             </span>
-            <FormDesiredJob />
-            <FormButtons btn_next="Finalizar" />
+            <FormDesiredJob formButtons={<FormButtons btn_next="Finalizar" />}/>
+            {/* <FormButtons btn_next="Finalizar" /> */}
           </div>
         </div>
       </div>

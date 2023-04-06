@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Form, Row, Col } from "react-bootstrap";
+import { Form, Row, Col, Button } from "react-bootstrap";
 import { workAvailability } from "../../utils/FormWorkAvailability";
 import { workplace } from "../../utils/FormWorkplace";
 import { workVisa } from "../../utils/FormWorkVisa";
@@ -12,12 +12,12 @@ const workAvailabilityDefault = Array(workAvailability.length).fill(false);
 
 const initialFormState = {
   idealJobDescription: "",
-  workAvailability: "",
+  workAvailability: [],
   workplace: "",
   workVisa: [],
 };
 
-const FormDesiredJob = () => {
+const FormDesiredJob = ({ formButtons }) => {
   const [form, setForm] = useState(initialFormState);
   const [validated, setValidated] = useState(false);
   const [workVisaState, setWorkVisaState] = useState(workVisaDefault);
@@ -36,10 +36,18 @@ const FormDesiredJob = () => {
     }
   };
 
+  function atLeastOneWorkAvailabilityCheckboxIsChecked() {
+    return form.workAvailability.length > 0;
+  }
+  function atLeastOneWorkVisaCheckboxIsChecked() {
+    return form.workVisa.length > 0;
+  }
+
   function isFormValid() {
-    const workAvailabilityChecked = form.workAvailability.length === 1;
+    const workAvailabilityChecked =
+      atLeastOneWorkAvailabilityCheckboxIsChecked();
     const workplaceSelected = form.workplace !== "";
-    const workVisaChecked = form.workVisa.checked;
+    const workVisaChecked = atLeastOneWorkVisaCheckboxIsChecked();
     return workAvailabilityChecked && workplaceSelected && workVisaChecked;
   }
 
@@ -87,8 +95,23 @@ const FormDesiredJob = () => {
     dispatch(setFormData(form));
   }, [dispatch, form]);
 
+  //--------MANEJO DE VALIDACIONES-----//
+  useEffect(() => {
+    const form = document.getElementById("form-desiredJob");
+    if (form.checkValidity() === true && isFormValid()) {
+      setValidated(true);
+    } else {
+      setValidated(false);
+    }
+  }, [form]);
+
   return (
-    <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+    <Form
+      noValidate
+      validated={validated}
+      onSubmit={handleFormSubmit}
+      id="form-desiredJob"
+    >
       <div className="FormDesiredJob">
         <Form.Group as={Row}>
           <Col sm="12">
@@ -205,6 +228,26 @@ const FormDesiredJob = () => {
         </Form.Group>
         <br />
       </div>
+      {/* ////////////////////////////////////////////////////////////////// */}
+      {validated ? (
+        formButtons
+      ) : (
+        <>
+          <Form.Group as={Row}>
+            <Col md="6">
+              <Button type="submit" disabled className="btn-app btn-app--blue">
+                Atras
+              </Button>
+            </Col>
+            <Col md="6">
+              <Button type="submit" disabled className="btn-app btn-app--blue">
+                Finalizar
+              </Button>
+            </Col>
+          </Form.Group>
+        </>
+      )}
+      {/* ////////////////////////////////////////////////////////////////// */}
     </Form>
   );
 };
