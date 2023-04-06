@@ -6,10 +6,7 @@
   font-family: $font;
 
   &__container {
-    margin: 56px 120px 120px 0px;
-    padding: 0px 50px;
-    width: 590px;
-    height: 1007px;
+    padding: 20px 30px;
     border-radius: 16px;
     background: $blue-dark;
   }
@@ -18,7 +15,6 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 30px;
-    padding: 32px 0px 8px 0px;
   }
 
   &__text {
@@ -31,7 +27,6 @@
     &--check {
       margin: 4px 0px;
       font-weight: 300;
-
     }
   }
 
@@ -91,5 +86,4 @@
     list-style-type: none;
     padding: 0px;
   }
-
 }
