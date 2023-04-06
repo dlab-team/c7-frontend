@@ -12,7 +12,6 @@ const LayoutWorkProfile = () => {
             </div>
 
             <div className='modal-work-profile__form-display' >
-                <div  className='close-button'> X </div>
                 <div className='form__regiter' >
                     <FormController />
                 </div>

@@ -50,7 +50,7 @@ const FormView = () => {
                 <strong>Tiempo: 5-10 minutos</strong>
                 </p>
                 <button className="blueBtn" id="LayoutWorkProfile">
-                    <NavLink className="nav-link" to='/carrou'>¡POSTULAR!</NavLink>
+                    <NavLink className="nav-link" to='/carrousel'>¡POSTULAR!</NavLink>
                 </button>
             </div>
         </section>
