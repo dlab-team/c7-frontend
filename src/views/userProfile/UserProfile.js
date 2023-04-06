@@ -21,9 +21,6 @@ const UserProfile = () => {
                 </div>
                 <div className='user-profile__content'>
                     {menuRender[choice_selected]}
-                    {/*choice_selected === 'home' && <HomeUserProfile />}
-                    {choice_selected === 'perfil' && <PersonalProfile />}
-                    {choice_selected === 'test' && <TestProfile />} */}
                 </div>
             </section>
         </>
