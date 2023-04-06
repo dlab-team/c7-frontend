@@ -5,11 +5,10 @@ import { workplace } from "../../utils/FormWorkplace";
 import { workVisa } from "../../utils/FormWorkVisa";
 import { setFormData } from "../../utils/Redux/Slices/Form";
 import { useDispatch } from "react-redux";
-import './styles.scss';
+import "./styles.scss";
 
 const workVisaDefault = Array(workVisa.length).fill(false);
 const workAvailabilityDefault = Array(workAvailability.length).fill(false);
-const workplaceDefault = Array(workplace.length).fill(false);
 
 const initialFormState = {
   idealJobDescription: "",
@@ -22,8 +21,9 @@ const FormDesiredJob = () => {
   const [form, setForm] = useState(initialFormState);
   const [validated, setValidated] = useState(false);
   const [workVisaState, setWorkVisaState] = useState(workVisaDefault);
-  const [workAvailabilityState, setWorkAvailabilityState] = useState(workAvailabilityDefault);
-  const [workplaceState, setWorkplaceState] = useState(workplaceDefault);
+  const [workAvailabilityState, setWorkAvailabilityState] = useState(
+    workAvailabilityDefault
+  );
   const dispatch = useDispatch();
 
   const handleFormSubmit = (event) => {
@@ -38,7 +38,7 @@ const FormDesiredJob = () => {
 
   function isFormValid() {
     const workAvailabilityChecked = form.workAvailability.length === 1;
-    const workplaceSelected = form.workplace.value !== "";
+    const workplaceSelected = form.workplace !== "";
     const workVisaChecked = form.workVisa.checked;
     return workAvailabilityChecked && workplaceSelected && workVisaChecked;
   }
@@ -51,35 +51,25 @@ const FormDesiredJob = () => {
     setForm({
       ...form,
       workVisa: Array.from(
-        document.querySelectorAll("input[type=checkbox]:checked"),
+        document.querySelectorAll(
+          "input[type=checkbox].workvisa-checkbox:checked"
+        ),
         (e) => e.name
       ),
     });
   };
 
   const updateWorkAvailabilityState = (position) => {
-    const updatedworkAvailabilityState = workAvailabilityState.map((item, index) =>
-      index === position ? !item : item
+    const updatedworkAvailabilityState = workAvailabilityState.map(
+      (item, index) => (index === position ? !item : item)
     );
     setWorkAvailabilityState(updatedworkAvailabilityState);
     setForm({
       ...form,
       workAvailability: Array.from(
-        document.querySelectorAll("input[type=checkbox]:checked"),
-        (e) => e.name
-      ),
-    });
-  };
-
-  const updateWorkplaceState = (position) => {
-    const updatedworkplaceState = workplaceState.map((item, index) =>
-      index === position ? !item : item
-    );
-    setWorkplaceState(updatedworkplaceState);
-    setForm({
-      ...form,
-      workplace: Array.from(
-        document.querySelectorAll("input[type=checkbox]:checked"),
+        document.querySelectorAll(
+          "input[type=checkbox].workAvailability-checkbox:checked"
+        ),
         (e) => e.name
       ),
     });
@@ -98,118 +88,125 @@ const FormDesiredJob = () => {
   }, [dispatch, form]);
 
   return (
-<Form noValidate validated={validated} onSubmit={handleFormSubmit}>
-  <div className="FormDesiredJob">
-    <Form.Group as={Row}>
-      <Form.Label>
-        <span className="text">
-          Déjanos una breve descripción con respecto a tu trabajo ideal
-        </span>
-      </Form.Label>
-      <Form.Control
-        as="textarea"
-        rows={3}
-        size="sm"
-        onChange={handleFormUpdate}
-        name="idealJobDescription"
-        aria-describedby="cv"
-        value={form.idealJobDescription}
-      />
-    </Form.Group>
-    <br />
-
-    <Form.Group as={Row}>
-      <Col sm="4">
-        <Form.Label>
-          <span className="text">
-            Indícanos tu disponibilidad laboral:
-          </span>
-        </Form.Label>
-        {workAvailability.map(({ name, value }, index) => (
-          <div key={name}>
-            <Form.Check.Input
+    <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+      <div className="FormDesiredJob">
+        <Form.Group as={Row}>
+          <Col sm="12">
+            <Form.Label>
+              <span className="text">
+                Déjanos una breve descripción con respecto a tu trabajo ideal
+              </span>
+            </Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
               size="sm"
-              required={!isFormValid()}
-              className="workAvailability-checkbox"
-              type="checkbox"
-              id={`check-${name}`}
-              name={value}
-              feedback="Debes seleccionar al menos una opción."
-              feedbacktype="invalid"
-              checked={workAvailabilityState[index]}
-              onChange={() => updateWorkAvailabilityState(index)}
+              onChange={handleFormUpdate}
+              name="idealJobDescription"
+              value={form.idealJobDescription}
             />
-            <Form.Check.Label
-              className="text--sm"
-              htmlFor={`check-${name}`}
-            >
-              {name}
-            </Form.Check.Label>
-          </div>
-        ))}
-      </Col>
+          </Col>
+        </Form.Group>
+        <br />
 
-      <Col sm="4">
-        <Form.Label>
-          <span className="text">
-            ¿Qué describe mejor tu situación laboral?
-          </span>
-        </Form.Label>
-        {workplace.map(({ name, value }, index) => (
-          <div key={name}>
-          <Form.Check.Input
-            size="sm"
-            required={!isFormValid()}
-            type="radio"
-            id={`radio-${name}`}
-            name="workplace"
-            feedback="Debes seleccionar una opción."
-            feedbacktype="invalid"
-            checked={workplaceState[index]}
-            onChange={() => updateWorkplaceState(index)}
-          />
-          <Form.Check.Label
-            className="text--sm"
-            htmlFor={`radio-${name}`}
-          >
-            {name}
-          </Form.Check.Label>
-        </div>
-        ))}
-      </Col>
+        <Form.Group as={Row}>
+          <Col sm="7">
+            <Form.Label>
+              <span className="text">Indícanos tu disponibilidad laboral:</span>
+            </Form.Label>
+          </Col>
+          <Row sm="5">
+            {workAvailability.map(({ name, value }, index) => (
+              <div key={name}>
+                <Form.Check.Input
+                  size="sm"
+                  required={!isFormValid()}
+                  className="workAvailability-checkbox"
+                  type="checkbox"
+                  id={`check-${name}`}
+                  name={value}
+                  feedback="Debes seleccionar al menos una opción."
+                  feedbacktype="invalid"
+                  checked={workAvailabilityState[index]}
+                  onChange={() => updateWorkAvailabilityState(index)}
+                />
+                <Form.Check.Label
+                  className="text--sm"
+                  htmlFor={`check-${name}`}
+                >
+                  {name}
+                </Form.Check.Label>
+              </div>
+            ))}
+          </Row>
 
-      <Col sm="4">
-        <Form.Label>
-          <span className="text">
-            ¿Tienes algún tipo de visa para trabajar en el país donde se
-            encuentra la posición?
-          </span>
-        </Form.Label>
-        {workVisa.map(({ name, value }, index) => (
-          <div key={name}>
-            <Form.Check.Input
-              size="sm"
-              required={!isFormValid()}
-              className="workvisa-checkbox"
-              type="checkbox"
-              id={`check-${name}`}
-              name={value}
-              feedback="Debes seleccionar al menos una opción."
-              feedbacktype="invalid"
-              checked={workVisaState[index]}
-              onChange={() => updateWorkVisaState(index)}
-            />
-            <Form.Check.Label
-              className="text--sm"
-              htmlFor={`check-${name}`}
-            >
-              {name}
-            </Form.Check.Label>
-          </div>
-        ))}
-      </Col>
-    </Form.Group>
-  </div>
-</Form>)}
+          <Col sm="8">
+            <br />
+            <Form.Label>
+              <span className="text">
+                ¿Qué describe mejor tu situación laboral?
+              </span>
+            </Form.Label>
+            {workplace.map(({ name, value }) => (
+              <div key={name}>
+                <Form.Check.Input
+                  size="sm"
+                  required={!isFormValid()}
+                  type="radio"
+                  id={`radio-${name}`}
+                  name="workplace"
+                  feedback="Debes seleccionar una opción."
+                  feedbacktype="invalid"
+                  value={value}
+                  onChange={handleFormUpdate}
+                />
+                <Form.Check.Label
+                  className="text--xs"
+                  htmlFor={`radio-${name}`}
+                >
+                  {name}
+                </Form.Check.Label>
+              </div>
+            ))}
+          </Col>
+        </Form.Group>
+        <br />
+        <Form.Group as={Row}>
+          <Col sm="12">
+            <Form.Label>
+              <span className="text">
+                ¿Tienes algún tipo de visa para trabajar en el país donde se
+                encuentra la posición?
+              </span>
+            </Form.Label>
+            {workVisa.map(({ name, value }, index) => (
+              <div key={name}>
+                <Form.Check.Input
+                  size="sm"
+                  required={!isFormValid()}
+                  className="workvisa-checkbox"
+                  type="checkbox"
+                  id={`check-${name}`}
+                  name={value}
+                  feedback="Debes seleccionar al menos una opción."
+                  feedbacktype="invalid"
+                  checked={workVisaState[index]}
+                  onChange={() => updateWorkVisaState(index)}
+                />
+                <Form.Check.Label
+                  className="text--sm"
+                  htmlFor={`check-${name}`}
+                >
+                  {name}
+                </Form.Check.Label>
+              </div>
+            ))}
+          </Col>
+        </Form.Group>
+        <br />
+      </div>
+    </Form>
+  );
+};
 
 export default FormDesiredJob;

@@ -1,17 +1,27 @@
 @use "../../styles/App" as *;
 
-.FormWorkExperience {
+.FormDesiredJob {
   display: block;
+  margin-left: 12px;
 
   .text {
     color: $blue-dark;
     font-weight: 400;
     font-size: 20px;
+
     &--sm {
       color: $blue-dark;
       font-weight: 400;
       font-size: 16px;
       margin-left: 12px;
+
+    }
+    &--xs {
+      color: $blue-dark;
+      font-weight: 400;
+      font-size: 14px;
+      margin-left: 12px;
+      text-align: justify;
     }
   }
 }
