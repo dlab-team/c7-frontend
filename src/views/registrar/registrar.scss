@@ -17,7 +17,7 @@
   height: fit-content;
   background-color: #fff;
   border-radius: 25px;
-  padding: 10px;
+  padding: 10px 40px;
 
   display: flex;
   flex-direction: column;
@@ -33,8 +33,11 @@
   }
 
   &__form {
-    max-width: 750px;
+    width: 100%;
     font-size: 20px;
+    .form-group {
+      margin-bottom: 25px;
+    }
 
     .form__input {
       background: rgba(226, 242, 254, 1);
