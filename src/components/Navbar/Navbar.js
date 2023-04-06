@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from "react-router-dom";
 import logo from '../../assets/dev-imagotipo-white-horizontal.png';
-import './Navbar.scss';
 import { DoorOpen, List, X } from 'react-bootstrap-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from '../../utils/Redux/Slices/authDev';
+import './Navbar.scss';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar navbar-dark navbar-expand-lg">
-        <div className="container">
+        <div onClick={() => setIsOpen(!isOpen)} className="container">
           <Link className="navbar-brand mx-5" to='/'>
             <img src={logo} id="navbar-logo" alt="Logo" />
           </Link>
