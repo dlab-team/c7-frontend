@@ -11,7 +11,7 @@ const SectionHomeSystem = () => {
           <span>
             ¿Escasez de talento Senior? No te preocupes, en{" "}
             <span className="system__text--blue">Devsafio </span>encontrarás el
-            talento que necesitas en nuestro programa Mentorías.git 
+            talento que necesitas en nuestro programa Mentorías.git
           </span>
         </div>
         <div className="system__text">
@@ -30,8 +30,14 @@ const SectionHomeSystem = () => {
             acelerar y potenciar tu próximo Talento TI!
           </span>
         </div>
-        <button className="system__btn" href="/">
-          AGENDAR
+        <button className="system__btn">
+          <a
+            href="https://calendar.app.google/W8JSDD63GqKoJVBw6"
+            target="_blank"
+            rel="noreferrer"
+          >
+            AGENDAR
+          </a>
         </button>
       </div>
     </>
