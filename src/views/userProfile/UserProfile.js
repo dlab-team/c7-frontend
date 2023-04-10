@@ -1,9 +1,9 @@
 import './userProfile.scss'
 import React, { useState } from 'react'
-import MenuProfile from '../../components/menuProfiles/menuProfile'
-import HomeUserProfile from '../../components/homeProfile/homeProfile'
-import PersonalProfile from '../../components/personalProfile/personalProfile'
-import TestProfile from '../../components/testProfile/testProfile'
+import MenuProfile from '../../components/UserProfile/menuProfiles'
+import HomeUserProfile from '../../components/UserProfile/homeProfile'
+import PersonalProfile from '../../components/UserProfile/personalProfile'
+import TestProfile from '../../components/UserProfile/testProfile'
 
 const UserProfile = () => {
     const [choice_selected, setChoice] = useState('home')
