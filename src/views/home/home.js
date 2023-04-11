@@ -1,9 +1,9 @@
 import React from "react";
-import SectionSinJrsNoHaySrs from "../../components/SectionSinJrsNoHaySrs/index";
-import SectionHomeSystem from "../../components/Section_home_system/index.js";
-import Banner from "../../components/Banner/Banner.js";
-import BigBanner from "../../components/BigBanner/BigBanner.js";
-import ContactForm from "../../components/ContactForm/index.js";
+import SectionSinJrsNoHaySrs from "../../components/Home/SectionSinJrsNoHaySrs/index.js";
+import SectionHomeSystem from "../../components/Home/SectionHomeSystem/index.js";
+import Banner from "../../components/Home/Banner/index.js";
+import BigBanner from "../../components/Home/BigBanner/index.js";
+import ContactForm from "../../components/Home/ContactForm/index.js";
 
 const Ui_home = () => {
 
