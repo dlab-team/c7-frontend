@@ -3,27 +3,25 @@
 .indicators-container {
   position: absolute;
   top: 0;
-  opacity: 40%;
+  opacity: 80%;
   height: fit-content;
   transition: all 0.3s ease-in-out;
 
   .form-indicator {
-    background-color: $light-blue;
-    min-height: 8px;
-    width: 90%;
-    &:hover {
-      opacity: 100%;
-      transform: scale(1.05);
-    }
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $light-grey;
   }
 
   .active {
     background-color: $blue;
+    transform: scale(1.2);
   }
 
   &:hover {
     opacity: 100%;
-    transform: scale(1.05);
   }
 }
 .carousel-item {
