@@ -157,9 +157,6 @@ const InfoPersonalProfile = () => {
                     onChange={handleChange}
                     required
                   />
-                  <Form.Control.Feedback type="invalid">
-                    Por favor ingresa tu Nombre.
-                  </Form.Control.Feedback>
                 </Col>
                 <Col sm="4">
                   <Form.Label>
@@ -172,9 +169,6 @@ const InfoPersonalProfile = () => {
                     onChange={handleChange}
                     required
                   />
-                  <Form.Control.Feedback type="invalid">
-                    Por favor ingresa tu Apellido.
-                  </Form.Control.Feedback>
                 </Col>
 
                 <Col sm="4">
@@ -188,9 +182,6 @@ const InfoPersonalProfile = () => {
                     onChange={handleChange}
                     required
                   />
-                  <Form.Control.Feedback type="invalid">
-                    Por favor ingresa tu País.
-                  </Form.Control.Feedback>
                 </Col>
               </Form.Group>
 
@@ -206,9 +197,6 @@ const InfoPersonalProfile = () => {
                     onChange={handleChange}
                     required
                   />
-                  <Form.Control.Feedback type="invalid">
-                    Por favor ingresa tu Email.
-                  </Form.Control.Feedback>
                 </Col>
                 <Col sm="6">
                   <Form.Label>
@@ -221,9 +209,6 @@ const InfoPersonalProfile = () => {
                     onChange={handleChange}
                     required
                   />
-                  <Form.Control.Feedback type="invalid">
-                    Por favor ingresa tu Telefono.
-                  </Form.Control.Feedback>
                 </Col>
               </Form.Group>
 
@@ -243,7 +228,8 @@ const InfoPersonalProfile = () => {
                     onChange={handleChange}
                   />
                 </Col>
-
+              </Form.Group>
+              <Form.Group as={Row}>
                 <Col sm="2">
                   <Form.Label>
                     <span className="text--subject">
@@ -259,7 +245,9 @@ const InfoPersonalProfile = () => {
                     onChange={handleChange}
                   />
                 </Col>
+              </Form.Group>
 
+              <Form.Group as={Row}>
                 <Col sm="2">
                   <Form.Label>
                     <span className="text--subject">

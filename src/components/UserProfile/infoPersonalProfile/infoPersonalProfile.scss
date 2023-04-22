@@ -1,3 +1,5 @@
+@use "../../../styles/settings" as *;
+
 .user-info {
   display: flex;
   justify-content: space-between;
@@ -22,14 +24,17 @@
         margin-left: 25px;
       }
 
+      & input {
+        background-color: $light-blue;
+      }
     }
 
     .user-info__contact {
-        display: flex;
-        flex-wrap: wrap;
-         gap: 6vw;
-        align-items: center;
-        padding: 10px;
-      }
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6vw;
+      align-items: center;
+      padding: 10px;
+    }
   }
 }
