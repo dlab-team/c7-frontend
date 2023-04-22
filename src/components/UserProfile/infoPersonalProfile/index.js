@@ -280,12 +280,13 @@ const InfoPersonalProfile = () => {
           </div>
 
           <div className="d-flex justify-content-center mt-4">
-            <Button type="submit" className="btn btn-primary me-3">
+            <Button type="submit" className="btn btn-app btn-app--blue me-3">
               Guardar
             </Button>
             <Button
               type="button"
-              className="btn btn-outline-secondary"
+              variant="secondary"
+              className="btn btn-app btn-app--grey"
               onClick={handleCancel}
             >
               Cancelar
