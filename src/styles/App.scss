@@ -78,6 +78,13 @@
     }
   }
 
+  &--grey {
+    background-color: $light-grey;
+    &:hover {
+      background-color: $grey;
+    }
+  }
+
   &--white {
     background-color: $white;
     color: $blue;

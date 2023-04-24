@@ -8,6 +8,7 @@ import languagesReducer from "./Slices/Languages/index";
 import toolsReducer from "./Slices/Tools/index";
 import idealJob from "./Slices/IdealJob";
 import authDev from "./Slices/authDev";
+import userPersonalInfo from "./Slices/UserPersonalInfo";
 
 const store = configureStore({
   reducer: {
@@ -18,6 +19,7 @@ const store = configureStore({
     tools: toolsReducer,
     idealJob: idealJob,
     authDev:authDev,
+    userPersonalInfo:userPersonalInfo,
   },
 });
 
