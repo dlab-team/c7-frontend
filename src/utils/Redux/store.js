@@ -9,6 +9,7 @@ import toolsReducer from "./Slices/Tools/index";
 import idealJob from "./Slices/IdealJob";
 import authDev from "./Slices/authDev";
 import userPersonalInfo from "./Slices/UserPersonalInfo";
+import aviableWork from "./Slices/aviableWork";
 
 const store = configureStore({
   reducer: {
@@ -20,6 +21,7 @@ const store = configureStore({
     idealJob: idealJob,
     authDev:authDev,
     userPersonalInfo:userPersonalInfo,
+    aviableWork:aviableWork
   },
 });
 
