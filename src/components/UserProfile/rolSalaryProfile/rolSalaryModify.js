@@ -57,7 +57,8 @@ const RolSalaryModify = ({ showModal, handleShow }) => {
         <div className='rol-edit__english'>
             <hr />
             <div className='fs-4 mb-3'><Coin className='fs-5 me-3' />Cambiar expectativa de renta:</div>
-            <input className='form-control border-primary' type='number' onChange={updateSalary} value={form.salary} />
+            <input className='form-control border-primary' type='number' onChange={updateSalary}
+                defaultValue={form.salary} />
         </div>
     </div>
 
