@@ -4,10 +4,17 @@ import swal from 'sweetalert';
 import { softwareWorkExperience } from '../../../utils/contactFormSoftwareWorkExperience';
 import { englishLevels } from '../../../utils/EnglishLevels';
 import { Pencil } from 'react-bootstrap-icons';
+import { useDispatch, useSelector } from 'react-redux';
+import { setEnglishLevel } from '../../../utils/Redux/Slices/englishLevel';
+import { setLaboralExp } from '../../../utils/Redux/Slices/laboralExp';
 
 const ExperienceModifyModal = ({ showModal, handleShow }) => {
-    const initialState = {}//language: undefined, aviable_time: undefined
+    const initialState = {}//language: undefined, laboralExp: undefined
     const [form, setForm] = useState(initialState);
+    const dispatch = useDispatch()
+
+    const laboralExp = useSelector((store) => store.laboralExp.laboralExp)
+    const engLevel = useSelector((store) => store.englishLevel.englishLevel)
 
 
     const onFormUpdate = (e) => {
@@ -29,14 +36,16 @@ const ExperienceModifyModal = ({ showModal, handleShow }) => {
             {
                 softwareWorkExperience.map(({ name, value }) => {
                     return <div className='d-flex align-items-center' key={name + value}>
-                        <input
-                            type="radio" id={value}
-                            onClick={onFormUpdate}
-                            name="aviable_time"
-                            value={name}
-                            className='m-2'
-                        />
-                        <label htmlFor={value} >{name}</label>
+                        {(value !== laboralExp) && <>
+                            <input
+                                type="radio" id={value}
+                                onClick={onFormUpdate}
+                                name="laboralExp"
+                                value={name}
+                                className='m-2'
+                            />
+                            <label htmlFor={value} >{name}</label>
+                        </>}
                     </div>
                 })
             }
@@ -44,28 +53,44 @@ const ExperienceModifyModal = ({ showModal, handleShow }) => {
         <div className='experience-edit__english'>
             <hr />
             <div className='fs-4 mb-3'><Pencil className='fs-5 me-3' />Cambiar nivel de Inglés</div>
-            <select onChange={updateLang}>
-                <option value="" disabled hidden>
-                    Selecciona
+            <select className='form-control border-primary' onChange={updateLang}>
+                <option value="" selected>
+                    {engLevel}
                 </option>
                 {
-                    englishLevels.map(({ name, value }) => (
-                        <option key={name} value={value}>
-                            {name}
-                        </option>
-                    ))
+                    englishLevels.map(({ name, value }) => {
+                        return <>
+                            {(value !== engLevel) &&
+                                < option key={name} value={value}>
+                                    {name}
+                                </option >
+                            }
+                        </>
+                    }
+                    )
                 }
             </select>
         </div>
-    </div>
+    </div >
 
     const handleAcceptModal = () => {
-        if (form?.language || form?.aviable_time)
-            swal({
-                title: form.aviable_time || form.language,
-                text: "Experiencia laboral cambiada exitosamente!",
-                icon: "success",
-            });
+        let resp = [];
+
+        if (form?.language || form?.laboralExp)
+
+            if (form.language) {
+                dispatch(setEnglishLevel(form.language))
+                resp.push('Nivel Inglés')
+            }
+        if (form.laboralExp) {
+            dispatch(setLaboralExp(form.laboralExp))
+            resp.push('Exp. Laboral')
+        }
+        swal({
+            title: [...resp],
+            text: "modificado exitosamente!",
+            icon: "success",
+        });
         handleResetState()
         handleCloseModal()
     }
@@ -73,13 +98,12 @@ const ExperienceModifyModal = ({ showModal, handleShow }) => {
     const handleError = () => {
         swal({
             title: "Lo sentimos",
-            text: "Su experiencia laboral no pudo ser cambiada exitosamente!! Intente de nuevo",
+            text: "No pudo hacerce la modificación exitosamente!! Intente de nuevo",
             icon: "error",
         });
         handleCloseModal()
     }
-    console.log('form')
-    console.log(form)
+
     return (
         <ModalModify
             tittle={'Cambiar Experiencia Laboral'}

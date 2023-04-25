@@ -9,6 +9,8 @@ import toolsReducer from "./Slices/Tools/index";
 import idealJob from "./Slices/IdealJob";
 import authDev from "./Slices/authDev";
 import userPersonalInfo from "./Slices/UserPersonalInfo";
+import laboralExp from "./Slices/laboralExp";
+import englishLevel from "./Slices/englishLevel";
 
 const store = configureStore({
   reducer: {
@@ -18,8 +20,10 @@ const store = configureStore({
     languages: languagesReducer,
     tools: toolsReducer,
     idealJob: idealJob,
-    authDev:authDev,
-    userPersonalInfo:userPersonalInfo,
+    authDev: authDev,
+    userPersonalInfo: userPersonalInfo,
+    laboralExp: laboralExp,
+    englishLevel: englishLevel
   },
 });
 
