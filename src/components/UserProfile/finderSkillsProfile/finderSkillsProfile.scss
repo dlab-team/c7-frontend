@@ -2,18 +2,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  
+
   &__container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    .skills-button__item {
-      background: transparent;
-      border: 1px solid blue;
-      border-radius: 10px;
-      padding: 10px 10px;
-    }
+ 
   }
   &__find {
     width: 100%;

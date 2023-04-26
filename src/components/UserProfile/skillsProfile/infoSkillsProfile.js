@@ -18,7 +18,7 @@ const InfoSkillsProfile = () => {
                     <SkillsRenderSection category={'Experimentado'} skills={['Figma', 'Redux Toolkit/Quey', 'UI/UX', 'Jira', 'git/gitHub']} />
                     <SkillsRenderSection category={'Principiante'} skills={['TypeScript', 'Angular', 'postgreSQL', 'mySQL']} />
                 </div>
-                
+
             </div>
             <div>
                 <Pen className='ms-5 fs-6' style={{ cursor: 'pointer' }} />

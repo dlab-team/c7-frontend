@@ -1,0 +1,38 @@
+.skill {
+  background: transparent;
+  border: 1px solid blue;
+  border-radius: 10px;
+  padding: 10px 15px;
+  box-shadow: 1px 1px 4px rgba(blue, 0.2);
+  display: flex;
+  overflow: hidden;
+
+  &__favorite {
+    #star-fav {
+      z-index: 5;
+      transform: translateX(35px);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  .isFavorite {
+    #star-fav {
+      transform: translateX(10px);
+    }
+  }
+
+  &:hover {
+    #star-fav {
+      transform: translateX(10px);
+    }
+  }
+
+  svg#star-fav {
+    &:hover {
+      cursor: pointer;
+    }
+    &:active {
+      // transform: translateY(-1.1px)
+    }
+  }
+}

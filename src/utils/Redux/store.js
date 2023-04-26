@@ -18,8 +18,8 @@ const store = configureStore({
     languages: languagesReducer,
     tools: toolsReducer,
     idealJob: idealJob,
-    authDev:authDev,
-    userPersonalInfo:userPersonalInfo,
+    authDev: authDev,
+    userPersonalInfo: userPersonalInfo,
   },
 });
 

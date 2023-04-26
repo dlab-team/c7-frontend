@@ -9,8 +9,14 @@ const languagesSlice = createSlice({
     setLanguages: (state, action) => {
       state.languages = action.payload;
     },
+    setLangSelected: (state, action) => {
+      state.selecteds = action.payload;
+    },
+    setLangFavorites: (state, action) => {
+      state.favorites = action.payload;
+    }
   },
 });
 
-export const { setLanguages } = languagesSlice.actions;
+export const { setLanguages, setLangSelected, setLangFavorites } = languagesSlice.actions;
 export default languagesSlice.reducer;
