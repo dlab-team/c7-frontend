@@ -1,0 +1,31 @@
+.card-profile {
+  background-color: #e2f2fe;
+  border-radius: 1rem;
+  padding: 1rem;
+  border: none;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4);
+  width: 150px;
+  min-height: 180px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.6);
+  }
+  &__number {
+    padding: 4px 13px;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

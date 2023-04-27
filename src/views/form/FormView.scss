@@ -1,48 +1,13 @@
 .bigBox {
-    position: absolute;
-    width: 85%;
-    height: 90%;
-    left: 120px;
-    top: 60px;
-    background: rgba(20, 11, 52, 0.9);
-    border-radius: 16px;
-  }
-
-  .whiteText {
-    color: white;
-    padding: 10px;
-  }
-  
-  .blueBtn {
-    display: flex;
-    position: relative;
-    align-items: center;
-    background: white;
-    border-radius: 24px;
-    font-weight: 700;
-    line-height: 24px;
-    color: #2738f5;
-    width: 150px;
-    height: 60px;
-    background-color: blue;
-    border-radius: 10px;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 15px;
-    margin-left: 85%;
-    top: -120px;
-  }
-
-@media (max-width: 1199.98px) { 
-  .bigBox {
-  position: absolute;
   width: 85%;
-  height: 100%;
-  left: 120px;
-  top: 60px;
+  height: 90%;
+  left: 50%;
   background: rgba(20, 11, 52, 0.9);
   border-radius: 16px;
+  max-width: 1000px;
+  max-height: calc(100% - 160px);
+  padding: 25px;
+  margin: 20px;
 }
 
 .whiteText {
@@ -50,125 +15,6 @@
   padding: 10px;
 }
 
-.blueBtn {
-  display: flex;
-  position: relative;
-  align-items: center;
-  background: white;
-  border-radius: 24px;
-  font-weight: 700;
-  line-height: 24px;
-  color: #2738f5;
-  width: 150px;
-  height: 60px;
-  background-color: blue;
-  border-radius: 10px;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 15px;
-  margin-left: 85%;
-  top: -120px;
-}}
-
-@media (max-width: 1023px) { 
-  .bigBox {
-    position: absolute;
-    width: 80%;
-    height: 70%;
-    background: rgba(20, 11, 52, 0.9);
-    border-radius: 16px;
-  }
-
-  .whiteText {
-    color: white;
-    padding: 10px;
-  }
-
-  .blueBtn {
-    display: flex;
-    position: relative;
-    align-items: center;
-    background: white;
-    border-radius: 24px;
-    font-weight: 700;
-    line-height: 24px;
-    color: #2738f5;
-    width: 150px;
-    height: 60px;
-    background-color: blue;
-    border-radius: 10px;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 15px;
-    margin-left: 70%;
-    top: -120px;
-  }
-}
-
-//Pantallas pequeñas (móviles en landscape de menos de 768px)
-@media (max-width: 768px) {
-  .bigBox {
-    position: absolute;
-    width: 70%;
-    height: 100%;
-    background: rgba(20, 11, 52, 0.9);
-    border-radius: 16px;
-  }
-
-  .whiteText {
-    color: white;
-    padding: 10px;
-  }
-  .blueBtn {
-    display: block;
-    align-items: center;
-    background: white;
-    border-radius: 24px;
-    font-weight: 700;
-    line-height: 24px;
-    color: #2738f5;
-    width: 150px;
-    height: 60px;
-    background-color: blue;
-    border-radius: 10px;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-}
-//Pantallas muy pequeñas (móviles en portrait de menos de 576px)
-@media (max-width: 575.98px) {
-  .bigBox {
-    position: absolute;
-    width: 95%;
-    height: 1400px;
-    background: rgba(20, 11, 52, 0.9);
-    border-radius: 16px;
-  }
-  .whiteText {
-    color: white;
-    padding: 10px;
-  }
-
-  .blueBtn {
-    position:relative;
-    display: block;
-    align-items: center;
-    background: white;
-    border-radius: 24px;
-    font-weight: 700;
-    line-height: 24px;
-    color: #2738f5;
-    width: 150px;
-    height: 60px;
-    background-color: blue;
-    border-radius: 10px;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-    left: -150px;
-    top: 60px;
-  }
+.btn-postular {
+  right: 0px;
 }

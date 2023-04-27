@@ -1,0 +1,32 @@
+.cv-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__title {
+  }
+  &__cv {
+    display: flex;
+    flex-direction: row;
+    .cv-name {
+      color: blue;
+      margin-right: 10px;
+    }
+
+    .cv-selector {
+     
+      position: relative;
+      &__input {
+        position: absolute;
+        background-color: aqua;
+        opacity: 0;
+        right: 0;
+        cursor: pointer;
+      }
+    }
+
+    .profile-pen-edit {
+      margin-left: 2rem;
+      cursor: pointer;
+    }
+  }
+}

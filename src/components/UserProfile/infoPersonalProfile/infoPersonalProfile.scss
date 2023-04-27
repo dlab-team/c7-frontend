@@ -1,0 +1,40 @@
+@use "../../../styles/settings" as *;
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__data {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    .personal-data {
+      display: flex;
+      &__img {
+        border-radius: 50%;
+        max-width: 100px;
+        height: 100px;
+        padding: 5px;
+      }
+      &__name {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        margin-left: 25px;
+      }
+
+      & input {
+        background-color: $light-blue;
+      }
+    }
+
+    .user-info__contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6vw;
+      align-items: center;
+      padding: 10px;
+    }
+  }
+}

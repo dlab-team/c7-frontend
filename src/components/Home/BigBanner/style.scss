@@ -1,0 +1,57 @@
+.Big-Banner {
+  width: 100%;
+  min-height: 55rem;
+  background-image: url("../../../../src/assets/devBannerCirculos.svg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  justify-items: flex-end;
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    gap: 30px;
+    margin-left: 6vw;
+    position: relative;
+  }
+
+  &__image-container {
+    display: flex;
+    align-items: end;
+    .image {
+      img {
+        width: 44vw;
+        min-width: 30rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .Big-Banner {
+    flex-wrap: wrap;
+
+    &__article {
+      z-index: 1;
+      gap: 1vw;
+      margin-top: 5px;
+      width: 90%;
+      text-align: center;
+      align-items: center;
+    }
+
+    &__image-container {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      .image {
+        position: absolute;
+        img {
+          opacity: 70%;
+        }
+      }
+    }
+  }
+}
