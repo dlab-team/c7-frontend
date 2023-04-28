@@ -3,7 +3,7 @@ import { Pen } from 'react-bootstrap-icons'
 import './genericProfileSection.scss'
 
 
-export const GenericProfileSection = ({ IconTitle, titleSection = 'Titulo generico', nameJob = 'Skills', description = 'javaScript, php, c/c++' }) => {
+export const GenericProfileSection = ({ IconTitle, titleSection = 'Titulo generico', nameJob = 'Skills', description = 'javaScript, php, c/c++' , handleEdit = ()=> alert(123)}) => {
 
     return <>
         <section className='generic-profile'>
@@ -20,7 +20,7 @@ export const GenericProfileSection = ({ IconTitle, titleSection = 'Titulo generi
                 </div>
 
                 <div>
-                    <Pen className='ms-5 fs-6' style={{ cursor: 'pointer' }} />
+                    <Pen onClick={handleEdit} className='ms-5 fs-6' style={{ cursor: 'pointer' }} />
                 </div>
             </div>
 
