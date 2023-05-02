@@ -1,3 +1,6 @@
+// @use "../../../styles/App" as *;
+@use "../../../styles/App.scss" as *;
+
 .skills-profile {
   display: flex;
   justify-content: space-between;
@@ -15,7 +18,6 @@
       flex-direction: column;
       gap: 20px;
       &__item {
-
         .all-skills__skill-x {
           background-color: transparent;
           border: 1px solid blue;
@@ -26,4 +28,95 @@
       }
     }
   }
+}
+
+// .editLanguage {
+//   color: $blue-dark;
+
+//   &__title {
+//     font-size: 20px;
+//     line-height: 30px;
+//     font-weight: 600;
+//   }
+
+//   &__text {
+//     font-size: 20px;
+//     line-height: 30px;
+//     font-weight: 400;
+
+//     &--b {
+//       font-size: 20px;
+//       line-height: 30px;
+//       font-weight: 600;
+//     }
+//     &--list {
+//       font-size: 16px;
+//       font-weight: 600;
+//       margin-bottom: 0px;
+//       line-height: 0px;
+//       margin-left: 5px;
+//     }
+//   }
+
+//   .icon {
+//     font-size: 20px;
+//     line-height: 0px;
+//   }
+
+//   .row {
+//     align-items: center;
+//     align-content: center;
+//   }
+
+//   .dropdown-menu {
+//     max-height: 265px;
+//     overflow-y: auto;
+//   }
+
+//   textarea:focus {
+//     background-color: $light-blue;
+//   }
+
+//   .list-group {
+//     list-style-type: none;
+//     max-height: 120px;
+//     margin-left: 15px;
+//     margin-bottom: 15px;
+//     width: 760px;
+//     overflow-y: auto;
+//     overflow-x: hidden;
+//     gap: 0px;
+
+//     &-item {
+//       padding: 0px 0px;
+//       background-color: $light-blue;
+//     }
+//   }
+
+//   .form-check {
+//     margin-bottom: 0px;
+
+//     &-label {
+//       font-size: 18px;
+//     }
+//   }
+
+//   .btn {
+//     &-app {
+//       margin-left: 12px;
+//     }
+//     &-danger {
+//       margin-left: auto;
+//     }
+//   }
+// }
+
+.skill-no-category {
+  background-color: rgba($light-blue-dark, 0.7);
+  background: linear-gradient(
+    90deg,
+    rgba($light-blue-dark, .2) 0%,
+    rgba($light-blue-dark, 0) 80%
+  );
+  color: $blue-dark;
 }
