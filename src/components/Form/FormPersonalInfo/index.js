@@ -137,6 +137,7 @@ const FormInfoPersonal = ({formButtons}) => {
               required
               onChange={onFormUpdate}
               name="email"
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
             />
             <Form.Control.Feedback type="invalid">
               Por favor ingresa un Email valido.
