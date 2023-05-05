@@ -54,18 +54,18 @@ const ExperienceModifyModal = ({ showModal, handleShow }) => {
             <hr />
             <div className='fs-4 mb-3'><Pencil className='fs-5 me-3' />Cambiar nivel de Inglés</div>
             <select className='form-control border-primary' onChange={updateLang}>
-                <option value="" selected>
+                <option value="default" defaultChecked={engLevel}>
                     {engLevel}
                 </option>
                 {
                     englishLevels.map(({ name, value }) => {
-                        return <>
+                        return <React.Fragment key={name + value} >
                             {(value !== engLevel) &&
-                                < option key={name} value={value}>
+                                <option value={value}>
                                     {name}
                                 </option >
                             }
-                        </>
+                        </React.Fragment>
                     }
                     )
                 }

@@ -2,31 +2,43 @@ import React, { useState } from 'react'
 import ModalModify from '../modalModify/ModalModify'
 import { workAvailability as currentAviabile } from '../../../utils/FormWorkAvailability';
 import swal from 'sweetalert';
+import { useDispatch, useSelector } from 'react-redux';
+import { setAvibility } from '../../../utils/Redux/Slices/aviableWork';
 
 const AviableModifyModal = ({ showModal, handleShow }) => {
     const [selected, setSelected] = useState('');
 
+    const aviableWork = useSelector((store) => store.aviableWork.aviable)
+    const dispatch = useDispatch()
     const handleCloseModal = () => handleShow(false);
 
+
     const bodyM = currentAviabile.map(({ name, value }) => {
-        return <div className='d-flex align-items-center' key={name + value}>
-            <input
-                type="radio" id={value}
-                onClick={() => setSelected(value)}
-                name="aviable_time"
-                value={name}
-                className='m-2'
-            />
-            <label htmlFor={value} >{name}</label>
+        return <div key={name} className='d-flex align-items-center'>
+            {(aviableWork !== name) && <>
+                < input
+                    type="radio" id={value}
+                    onClick={() => setSelected(value)}
+                    name="aviable_time"
+                    value={name}
+                    className='m-2'
+                    key={name + value}
+                />
+                <label htmlFor={value} >{name}</label>
+            </>
+            }
         </div>
     })
 
     const handleAcceptModal = () => {
-        swal({
-            title: selected,
-            text: "Disponbibilidad cambiada exitosamente!",
-            icon: "success",
-        });
+        if (selected) {
+            dispatch(setAvibility(selected))
+            swal({
+                title: selected,
+                text: "Disponbibilidad cambiada exitosamente!",
+                icon: "success",
+            });
+        }
         handleCloseModal()
     }
 
