@@ -12,6 +12,8 @@ import userPersonalInfo from "./Slices/UserPersonalInfo";
 import aviableWork from "./Slices/aviableWork";
 import laboralExp from "./Slices/laboralExp";
 import englishLevel from "./Slices/englishLevel";
+import rolSlice from "./Slices/rolSlice";
+import salarySlice from "./Slices/salarySlice";
 
 export const store = configureStore({
   reducer: {
@@ -23,6 +25,8 @@ export const store = configureStore({
     idealJob: idealJob,
     authDev:authDev,
     userPersonalInfo:userPersonalInfo,
+    rolDevelop:rolSlice,
+    salaryExpectative:salarySlice,
     aviableWork:aviableWork,
     laboralExp: laboralExp,
     englishLevel: englishLevel
