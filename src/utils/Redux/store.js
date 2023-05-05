@@ -29,7 +29,7 @@ export const store = configureStore({
     salaryExpectative:salarySlice,
     aviableWork:aviableWork,
     laboralExp: laboralExp,
-    englishLevel: englishLevel
+    englishLevel: englishLevel,
   },
 });
 
