@@ -3,7 +3,7 @@ import { CloudUpload, Pen } from 'react-bootstrap-icons'
 import './cvProfile.scss'
 
 const CvProfile = () => {
-    const initial_cv = 'ejemploCv.pdf'
+    const initial_cv = 'mi curriculum.pdf'
     const [pdfSelection, setPdfSelection] = useState(initial_cv)
 
     const handleImportingCv = (e) => {
