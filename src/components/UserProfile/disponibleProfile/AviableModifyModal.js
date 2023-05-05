@@ -14,7 +14,7 @@ const AviableModifyModal = ({ showModal, handleShow }) => {
 
 
     const bodyM = currentAviabile.map(({ name, value }) => {
-        return <div className='d-flex align-items-center' key={name + value}>
+        return <div key={name} className='d-flex align-items-center'>
             {(aviableWork !== name) && <>
                 < input
                     type="radio" id={value}
@@ -22,6 +22,7 @@ const AviableModifyModal = ({ showModal, handleShow }) => {
                     name="aviable_time"
                     value={name}
                     className='m-2'
+                    key={name + value}
                 />
                 <label htmlFor={value} >{name}</label>
             </>

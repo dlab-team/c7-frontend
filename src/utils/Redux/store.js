@@ -10,8 +10,10 @@ import idealJob from "./Slices/IdealJob";
 import authDev from "./Slices/authDev";
 import userPersonalInfo from "./Slices/UserPersonalInfo";
 import aviableWork from "./Slices/aviableWork";
+import laboralExp from "./Slices/laboralExp";
+import englishLevel from "./Slices/englishLevel";
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     categories: categoriesReducer,
     formData: formReducer,
@@ -21,8 +23,10 @@ const store = configureStore({
     idealJob: idealJob,
     authDev:authDev,
     userPersonalInfo:userPersonalInfo,
-    aviableWork:aviableWork
+    aviableWork:aviableWork,
+    laboralExp: laboralExp,
+    englishLevel: englishLevel
   },
 });
 
-export default store;
+export default store
