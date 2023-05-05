@@ -1,0 +1,17 @@
+@forward "../../../styles/App.scss";
+@use "../../../styles/App.scss" as *;
+.modal {
+  .modal-dialog {
+    .modal-content {
+      //   background-color: aqua !important;
+      overflow: hidden;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        background-color: rgb($light-blue-dark,0.8);
+      }
+    }
+  }
+}

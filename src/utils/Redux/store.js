@@ -9,8 +9,13 @@ import toolsReducer from "./Slices/Tools/index";
 import idealJob from "./Slices/IdealJob";
 import authDev from "./Slices/authDev";
 import userPersonalInfo from "./Slices/UserPersonalInfo";
+import aviableWork from "./Slices/aviableWork";
+import laboralExp from "./Slices/laboralExp";
+import englishLevel from "./Slices/englishLevel";
+import rolSlice from "./Slices/rolSlice";
+import salarySlice from "./Slices/salarySlice";
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     categories: categoriesReducer,
     formData: formReducer,
@@ -18,9 +23,14 @@ const store = configureStore({
     languages: languagesReducer,
     tools: toolsReducer,
     idealJob: idealJob,
-    authDev: authDev,
-    userPersonalInfo: userPersonalInfo,
+    authDev:authDev,
+    userPersonalInfo:userPersonalInfo,
+    rolDevelop:rolSlice,
+    salaryExpectative:salarySlice,
+    aviableWork:aviableWork,
+    laboralExp: laboralExp,
+    englishLevel: englishLevel,
   },
 });
 
-export default store;
+export default store

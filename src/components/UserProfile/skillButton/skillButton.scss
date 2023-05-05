@@ -5,6 +5,7 @@
   padding: 10px 15px;
   box-shadow: 1px 1px 4px rgba(blue, 0.2);
   display: flex;
+  max-width: fit-content;
   overflow: hidden;
 
   &__favorite {

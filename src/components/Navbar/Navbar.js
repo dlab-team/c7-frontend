@@ -46,7 +46,7 @@ export default function Navbar() {
               {
                 isLoggedIn && <>
                   <li className="nav-item">
-                    <>¡Bienvenido {userName}.!</>
+                    <>¡Bienvenido {userName}!</>
                   </li>
 
                   {(userType === 'admin')
