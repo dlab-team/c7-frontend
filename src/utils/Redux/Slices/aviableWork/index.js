@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {}
+const initialState = {
+    aviable: [],
+}
 
 const aviableWorkSlice = createSlice({
     name: "aviableWork",
