@@ -7,6 +7,13 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../../utils/Redux/Slices/authDev";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
+import { setPersonalInfo } from "../../utils/Redux/Slices/UserPersonalInfo";
+import { setAvibility } from "../../utils/Redux/Slices/aviableWork";
+import { setLanguages } from "../../utils/Redux/Slices/Languages";
+import { setLaboralExp } from "../../utils/Redux/Slices/laboralExp";
+import { setEnglishLevel } from "../../utils/Redux/Slices/englishLevel";
+import { setSalaryExpectative } from "../../utils/Redux/Slices/salarySlice";
+import { setRol } from "../../utils/Redux/Slices/rolSlice";
 
 const formDefault = { email: "", password: "" };
 
@@ -77,6 +84,78 @@ const UiLoginEmail = () => {
       });
   }
 
+
+  //--------MANEJA EL MOCK USUARIO DE PRUEBA ALEX----//
+
+  const handleUserMock = () => {
+    // const rolDeveloper = useSelector((store) => store.rolDevelop.rol)
+    // const salaryExp = useSelector((store) => store.salaryExpectative.salaryExp)
+
+
+
+    const alexPersonalInfo = {
+      name: "Alex",
+      lastName: "Fernandez",
+      country: "Chile",
+      email: "alexfernand@gmail.com",
+      phone: "+1 652 687 452",
+      linkedInLink: "https://www.linkedin.com/li/alexfernandez",
+      gitHubLink: "https://www.github.com/git/alexfernandez",
+      portfolioLink: "zzz.alexfernandez.com",
+    }
+    const languages = [{
+      name: "Python",
+      value: 1,
+    },
+    {
+      name: "JavaScript",
+      value: 3,
+    },
+    {
+      name: "HTML/CSS",
+      value: 3,
+    },
+    {
+      name: "Java",
+      value: 1,
+    },
+    {
+      name: "PHP",
+      value: 1,
+    },
+    {
+      name: "Ruby",
+      value: 2,
+    },
+    {
+      name: "Scala, Perl y/o Go",
+      value: 2,
+    },
+    {
+      name: "C/C++",
+      value: 1,
+    }]
+
+    const experienciaLaboral = 'Entre 2 a 3 años de experiencia laboral'
+    const disponibilidad = 'Part Time'
+    const rol = 'Full Stack'
+    const lvlEnglish = 'Avanzado2'
+    const salarioDefault = 1300000
+    const educacionList = '';
+
+    dispatch(setPersonalInfo(alexPersonalInfo))
+
+    dispatch(setLaboralExp(experienciaLaboral))
+    dispatch(setEnglishLevel(lvlEnglish))
+
+    dispatch(setAvibility(disponibilidad))
+
+    dispatch(setSalaryExpectative(salarioDefault))
+    dispatch(setRol(rol))
+    dispatch(setLanguages([...languages]))
+    // const skill
+  }
+
   //--------MANEJA LA VISIBILIDAD DE LA CONTRASEÑA----//
   const handleTogglePassword = (e) => {
     e.preventDefault();
@@ -90,6 +169,7 @@ const UiLoginEmail = () => {
         mail: user,
         rol: 'user'
       }))
+      handleUserMock();
       return true;
     }
     if (user === 'usuario@devsafio.com' && pass === 'user') {
@@ -112,10 +192,6 @@ const UiLoginEmail = () => {
 
     return false;
   }
-
-  useEffect(() => {
-    // console.log(form);
-  }, [form]);
 
   return (
     <>
