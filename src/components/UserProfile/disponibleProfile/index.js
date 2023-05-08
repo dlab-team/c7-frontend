@@ -8,14 +8,14 @@ const DisponibleProfile = () => {
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
     const aviableWork = useSelector((store) => store.aviableWork.aviable)
-
+    const aviabilityString = ' ' + [...aviableWork]
     return (
         <>
             <GenericProfileSection
                 IconTitle={Calendar2Check}
                 titleSection='Disponibilidad'
-                nameJob={aviableWork || 'No definida'}
-                description=' '
+                nameJob={aviabilityString || 'No definida'}
+                description=''
                 handleEdit={() => handleShow()}
             />
             <AviableModifyModal showModal={show} handleShow={setShow} />

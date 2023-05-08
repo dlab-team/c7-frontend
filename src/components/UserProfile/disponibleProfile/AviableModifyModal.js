@@ -6,31 +6,40 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setAvibility } from '../../../utils/Redux/Slices/aviableWork';
 
 const AviableModifyModal = ({ showModal, handleShow }) => {
-    const [selected, setSelected] = useState('');
-
     const aviableWork = useSelector((store) => store.aviableWork.aviable)
+    const [selected, setSelected] = useState(aviableWork);
+
     const dispatch = useDispatch()
     const handleCloseModal = () => handleShow(false);
 
 
+    const addOrRemove = (arr, item) => arr.includes(item) ? arr.filter(i => i !== item) : [...arr, item];
+
+    const handleChangeAviableWork = (aviability) => {
+        setSelected(addOrRemove(selected, aviability))
+    }
+
     const bodyM = currentAviabile.map(({ name, value }) => {
         return <div key={name} className='d-flex align-items-center'>
-            {(aviableWork !== name) && <>
-                < input
-                    type="radio" id={value}
-                    onClick={() => setSelected(value)}
-                    name="aviable_time"
-                    value={name}
-                    className='m-2'
-                    key={name + value}
-                />
-                <label htmlFor={value} >{name}</label>
-            </>
+            {
+                <>
+                    < input
+                        type="checkbox" id={value}
+                        onChange={() => handleChangeAviableWork(value)}
+                        name="aviable_time"
+                        value={name}
+                        className='m-2'
+                        key={name + value}
+                        defaultChecked={selected.includes(value)}
+                    />
+                    <label htmlFor={value} >{name}</label>
+                </>
             }
-        </div>
+        </div >
     })
 
     const handleAcceptModal = () => {
+        
         if (selected) {
             dispatch(setAvibility(selected))
             swal({
@@ -39,6 +48,7 @@ const AviableModifyModal = ({ showModal, handleShow }) => {
                 icon: "success",
             });
         }
+
         handleCloseModal()
     }
 
