@@ -14,6 +14,7 @@ import { setLaboralExp } from "../../utils/Redux/Slices/laboralExp";
 import { setEnglishLevel } from "../../utils/Redux/Slices/englishLevel";
 import { setSalaryExpectative } from "../../utils/Redux/Slices/salarySlice";
 import { setRol } from "../../utils/Redux/Slices/rolSlice";
+import { useAuth } from "../../utils/firebase/useAuth";
 
 const formDefault = { email: "", password: "" };
 
@@ -23,6 +24,7 @@ const UiLoginEmail = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate()
   const dispatch = useDispatch()
+
 
   //ACTUALIZA EL CUADRO DE TEXTO
   const onFormUpdate = (e) => {
