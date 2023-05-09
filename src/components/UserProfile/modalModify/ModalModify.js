@@ -4,6 +4,14 @@ import './modalModify.scss'
 
 const ModalModify = ({ show = false, tittle = '', modalBody, handleOk, handleClose = false, isLoading = false, btnCancel = 'Cancelar', btnOk = 'Cambiar', handleError }) => {
     if (!show) return;
+    const handleAcceptDispatch = () => {
+        try {
+            handleOk()
+        } catch (error) {
+            handleError();
+        }
+    }
+
     return (<div id='modalModify'>
         <Modal centered show={show} onHide={handleClose}>
             <Modal.Header closeButton>
@@ -26,7 +34,7 @@ const ModalModify = ({ show = false, tittle = '', modalBody, handleOk, handleClo
                 <Button variant="secondary" onClick={handleClose}>
                     {btnCancel}
                 </Button>
-                <Button variant="primary" onClick={handleOk}>
+                <Button variant="primary" onClick={handleAcceptDispatch}>
                     {btnOk}
                 </Button>
             </Modal.Footer>
@@ -34,5 +42,6 @@ const ModalModify = ({ show = false, tittle = '', modalBody, handleOk, handleClo
     </div>
     )
 }
+
 
 export default ModalModify

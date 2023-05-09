@@ -139,7 +139,7 @@ const UiLoginEmail = () => {
     }]
 
     const experienciaLaboral = 'Entre 2 a 3 años de experiencia laboral'
-    const disponibilidad = 'Part Time'
+    const disponibilidad = ['Part Time']
     const rol = 'Full Stack'
     const lvlEnglish = 'Avanzado2'
     const salarioDefault = 1300000
