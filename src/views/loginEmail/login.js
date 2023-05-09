@@ -103,7 +103,7 @@ const UiLoginEmail = () => {
       phone: "+1 652 687 452",
       linkedInLink: "https://www.linkedin.com/li/alexfernandez",
       gitHubLink: "https://www.github.com/git/alexfernandez",
-      portfolioLink: "zzz.alexfernandez.com",
+      portfolioLink: "www.alexfernandez132456.com",
     }
     const languages = [{
       name: "Python",
