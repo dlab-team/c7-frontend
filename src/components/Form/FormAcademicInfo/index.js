@@ -1,14 +1,16 @@
 import "./style.scss";
 import { Form, Col, Row, Button } from "react-bootstrap";
+
 import React, { useState } from "react";
 import { englishLevels } from "../../../utils/EnglishLevels";
-import { instituteType } from "../../../utils/instituteType";
 import { maxEducation } from "../../../utils/maxEducation";
 import { educationalSituation } from "../../../utils/educationalSituation";
 //REDUX
 import { setFormData } from "../../../utils/Redux/Slices/Form";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+
+import academicForm from "./form";
 
 const formDefault = {
   maxEducationLevel: "",
@@ -39,16 +41,6 @@ const FormInfoPersonal = ({ formButtons }) => {
   useEffect(() => {
     dispatch(setFormData(form));
   }, [form, dispatch]);
-
-  //--------MANEJA EL ENVIO DE FORMULARIO----//
-  // const handleSubmit = (event) => {
-  //   const form = event.currentTarget;
-  //   if (form.checkValidity() === false) {
-  //     event.preventDefault();
-  //     event.stopPropagation();
-  //   }
-  //   setValidated(true);
-  // };
 
   //--------MANEJO DE VALIDACIONES-----//
   useEffect(() => {
@@ -131,8 +123,10 @@ const FormInfoPersonal = ({ formButtons }) => {
           </div>
         </Form.Group>
 
-        {academicForm(onFormUpdate, 1)}
-        {academicForm(onFormUpdate, 2)}
+        <div>
+          {academicForm(onFormUpdate, 1)}
+          {academicForm(onFormUpdate, 2)}
+        </div>
 
         <Col sm="12">
           <Form.Label>
@@ -187,77 +181,4 @@ const FormInfoPersonal = ({ formButtons }) => {
   );
 };
 
-const academicForm = (onFormUpdate, id) => {
-  return (
-    <>
-      <Form.Group as={Row}>
-        <Col sm="12">
-          <Form.Label>
-            <span className="text">
-              Nombre de la carrera, curso, bootcamp o certificación:{" "}
-              <span className="red">*</span>
-            </span>
-          </Form.Label>
-          <Form.Control
-            size="sm"
-            type="text"
-            required
-            onChange={onFormUpdate}
-            name={`carrera_${id}`}
-          />
-          <Form.Control.Feedback type="invalid">
-            Por favor ingresa el Nombre de la carrera, curso, bootcamp o
-            certificación.
-          </Form.Control.Feedback>
-        </Col>
-      </Form.Group>
-
-      <Form.Group as={Row}>
-        <Col sm="6" md="6" xl="8">
-          <Form.Label>
-            <span className="text">
-              Nombre institución: <span className="red">*</span>
-            </span>
-          </Form.Label>
-          <Form.Control
-            size="sm"
-            type="text"
-            required
-            onChange={onFormUpdate}
-            name={`nombre_${id}`}
-          />
-          <Form.Control.Feedback type="invalid">
-            Por favor ingresa el Nombre de la institución.
-          </Form.Control.Feedback>
-        </Col>
-        <Col sm="6" md="6" xl="4">
-          <Form.Label>
-            <span className="text">
-              Tipo de institución: <span className="red">*</span>
-            </span>
-          </Form.Label>
-          <Form.Select
-            required
-            defaultValue=""
-            size="sm"
-            onChange={onFormUpdate}
-            name={`type_${id}`}
-          >
-            <option value="" disabled hidden>
-              Selecciona
-            </option>
-            {instituteType.map(({ name, value }) => (
-              <option key={name} value={value}>
-                {name}
-              </option>
-            ))}
-          </Form.Select>
-          <Form.Control.Feedback type="invalid">
-            Por favor selecciona tu tipo de institución.
-          </Form.Control.Feedback>
-        </Col>
-      </Form.Group>
-    </>
-  );
-};
 export default FormInfoPersonal;
