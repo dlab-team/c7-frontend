@@ -10,6 +10,7 @@ const initialState = {
     linkedInLink: "https://www.linkedin.com",
     gitHubLink: "",
     portfolioLink: "",
+    photo: ""
   },
 };
 
@@ -26,6 +27,7 @@ const userPersonalInfo = createSlice({
       state.user.linkedInLink = action.payload.linkedInLink;
       state.user.gitHubLink = action.payload.gitHubLink;
       state.user.portfolioLink = action.payload.portfolioLink;
+      state.user.photo = action.payload.photo || '';
       return state;
     },
     setDefaultPersonalInfo: (state) => {

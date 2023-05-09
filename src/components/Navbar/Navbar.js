@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, Navigate, useNavigate } from "react-router-dom";
 import logo from '../../assets/dev-imagotipo-white-horizontal.png';
 import { DoorOpen, List, X } from 'react-bootstrap-icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { logOut } from '../../utils/Redux/Slices/authDev';
 import './Navbar.scss';
+import { useAuth } from '../../utils/firebase/useAuth';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch()
-
+  const { logOutAuth } = useAuth()
   const { isLoggedIn, rol: userType, user } = useSelector(store => store.authDev)
   const { userName } = user
-  
-  const handleLogOut = () => {
-    dispatch(logOut())
+  const navigate = useNavigate();
+
+  const handleLogOut = async () => {
+    await logOutAuth()
+    navigate('/')
   }
 
   return (
