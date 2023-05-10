@@ -26,7 +26,7 @@ import { useDispatch } from "react-redux";
 
 const formDefault = { languages: [], frameworks: [], tools: [], message: "" };
 
-export default function FormWorkProfile({ formButtons }) {
+export default function FormWorkProfile({ formButtons, setProgress }) {
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState(formDefault);
   const [list, setList] = useState([]);
@@ -138,8 +138,12 @@ export default function FormWorkProfile({ formButtons }) {
     const form = document.getElementById("form-workProfile");
     if (form.checkValidity() === true && allChecksWithLvlSelected()) {
       setValidated(true);
+      if (list.length !== 0) {
+        setProgress(60);
+      }
     } else {
       setValidated(false);
+      setProgress(40);
     }
   }, [form]);
 

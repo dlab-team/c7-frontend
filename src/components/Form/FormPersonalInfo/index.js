@@ -21,11 +21,12 @@ const formDefault = {
 };
 const categoriesDefault = new Array(categories.length).fill(false);
 
-const FormInfoPersonal = ({formButtons}) => {
+const FormInfoPersonal = ({formButtons, setProgress}) => {
   const [form, setForm] = useState(formDefault);
   const [validated, setValidated] = useState(false);
   const [categoriesState, setCategoriesState] = useState(categoriesDefault);
   const dispatch = useDispatch();
+  
 
   //--------ACTUALIZO EL FORM DEL STATE-----//
   const onFormUpdate = (e) => {
@@ -48,16 +49,6 @@ const FormInfoPersonal = ({formButtons}) => {
     return checkboxes.reduce((acc, curr) => acc || curr.checked, false);
   }
 
-  //--------MANEJA EL ENVIO DE FORMULARIO----//
-  // const handleSubmit = (event) => {
-  //   const form = event.currentTarget;
-  //   if (form.checkValidity() === false) {
-  //     event.preventDefault();
-  //     event.stopPropagation();
-  //   }
-  //   setValidated(true);
-  // };
-
   //--------GUARDA LOS CHECKS EN EL FORM----//
   const categoriesUpdate = (position) => {
     const updatedcategoriesState = categoriesState.map((item, index) =>
@@ -78,9 +69,11 @@ const FormInfoPersonal = ({formButtons}) => {
     const form = document.getElementById("form-personal");
     if (form.checkValidity() === true) {
       setValidated(true);
+      setProgress(20);
     }
     else{
       setValidated(false);
+      setProgress(0);
     }
   }, [form]);
 

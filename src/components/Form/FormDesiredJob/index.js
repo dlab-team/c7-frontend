@@ -17,7 +17,7 @@ const initialFormState = {
   workVisa: [],
 };
 
-const FormDesiredJob = ({ formButtons }) => {
+const FormDesiredJob = ({ formButtons, setProgress }) => {
   const [form, setForm] = useState(initialFormState);
   const [validated, setValidated] = useState(false);
   const [workVisaState, setWorkVisaState] = useState(workVisaDefault);
@@ -94,6 +94,7 @@ const FormDesiredJob = ({ formButtons }) => {
     const form = document.getElementById("form-desiredJob");
     if (form.checkValidity() === true && isFormValid()) {
       setValidated(true);
+      setProgress(100);
     } else {
       setValidated(false);
     }

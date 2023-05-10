@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./FormController.scss";
 import FormInfoPersonal from "../FormPersonalInfo";
 import FormInfoAcademica from "../FormAcademicInfo";
@@ -8,8 +8,11 @@ import FormDesiredJob from "../FormDesiredJob";
 import swal from "sweetalert";
 import { useNavigate } from "react-router";
 
+import ProgressBar from "react-bootstrap/ProgressBar";
+
 const FormController = () => {
   const navigate = useNavigate();
+  const [progress, setProgress] = useState(0);
 
   const handleSubmit = () => {
     swal("Sus datos han sido guardados exitosamente...", {
@@ -68,6 +71,7 @@ const FormController = () => {
         {/* botones navegacion de la parte de arriba */}
         <div className="carousel-indicators indicators-container">
           <button
+            disabled
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide-to="0"
@@ -77,6 +81,7 @@ const FormController = () => {
           ></button>
 
           <button
+            disabled
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide-to="1"
@@ -85,6 +90,7 @@ const FormController = () => {
           ></button>
 
           <button
+            disabled
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide-to="2"
@@ -93,6 +99,7 @@ const FormController = () => {
           ></button>
 
           <button
+            disabled
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide-to="3"
@@ -101,6 +108,7 @@ const FormController = () => {
           ></button>
 
           <button
+            disabled
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide-to="4"
@@ -108,30 +116,48 @@ const FormController = () => {
             aria-label="Slide 5"
           ></button>
         </div>
+        <br></br>
+        <ProgressBar
+          animated
+          now={progress}
+          label={`${progress}%`}
+        />
 
         {/* Cada formulario */}
         <div className="carousel-inner" id="form-controll">
           <div className="carousel-item active">
             <span className="text__subject ">INFORMACIÓN PERSONAL</span>
-            <FormInfoPersonal formButtons={<FormButtons />} />
+            <FormInfoPersonal
+              formButtons={<FormButtons />}
+              setProgress={setProgress}
+            />
             {/* <FormButtons /> */}
           </div>
 
           <div className="carousel-item">
             <span className="text__subject ">INFORMACIÓN ACADÉMICA</span>
-            <FormInfoAcademica formButtons={<FormButtons />} />
+            <FormInfoAcademica
+              formButtons={<FormButtons />}
+              setProgress={setProgress}
+            />
             {/* <FormButtons /> */}
           </div>
 
           <div className="carousel-item">
             <span className="text__subject ">PERFIL LABORAL</span>
-            <FormWorkProfile formButtons={<FormButtons />} />
+            <FormWorkProfile
+              formButtons={<FormButtons />}
+              setProgress={setProgress}
+            />
             {/* <FormButtons /> */}
           </div>
 
           <div className="carousel-item">
             <span className="text__subject ">EXPERIENCIA Y TRABAJO</span>
-            <FormWorkExperience formButtons={<FormButtons />} />
+            <FormWorkExperience
+              formButtons={<FormButtons />}
+              setProgress={setProgress}
+            />
             {/* <FormButtons /> */}
           </div>
 
@@ -141,6 +167,7 @@ const FormController = () => {
             </span>
             <FormDesiredJob
               formButtons={<FormButtons btn_next="Finalizar" />}
+              setProgress={setProgress}
             />
             {/* <FormButtons btn_next="Finalizar" /> */}
           </div>
