@@ -24,7 +24,7 @@ const formDefault = {
   educationalSituation: "",
 };
 
-const FormInfoPersonal = ({ formButtons }) => {
+const FormInfoPersonal = ({ formButtons, setProgress }) => {
   const [form, setForm] = useState(formDefault);
   const [validated, setValidated] = useState(false);
   const dispatch = useDispatch();
@@ -47,8 +47,12 @@ const FormInfoPersonal = ({ formButtons }) => {
     const form = document.getElementById("form-academica");
     if (form.checkValidity() === true) {
       setValidated(true);
+      setProgress(40);
     } else {
       setValidated(false);
+      if (form.checkValidity()){
+        setProgress(20);
+      }
     }
   }, [form]);
 

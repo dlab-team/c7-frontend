@@ -19,7 +19,7 @@ const formDefault = {
 };
 const softSkillsDefault = new Array(softSkills.length).fill(false);
 
-const FormWorkExperience = ({formButtons}) => {
+const FormWorkExperience = ({formButtons, setProgress}) => {
   const [form, setForm] = useState(formDefault);
   const [validated, setValidated] = useState(false);
   const [softSkillsState, setsoftSkillsState] = useState(softSkillsDefault);
@@ -73,9 +73,13 @@ const FormWorkExperience = ({formButtons}) => {
     const form = document.getElementById("form-workExperience");
     if (form.checkValidity() === true  && atLeastThreeCheckboxIsChecked()) {
       setValidated(true);
+      setProgress(80);
     }
     else{
       setValidated(false);
+      if (atLeastThreeCheckboxIsChecked()){
+        setProgress(60);
+      }
     }
   }, [form]);
 
